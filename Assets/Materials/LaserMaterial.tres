@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://e8khyax0xmie"]
+
+[resource]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
