@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb1nhthuuwvs3"]
+
+[ext_resource type="Script" path="res://Scenes/StartMenuUI.gd" id="1_fmx3k"]
+[ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="2_0b6b2"]
+[ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_kptih"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fmx3k")
+
+[node name="MainImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -25.0
+offset_right = 268.0
+offset_bottom = 175.0
+texture = ExtResource("2_kptih")
+expand_mode = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 130.0
+offset_right = 190.0
+offset_bottom = 192.0
+
+[node name="NewGame" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_0b6b2")
+text = "New Game"
+
+[node name="Credits" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_0b6b2")
+text = "Credits"
+
+[node name="Exit" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("2_0b6b2")
+text = "Exit
+"
+
+[connection signal="pressed" from="MenuButtons/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]

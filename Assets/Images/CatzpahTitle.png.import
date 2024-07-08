@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1301ri66nf8b"
-path.s3tc="res://.godot/imported/CatzpahTitle.png-a5c4b1720880ec8cb5984bc28e4e1e55.s3tc.ctex"
-path.etc2="res://.godot/imported/CatzpahTitle.png-a5c4b1720880ec8cb5984bc28e4e1e55.etc2.ctex"
+path.s3tc="res://.godot/imported/CatzpahTitle.png-27c3419060096d8374dcbed864c8f3ec.s3tc.ctex"
+path.etc2="res://.godot/imported/CatzpahTitle.png-27c3419060096d8374dcbed864c8f3ec.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://CatzpahTitle.png"
-dest_files=["res://.godot/imported/CatzpahTitle.png-a5c4b1720880ec8cb5984bc28e4e1e55.s3tc.ctex", "res://.godot/imported/CatzpahTitle.png-a5c4b1720880ec8cb5984bc28e4e1e55.etc2.ctex"]
+source_file="res://Assets/Images/CatzpahTitle.png"
+dest_files=["res://.godot/imported/CatzpahTitle.png-27c3419060096d8374dcbed864c8f3ec.s3tc.ctex", "res://.godot/imported/CatzpahTitle.png-27c3419060096d8374dcbed864c8f3ec.etc2.ctex"]
 
 [params]
 

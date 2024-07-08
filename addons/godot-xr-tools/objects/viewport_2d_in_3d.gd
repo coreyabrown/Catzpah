@@ -57,7 +57,7 @@ const DEFAULT_LAYER := 0b0000_0000_0101_0000_0000_0000_0000_0001
 @export_group("Physics")
 
 ## Physical screen size property
-@export var screen_size : Vector2 = Vector2(3.0, 2.0): set = set_screen_size
+@export var screen_size : Vector2 = Vector2(5.0, 5.0): set = set_screen_size
 
 ## Viewport collision enabled property
 @export var enabled : bool = true: set = set_enabled
@@ -72,7 +72,7 @@ const DEFAULT_LAYER := 0b0000_0000_0101_0000_0000_0000_0000_0001
 @export var scene : PackedScene: set = set_scene
 
 ## Viewport size property
-@export var viewport_size : Vector2 = Vector2(300.0, 200.0): set = set_viewport_size
+@export var viewport_size : Vector2 = Vector2(512.0, 512.0): set = set_viewport_size
 
 ## Update Mode property
 @export var update_mode : UpdateMode = UpdateMode.UPDATE_ALWAYS: set = set_update_mode
