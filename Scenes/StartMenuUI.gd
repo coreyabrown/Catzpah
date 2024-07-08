@@ -7,8 +7,10 @@ func _ready():
 
 
 func _on_exit_pressed():
+	# Haptic feedback on button press?
 	get_tree().quit()
 
 
 func _on_new_game_pressed():
+	# Haptic feedback on button press?
 	get_tree().change_scene_to_file("res://Scenes/LivingRoom.tscn")
