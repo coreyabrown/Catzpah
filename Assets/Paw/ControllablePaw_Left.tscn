@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://eu66kdwgagl2"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/hand.gd" id="1_jhlgr"]
+[ext_resource type="PackedScene" uid="uid://d1m1ddctiwifk" path="res://Assets/Paw/Cat Paw.tscn" id="2_vqye4"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://dq1hprjegb6mq" path="res://Assets/Paw/ControllablePaw_Right_animationTree.tres" id="3_4k5mh"]
+
+[node name="left_cat_paw" type="Node3D"]
+script = ExtResource("1_jhlgr")
+
+[node name="Cat Paw" parent="." instance=ExtResource("2_vqye4")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 3.59989e-21, 4.37114e-08, -1, -4.37114e-08, -0.0148155, -0.0285971, 0.113954)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Cat Paw")
+tree_root = ExtResource("3_4k5mh")
+anim_player = NodePath("../Cat Paw/AnimationPlayer")
+parameters/Grip/blend_amount = 0
+parameters/Trigger/blend_amount = 0
+
+[editable path="Cat Paw"]

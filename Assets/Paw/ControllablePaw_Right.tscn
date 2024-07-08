@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4nmmjxv0olom"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/hand.gd" id="1_fpalv"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://dq1hprjegb6mq" path="res://Assets/Paw/ControllablePaw_Right_animationTree.tres" id="2_62x31"]
+[ext_resource type="Resource" uid="uid://rgyged44w3a8" path="res://Assets/Paw/ControllablePaw_Right_pose.tres" id="3_nqfwv"]
+[ext_resource type="PackedScene" uid="uid://d1m1ddctiwifk" path="res://Assets/Paw/Cat Paw.tscn" id="5_bb68x"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as1wk"]
+animation = &"closed_hand"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7n65l"]
+animation = &"closed_hand"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c4lj4"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lr53a"]
+animation = &"open_hand"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_3vxb6"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0keee"]
+graph_offset = Vector2(-314.876, 44.6446)
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_as1wk")
+nodes/ClosedHand1/position = Vector2(300, 260)
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_7n65l")
+nodes/ClosedHand2/position = Vector2(560, 360)
+nodes/Grip/node = SubResource("AnimationNodeBlend2_c4lj4")
+nodes/Grip/position = Vector2(740, 140)
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_lr53a")
+nodes/OpenHand/position = Vector2(300, 120)
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_3vxb6")
+nodes/Trigger/position = Vector2(500, 100)
+nodes/output/position = Vector2(960, 140)
+node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
+
+[node name="right_cat_paw" type="Node3D"]
+script = ExtResource("1_fpalv")
+hand_blend_tree = ExtResource("2_62x31")
+default_pose = ExtResource("3_nqfwv")
+
+[node name="Cat Paw" parent="." instance=ExtResource("5_bb68x")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.0135183, -0.0285971, 0.113954)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Cat Paw")
+tree_root = SubResource("AnimationNodeBlendTree_0keee")
+anim_player = NodePath("../Cat Paw/AnimationPlayer")
+parameters/Grip/blend_amount = 0.0
+parameters/Trigger/blend_amount = 0.0
+
+[editable path="Cat Paw"]

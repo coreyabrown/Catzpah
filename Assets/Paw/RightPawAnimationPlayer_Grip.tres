@@ -1,0 +1,19 @@
+[gd_resource type="Animation" format=3 uid="uid://jqdrjrmj6war"]
+
+[resource]
+resource_name = "closed_hand"
+length = 0.04
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Paw")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.19648, -0.00101868, -0.00153784, 0.980506)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Toes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.224433, -0.00145026, -0.00383279, 0.974481)

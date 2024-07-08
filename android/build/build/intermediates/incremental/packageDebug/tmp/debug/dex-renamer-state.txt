@@ -1,0 +1,10 @@
+#Wed Jul 03 16:53:33 CDT 2024
+base.2=C\:\\Code\\Catzpah\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+path.2=6/classes.dex
+base.1=C\:\\Code\\Catzpah\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+path.1=0/classes.dex
+base.0=C\:\\Code\\Catzpah\\android\\build\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

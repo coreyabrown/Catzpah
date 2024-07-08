@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://0yiu8k8a0y1o"]
+
+[ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="1_p6tf3"]
+[ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="2_nonik"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0xm1"]
+_data = {
+"closed_hand": ExtResource("1_p6tf3"),
+"open_hand": ExtResource("2_nonik")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_t0xm1")
+}

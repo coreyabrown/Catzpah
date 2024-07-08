@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://dayq50eq0j0oi"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_wjlmx"]
+[ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_gx3hw"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_2fxw0"]
+[ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="3_wjeur"]
+[ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="5_6xmgf"]
+[ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="6_s3pb0"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_86vi2"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="8_dkt8k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oicb0"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5m1qp"]
+sky_material = SubResource("ProceduralSkyMaterial_oicb0")
+
+[sub_resource type="Environment" id="Environment_oyj4y"]
+background_mode = 2
+background_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+sky = SubResource("Sky_5m1qp")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_ylkic"]
+script = ExtResource("7_86vi2")
+open_pose = ExtResource("6_s3pb0")
+closed_pose = ExtResource("5_6xmgf")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_wjlmx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oyj4y")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+pose = &"aim"
+
+[node name="left_cat_paw" parent="XROrigin3D/LeftPaw" instance=ExtResource("2_gx3hw")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/LeftPaw"]
+script = ExtResource("3_2fxw0")
+
+[node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+pose = &"aim"
+
+[node name="right_cat_paw" parent="XROrigin3D/RightPaw" instance=ExtResource("3_wjeur")]
+default_pose = SubResource("Resource_ylkic")
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/RightPaw"]
+script = ExtResource("3_2fxw0")
+
+[node name="StartXR" parent="." instance=ExtResource("8_dkt8k")]
