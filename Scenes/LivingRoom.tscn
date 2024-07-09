@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=48 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_qrvkd"]
 [ext_resource type="PackedScene" uid="uid://cn1da0gl32lys" path="res://Scenes/HUD.tscn" id="2_e2yg2"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bnk3wja1m5dh1" path="res://Assets/Models/notebook.tscn" id="30_us4yp"]
 [ext_resource type="PackedScene" uid="uid://c3fcqqo7noqbx" path="res://Assets/Models/coffee_mug.tscn" id="31_yek65"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="32_wpm0v"]
+[ext_resource type="Script" path="res://Scenes/ScoreArea.gd" id="40_pg2f1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
 sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
@@ -58,19 +59,22 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5ig0d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yktnf"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcky1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq7ic"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_5ig0d")
+albedo_texture = SubResource("ViewportTexture_yktnf")
 texture_filter = 1
 
 [sub_resource type="Resource" id="Resource_ylkic"]
 script = ExtResource("7_urlt0")
 open_pose = ExtResource("6_wv3w0")
 closed_pose = ExtResource("5_0tqia")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhkd4"]
+size = Vector3(21.8723, 1.05005, 13.6673)
 
 [node name="LivingRoom" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
@@ -91,11 +95,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_ux1fl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0894444, -1.72869, 2.88627)
+collision_layer = 4194304
 
 [node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("2_e2yg2")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_wcky1")
+surface_material_override/0 = SubResource("StandardMaterial3D_jq7ic")
+
+[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
+collision_layer = 4194304
 
 [node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -300,5 +308,16 @@ collision_mask = 196615
 mass = 0.5
 linear_damp = 1.0
 angular_damp = 1.0
+
+[node name="ScoreArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.53814)
+collision_mask = 524295
+script = ExtResource("40_pg2f1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScoreArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05383, -0.140503, -1.22512)
+shape = SubResource("BoxShape3D_fhkd4")
+
+[connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
 
 [editable path="XROrigin3D/XRCamera3D/Menu"]
