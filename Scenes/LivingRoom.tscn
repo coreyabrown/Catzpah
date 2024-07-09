@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=38 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_qrvkd"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
@@ -31,6 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://nlibdjpoatqw" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall.tscn" id="23_3ebhc"]
 [ext_resource type="PackedScene" uid="uid://c2di1egpylkf4" path="res://Assets/Furniture-KennyNL/Modified-Furniture/plant_small_3.tscn" id="29_etiyv"]
 [ext_resource type="PackedScene" uid="uid://bobv75r6qerhs" path="res://Assets/Furniture-KennyNL/Modified-Furniture/lamp_round_floor.tscn" id="30_s868l"]
+[ext_resource type="PackedScene" uid="uid://c3fcqqo7noqbx" path="res://Assets/Models/coffee_mug.tscn" id="31_yek65"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="32_wpm0v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
 sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
@@ -141,7 +143,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.249,
 transform = Transform3D(-0.628818, 0, 0.777552, 0, 1, 0, -0.777552, 0, -0.628818, -4.317, -0.7, -1.95201)
 
 [node name="rugRectangle" parent="LivingRoomLevel" instance=ExtResource("15_j4phm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.7, -0.371)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.725002, -0.371)
 
 [node name="rugRectangle2" parent="LivingRoomLevel" instance=ExtResource("15_j4phm")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.82452, -0.7, -8.50331)
@@ -212,10 +214,23 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="ScoringObjects" type="Node3D" parent="."]
 
-[node name="lampRoundFloor" parent="ScoringObjects" instance=ExtResource("30_s868l")]
+[node name="floor lamp" parent="ScoringObjects" instance=ExtResource("30_s868l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.211, -0.7, 1.026)
+collision_layer = 2
+collision_mask = 196615
+linear_damp = 1.0
+angular_damp = 1.0
+
+[node name="coffee mug" parent="ScoringObjects" instance=ExtResource("31_yek65")]
+transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.53749, -1.87986)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
 
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("29_etiyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.455535, -2.59381)
 collision_layer = 4
 collision_mask = 196615
+mass = 0.5
+linear_damp = 1.0
+angular_damp = 1.0
