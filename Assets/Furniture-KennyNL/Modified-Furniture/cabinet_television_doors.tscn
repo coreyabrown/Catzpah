@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp8dysnxerbi6"]
+
+[ext_resource type="PackedScene" uid="uid://b5t5u3skfyddp" path="res://Assets/Furniture-KennyNL/Models/GLTF format/cabinetTelevisionDoors.glb" id="1_kbihk"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_3uoxq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoc6y"]
+size = Vector3(4.01712, 1.53979, 1.24866)
+
+[node name="cabinetTelevisionDoors" instance=ExtResource("1_kbihk")]
+
+[node name="cabinetTelevisionDoors(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_3uoxq")
+
+[node name="doorLeft" parent="cabinetTelevisionDoors(Clone)" index="0"]
+surface_material_override/0 = ExtResource("2_3uoxq")
+
+[node name="doorRight" parent="cabinetTelevisionDoors(Clone)" index="1"]
+surface_material_override/1 = ExtResource("2_3uoxq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9915, 0.786011, -0.607605)
+shape = SubResource("BoxShape3D_eoc6y")

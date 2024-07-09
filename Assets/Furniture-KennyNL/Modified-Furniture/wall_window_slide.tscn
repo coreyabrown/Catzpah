@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bejjnqdb8vrc8"]
+
+[ext_resource type="PackedScene" uid="uid://dh7su2oi173ae" path="res://Assets/Furniture-KennyNL/Models/GLTF format/wallWindowSlide.glb" id="1_7jt0c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmx1v"]
+size = Vector3(5.07825, 6.47974, 0.270996)
+
+[node name="wallWindowSlide" instance=ExtResource("1_7jt0c")]
+
+[node name="wallWindowSlide(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44952, 3.21887, -0.128174)
+shape = SubResource("BoxShape3D_tmx1v")

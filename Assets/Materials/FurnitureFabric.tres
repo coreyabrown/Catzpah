@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://f0je2heiahct"]
+
+[ext_resource type="Texture2D" uid="uid://0vytuchio6jt" path="res://Assets/Materials/MaterialHelpers/Carpet015_1K-JPG_NormalDX.jpg" id="1_ketja"]
+[ext_resource type="Texture2D" uid="uid://b6h12xobvibxb" path="res://Assets/Materials/MaterialHelpers/Carpet015_1K-JPG_Roughness.jpg" id="2_nd5s1"]
+
+[resource]
+albedo_color = Color(2.98411e-06, 0.499088, 0.65563, 1)
+metallic_specular = 0.0
+roughness_texture = ExtResource("2_nd5s1")
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("1_ketja")
+subsurf_scatter_strength = 1.0
+uv1_scale = Vector3(10000, 10000, 10000)

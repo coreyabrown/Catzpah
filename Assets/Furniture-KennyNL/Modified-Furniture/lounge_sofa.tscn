@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyfnargq8h1re"]
+
+[ext_resource type="PackedScene" uid="uid://ob4y4afrxb85" path="res://Assets/Furniture-KennyNL/Models/GLTF format/loungeSofa.glb" id="1_g4qoa"]
+[ext_resource type="Material" uid="uid://f0je2heiahct" path="res://Assets/Materials/FurnitureFabric.tres" id="2_pi137"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yylva"]
+size = Vector3(4.85931, 1.1123, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81fv0"]
+size = Vector3(4.34381, 2.07886, 0.451172)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_skura"]
+size = Vector3(0.446289, 1, 1.93823)
+
+[node name="loungeSofa" instance=ExtResource("1_g4qoa")]
+
+[node name="loungeSofa(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_pi137")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46742, 0.595294, -0.811545)
+shape = SubResource("BoxShape3D_yylva")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45712, 1.26325, -1.82482)
+shape = SubResource("BoxShape3D_81fv0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214355, 1.36105, -1.05383)
+shape = SubResource("BoxShape3D_skura")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68534, 1.36105, -1.05383)
+shape = SubResource("BoxShape3D_skura")

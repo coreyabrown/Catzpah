@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn37hpn158gol"]
+
+[ext_resource type="PackedScene" uid="uid://g1ep3dfyo1mt" path="res://Assets/Furniture-KennyNL/Models/GLTF format/rugRectangle.glb" id="1_62kxq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1s5e8"]
+albedo_color = Color(0.337221, 0.325996, 0.328822, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gpkk"]
+albedo_color = Color(0.637059, 0.715585, 0.785775, 1)
+
+[node name="rugRectangle" instance=ExtResource("1_62kxq")]
+
+[node name="rugRectangle(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_1s5e8")
+surface_material_override/1 = SubResource("StandardMaterial3D_3gpkk")
