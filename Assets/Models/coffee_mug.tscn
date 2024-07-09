@@ -108,11 +108,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1ay28")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5uohg"]
-height = 0.168384
-radius = 0.100023
+height = 0.338732
+radius = 0.181048
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_46nos"]
-size = Vector3(0.0699158, 0.147491, 0.0174561)
+size = Vector3(0.122936, 0.307529, 0.0295258)
 
 [node name="CoffeeMug" type="RigidBody3D"]
 mass = 0.35
@@ -120,12 +120,12 @@ linear_damp = 1.0
 angular_damp = 1.0
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_obwyh")
 skeleton = NodePath("")
 
 [node name="Torus" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.866025, 0.5, -3.27835e-08, 0, -4.37114e-08, -1.5, -0.5, 0.866025, -5.67828e-08, 0.08, 0, -0.05)
+transform = Transform3D(1.73205, 1, -6.55671e-08, 0, -8.74228e-08, -3, -1, 1.73205, -1.13566e-07, 0.180254, 0, -0.114286)
 mesh = SubResource("ArrayMesh_bqtol")
 skeleton = NodePath("")
 
@@ -134,5 +134,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00062231, 0)
 shape = SubResource("CylinderShape3D_5uohg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0.0998366, -0.000198364, -0.0608121)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0.219214, -0.000520706, -0.137255)
 shape = SubResource("BoxShape3D_46nos")

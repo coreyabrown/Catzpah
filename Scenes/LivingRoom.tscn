@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=42 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_qrvkd"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
@@ -30,7 +30,11 @@
 [ext_resource type="PackedScene" uid="uid://bejjnqdb8vrc8" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall_window_slide.tscn" id="22_alhjg"]
 [ext_resource type="PackedScene" uid="uid://nlibdjpoatqw" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall.tscn" id="23_3ebhc"]
 [ext_resource type="PackedScene" uid="uid://c2di1egpylkf4" path="res://Assets/Furniture-KennyNL/Modified-Furniture/plant_small_3.tscn" id="29_etiyv"]
+[ext_resource type="PackedScene" uid="uid://cgbop21vsu3yi" path="res://Assets/Models/coasterholder.tscn" id="30_f8rc0"]
+[ext_resource type="PackedScene" uid="uid://dw0xxwht65n4q" path="res://Assets/Models/coaster.tscn" id="30_ppub1"]
 [ext_resource type="PackedScene" uid="uid://bobv75r6qerhs" path="res://Assets/Furniture-KennyNL/Modified-Furniture/lamp_round_floor.tscn" id="30_s868l"]
+[ext_resource type="PackedScene" uid="uid://0fh3bljptvgg" path="res://Assets/Models/pencil.tscn" id="30_ulgaw"]
+[ext_resource type="PackedScene" uid="uid://bnk3wja1m5dh1" path="res://Assets/Models/notebook.tscn" id="30_us4yp"]
 [ext_resource type="PackedScene" uid="uid://c3fcqqo7noqbx" path="res://Assets/Models/coffee_mug.tscn" id="31_yek65"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="32_wpm0v"]
 
@@ -58,7 +62,7 @@ open_pose = ExtResource("6_wv3w0")
 closed_pose = ExtResource("5_0tqia")
 
 [node name="LivingRoom" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.408711, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
 script = ExtResource("1_qrvkd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -117,8 +121,9 @@ step_turn_angle = 10.0
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("9_37r5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
-player_height_min = 0.4
-player_height_max = 1.0
+player_radius = 0.1
+player_height_min = 0.2
+player_height_max = 0.85
 
 [node name="StartXR" parent="." instance=ExtResource("8_2bkdu")]
 
@@ -214,6 +219,48 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="ScoringObjects" type="Node3D" parent="."]
 
+[node name="Pencil" parent="ScoringObjects" instance=ExtResource("30_ulgaw")]
+transform = Transform3D(0.996101, 0.0881801, -0.00252778, 0, -0.0286544, -0.99959, -0.0882163, 0.995692, -0.0285427, 0.221541, 0.520417, -1.90647)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
+[node name="notebook" parent="ScoringObjects" instance=ExtResource("30_us4yp")]
+transform = Transform3D(0.531132, 0, -0.847289, 0, 1, 0, 0.847289, 0, 0.531132, 0.234223, 0.472775, -1.89634)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
+[node name="Coaster2" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
+transform = Transform3D(0.122788, 0.696364, 0.707107, 0.984808, -0.173648, 0, 0.122788, 0.696364, -0.707107, -0.356504, 0.702963, -2.63282)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
+[node name="Coaster3" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
+transform = Transform3D(0.0616284, 0.704416, 0.707107, 0.996195, -0.0871558, 0, 0.0616284, 0.704416, -0.707107, -0.316877, 0.702963, -2.58651)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
+[node name="Coaster4" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
+transform = Transform3D(-0.0616284, 0.704416, 0.707107, 0.996195, 0.0871558, 0, -0.0616284, 0.704416, -0.707107, -0.258651, 0.702963, -2.55567)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
+[node name="Coaster" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28313, 0.465659, -1.91903)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
+[node name="coaster holder" parent="ScoringObjects" instance=ExtResource("30_f8rc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302129, 0.563027, -2.56158)
+collision_layer = 4
+collision_mask = 196615
+script = ExtResource("32_wpm0v")
+
 [node name="floor lamp" parent="ScoringObjects" instance=ExtResource("30_s868l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.211, -0.7, 1.026)
 collision_layer = 2
@@ -222,13 +269,13 @@ linear_damp = 1.0
 angular_damp = 1.0
 
 [node name="coffee mug" parent="ScoringObjects" instance=ExtResource("31_yek65")]
-transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.53749, -1.87986)
+transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.647381, -1.87986)
 collision_layer = 4
 collision_mask = 196615
 script = ExtResource("32_wpm0v")
 
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("29_etiyv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.455535, -2.59381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277834, 0.455535, -2.59381)
 collision_layer = 4
 collision_mask = 196615
 mass = 0.5

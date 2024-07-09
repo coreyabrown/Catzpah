@@ -17,6 +17,6 @@ transform = Transform3D(5.4, 0, 0, 0, 5, 0, 0, 0, 5, -0.0759833, 0, 0)
 surface_material_override/0 = ExtResource("2_3f6mf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
-transform = Transform3D(-2, 0, -3.01992e-07, 0, 2.5, 0, 3.01992e-07, 0, -2, 1.26163, 1.50691, -0.0541489)
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2.5, 0, 3.01992e-07, 0, -2, 1.26163, 1.50691, -0.00884943)
 material_override = SubResource("StandardMaterial3D_xhm02")
 mesh = SubResource("QuadMesh_di852")
