@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn1da0gl32lys"]
+
+[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_k52ea"]
+[ext_resource type="FontFile" uid="uid://cstveyvjku21d" path="res://Assets/Font/Rowdies-Regular.ttf" id="2_ps2di"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_k52ea")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -414.0
+offset_right = 476.0
+offset_bottom = 200.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ps2di")
+theme_override_font_sizes/font_size = 20
+text = "Score: "
+
+[node name="ComboLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
