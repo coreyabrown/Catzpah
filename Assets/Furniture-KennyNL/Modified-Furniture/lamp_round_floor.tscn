@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bobv75r6qerhs"]
+
+[ext_resource type="PackedScene" uid="uid://vhkbvj2xb2oe" path="res://Assets/Furniture-KennyNL/Models/GLTF format/lampRoundFloor.glb" id="1_wywh7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bi3w"]
+albedo_color = Color(0.581033, 0.581033, 0.581033, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahs2n"]
+albedo_color = Color(0.520826, 0.776585, 0.563101, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yk6rb"]
+size = Vector3(0.617249, 0.102966, 0.602112)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v51lr"]
+radius = 0.0407581
+height = 3.39691
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_asgkx"]
+height = 0.884347
+radius = 0.385165
+
+[node name="lampRoundFloor" instance=ExtResource("1_wywh7")]
+
+[node name="lampRoundFloor(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_2bi3w")
+surface_material_override/1 = SubResource("StandardMaterial3D_ahs2n")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+collision_layer = 2
+collision_mask = 655367
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300873, 0.0584412, -0.300995)
+shape = SubResource("BoxShape3D_yk6rb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29317, 1.77397, -0.297455)
+shape = SubResource("CapsuleShape3D_v51lr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299114, 3.8384, -0.290316)
+shape = SubResource("CylinderShape3D_asgkx")
