@@ -59,13 +59,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_78jkf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ah6cf"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_068xk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aus6n"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_78jkf")
+albedo_texture = SubResource("ViewportTexture_ah6cf")
 texture_filter = 1
 
 [sub_resource type="Resource" id="Resource_ylkic"]
@@ -94,13 +94,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801352, 0.486916, -2.04188)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_ux1fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0894444, -1.72869, 2.88627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0894444, -1.72869, 2.64231)
 collision_layer = 4194304
 
 [node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("2_e2yg2")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_068xk")
+surface_material_override/0 = SubResource("StandardMaterial3D_aus6n")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 4194304

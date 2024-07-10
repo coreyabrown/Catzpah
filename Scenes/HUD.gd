@@ -17,8 +17,9 @@ func _on_score_area_update_combo_text(new_value):
 		$VBoxContainer/ComboLabel.text = str(new_value[0])
 	elif new_value.size() > 1:
 		var combo_text = $VBoxContainer/ComboLabel.text
-		for object in new_value:
-			combo_text += " * " + str(object)
+		for i in range(new_value.size()):
+			if i > 0:
+				combo_text += " * " + str(new_value[i])
 		$VBoxContainer/ComboLabel.text = str(combo_text)
 
 
