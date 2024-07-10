@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://btem7lplgv2ai"]
+
+[ext_resource type="Script" path="res://Scenes/LevelOverUI.gd" id="1_tqtmy"]
+[ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_4q3kx"]
+[ext_resource type="Texture2D" uid="uid://bwbfs1ykd0ilj" path="res://Assets/Images/CatzpahTitle2.png" id="3_7e8og"]
+[ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="4_p35tr"]
+
+[node name="LevelOverMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqtmy")
+
+[node name="MainImage" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = -25.0
+offset_right = 268.0
+offset_bottom = 175.0
+texture = ExtResource("2_4q3kx")
+expand_mode = 1
+
+[node name="CatzpahTitle2" type="Sprite2D" parent="."]
+position = Vector2(150, 50)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_7e8og")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 200.0
+offset_bottom = 125.0
+text = "Score: "
+horizontal_alignment = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 130.0
+offset_right = 190.0
+offset_bottom = 192.0
+
+[node name="NextLevel" type="Button" parent="MenuButtons"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_p35tr")
+text = "Next Level"
+
+[node name="MainMenu" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("4_p35tr")
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("4_p35tr")
+text = "Exit
+"
+
+[connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]

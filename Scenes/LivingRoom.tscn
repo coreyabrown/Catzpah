@@ -59,13 +59,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ah6cf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ovuvk"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aus6n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr5gh"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_ah6cf")
+albedo_texture = SubResource("ViewportTexture_ovuvk")
 texture_filter = 1
 
 [sub_resource type="Resource" id="Resource_ylkic"]
@@ -100,7 +100,7 @@ collision_layer = 4194304
 [node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("2_e2yg2")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_aus6n")
+surface_material_override/0 = SubResource("StandardMaterial3D_xr5gh")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 4194304
@@ -320,6 +320,10 @@ shape = SubResource("BoxShape3D_fhkd4")
 
 [node name="Timer" type="Timer" parent="ScoreArea"]
 wait_time = 2.0
+one_shot = true
+
+[node name="LevelEndTimer" type="Timer" parent="ScoreArea"]
+wait_time = 5.0
 one_shot = true
 
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]

@@ -23,7 +23,10 @@ func _ready():
 func _process(_delta):
 	if $Timer.is_stopped() and comboEngaged:
 		endCombo()
-		
+	if $Timer.is_stopped() and $LevelEndTimer.is_stopped() and playerScored:
+		Global.pass_score(score)
+		get_tree().change_scene_to_file("res://Scenes/LevelOver.tscn")
+
 
 func _on_body_entered(body):
 	if body in scoringObjects:
@@ -44,6 +47,8 @@ func _on_body_entered(body):
 		var addPoints = 70 # should be on the high end of points
 		# Maybe should end level after falling?
 		addCombo(addPoints, "RUFUS")
+		
+		$LevelEndTimer.start()
 		
 
 func endCombo():
