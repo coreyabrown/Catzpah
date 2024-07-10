@@ -59,13 +59,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_sfgin"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_78jkf"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qeclt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_068xk"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_sfgin")
+albedo_texture = SubResource("ViewportTexture_78jkf")
 texture_filter = 1
 
 [sub_resource type="Resource" id="Resource_ylkic"]
@@ -100,7 +100,7 @@ collision_layer = 4194304
 [node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("2_e2yg2")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_qeclt")
+surface_material_override/0 = SubResource("StandardMaterial3D_068xk")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 4194304
@@ -323,5 +323,8 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
+[connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_combo_end"]
+[connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_update_combo_score"]
+[connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_update_combo_text"]
 
 [editable path="XROrigin3D/XRCamera3D/Menu"]

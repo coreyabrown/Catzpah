@@ -6,6 +6,9 @@ var score = 0
 var comboScore = 0
 var displayComboScore = 0
 var combo = []
+signal combo_end(score)
+signal update_combo_text(new_value)
+signal update_combo_score(new_value)
 
 @onready var comboEngaged : bool = false
 
@@ -14,6 +17,7 @@ func _ready():
 	# Get all Scoring Objects
 	var scoringObjNodes = get_node("../ScoringObjects").get_children()
 	scoringObjects.append_array(scoringObjNodes)
+	combo_end.emit(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -47,7 +51,9 @@ func endCombo():
 	print("ENDED COMBO")
 	score += displayComboScore
 	print("SCORE: "+str(score))
-	$"../XROrigin3D/XRCamera3D/Menu/Viewport/HUD/VBoxContainer/ComboLabel".clear()
+	
+	combo_end.emit(score)
+	
 	comboScore = 0
 	combo = []
 
@@ -62,7 +68,5 @@ func addCombo(trickScore, itemName):
 	var comboLength = combo.size()
 	displayComboScore = clamp(round(comboScore * pow(1.2, comboLength)),10,1000)
 	print("COMBO: "+str(combo) +"\nDISPLAY COMBO SCORE: " +str(displayComboScore))
-	if comboLength == 1:
-		$"../XROrigin3D/XRCamera3D/Menu/Viewport/HUD/VBoxContainer/ComboLabel".append_text(combo[comboLength-1])
-	else:
-		$"../XROrigin3D/XRCamera3D/Menu/Viewport/HUD/VBoxContainer/ComboLabel".append_text(" * "+combo[comboLength-1])
+	update_combo_text.emit(combo)
+	update_combo_score.emit(displayComboScore)
