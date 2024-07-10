@@ -19,7 +19,7 @@ config/icon="res://Assets/Images/CatzpahIcon.png"
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
-Global="*res://Scenes/global.gd"
+Global="*res://Scenes/SceneHelpers/global.gd"
 
 [editor_plugins]
 

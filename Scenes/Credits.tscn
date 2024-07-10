@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://c4r25o2xl72wb"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_s5nnf"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_s5nnf"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_su0c8"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_nfuxq"]
 [ext_resource type="PackedScene" uid="uid://bjjdccpbgb2kb" path="res://Assets/Paw/xr_tools_function_pointer.tscn" id="4_i7ddr"]
@@ -9,9 +9,9 @@
 [ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="7_si2hm"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="8_m6c7b"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="9_fjepk"]
-[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/Viewport.tscn" id="10_kaumc"]
-[ext_resource type="PackedScene" uid="uid://c7gdpshkuyvpj" path="res://Scenes/CreditSlide1.tscn" id="11_rx7nj"]
-[ext_resource type="PackedScene" uid="uid://c3l37spkdc1iv" path="res://Scenes/CreditSlide2.tscn" id="12_2mc24"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="10_kaumc"]
+[ext_resource type="PackedScene" uid="uid://c7gdpshkuyvpj" path="res://Scenes/SceneHelpers/CreditSlide1.tscn" id="11_rx7nj"]
+[ext_resource type="PackedScene" uid="uid://c3l37spkdc1iv" path="res://Scenes/SceneHelpers/CreditSlide2.tscn" id="12_2mc24"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oicb0"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,7 +28,7 @@ ambient_light_color = Color(0.894922, 0.894922, 0.894922, 1)
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhkid"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_801a1"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 1
@@ -39,28 +39,28 @@ script = ExtResource("8_m6c7b")
 open_pose = ExtResource("7_si2hm")
 closed_pose = ExtResource("6_bw4xn")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chav3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggane"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q8fxk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_eo6x4"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hecu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slxnl"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_q8fxk")
+albedo_texture = SubResource("ViewportTexture_eo6x4")
 texture_filter = 1
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2pitp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_aoafs"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbwrv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aslx6"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_2pitp")
+albedo_texture = SubResource("ViewportTexture_aoafs")
 texture_filter = 1
 
 [node name="Credits" type="Node3D"]
@@ -92,7 +92,7 @@ script = ExtResource("3_nfuxq")
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("4_i7ddr")]
 show_laser = 2
 laser_length = 1
-laser_material = SubResource("StandardMaterial3D_mhkid")
+laser_material = SubResource("StandardMaterial3D_801a1")
 
 [node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
@@ -108,7 +108,7 @@ script = ExtResource("3_nfuxq")
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("4_i7ddr")]
 show_laser = 2
 laser_length = 1
-laser_material = SubResource("StandardMaterial3D_chav3")
+laser_material = SubResource("StandardMaterial3D_ggane")
 
 [node name="StartXR" parent="." instance=ExtResource("9_fjepk")]
 
@@ -118,7 +118,7 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 [node name="StartMenu" parent="Menu/Viewport" index="0" instance=ExtResource("11_rx7nj")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_2hecu")
+surface_material_override/0 = SubResource("StandardMaterial3D_slxnl")
 
 [node name="Menu2" parent="." instance=ExtResource("10_kaumc")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0.5, 0, 0)
@@ -126,7 +126,7 @@ transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 
 [node name="StartMenu" parent="Menu2/Viewport" index="0" instance=ExtResource("12_2mc24")]
 
 [node name="Screen" parent="Menu2" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_rbwrv")
+surface_material_override/0 = SubResource("StandardMaterial3D_aslx6")
 
 [editable path="Menu"]
 [editable path="Menu2"]

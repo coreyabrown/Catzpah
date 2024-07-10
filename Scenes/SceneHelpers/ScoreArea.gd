@@ -24,7 +24,7 @@ func _process(_delta):
 	if $Timer.is_stopped() and comboEngaged:
 		endCombo()
 	if $Timer.is_stopped() and $LevelEndTimer.is_stopped() and playerScored:
-		Global.pass_score(score)
+		Global.set_score(score)
 		get_tree().change_scene_to_file("res://Scenes/LevelOver.tscn")
 
 
@@ -53,9 +53,9 @@ func _on_body_entered(body):
 
 func endCombo():
 	comboEngaged = false
-	print("ENDED COMBO")
+	# print("ENDED COMBO")
 	score += displayComboScore
-	print("SCORE: "+str(score))
+	# print("SCORE: "+str(score))
 	
 	combo_end.emit(score)
 	
@@ -72,6 +72,6 @@ func addCombo(trickScore, itemName):
 	comboScore += trickScore
 	var comboLength = combo.size()
 	displayComboScore = clamp(round(comboScore * pow(1.2, comboLength)),10,1000)
-	print("COMBO: "+str(combo) +"\nDISPLAY COMBO SCORE: " +str(displayComboScore))
+	# print("COMBO: "+str(combo) +"\nDISPLAY COMBO SCORE: " +str(displayComboScore))
 	update_combo_text.emit(combo)
 	update_combo_score.emit(displayComboScore)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cn1da0gl32lys"]
 
-[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_k52ea"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/HUD.gd" id="1_k52ea"]
 [ext_resource type="FontFile" uid="uid://cstveyvjku21d" path="res://Assets/Font/Rowdies-Regular.ttf" id="2_ps2di"]
 
 [node name="HUD" type="CanvasLayer"]

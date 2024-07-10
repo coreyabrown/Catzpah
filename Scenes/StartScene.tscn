@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dayq50eq0j0oi"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_dakp7"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_dakp7"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_4xygx"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_ogxiw"]
 [ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="4_yahdn"]
@@ -8,8 +8,8 @@
 [ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="6_ja7gu"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_aokor"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="8_a4ibg"]
-[ext_resource type="PackedScene" uid="uid://bb1nhthuuwvs3" path="res://Scenes/StartMenu.tscn" id="9_71cef"]
-[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/Viewport.tscn" id="9_k1htl"]
+[ext_resource type="PackedScene" uid="uid://bb1nhthuuwvs3" path="res://Scenes/SceneHelpers/StartMenu.tscn" id="9_71cef"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="9_k1htl"]
 [ext_resource type="PackedScene" uid="uid://bjjdccpbgb2kb" path="res://Assets/Paw/xr_tools_function_pointer.tscn" id="9_k7pyt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oicb0"]

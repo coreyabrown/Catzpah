@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://btem7lplgv2ai"]
 
-[ext_resource type="Script" path="res://Scenes/LevelOverUI.gd" id="1_tqtmy"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelOverUI.gd" id="1_tqtmy"]
 [ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_4q3kx"]
 [ext_resource type="Texture2D" uid="uid://bwbfs1ykd0ilj" path="res://Assets/Images/CatzpahTitle2.png" id="3_7e8og"]
 [ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="4_p35tr"]

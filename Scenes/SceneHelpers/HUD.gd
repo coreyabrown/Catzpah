@@ -6,7 +6,6 @@ func _ready():
 
 func update_score(score):
 	var score_bug = "Score: "+str(score)
-	print("SCORE SIGNAL WORKS")
 	$Container/VBoxContainer/ScoreLabel.text = str(score_bug)
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bb1nhthuuwvs3"]
 
-[ext_resource type="Script" path="res://Scenes/StartMenuUI.gd" id="1_fmx3k"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/StartMenuUI.gd" id="1_fmx3k"]
 [ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="2_0b6b2"]
 [ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_kptih"]
 [ext_resource type="Texture2D" uid="uid://bwbfs1ykd0ilj" path="res://Assets/Images/CatzpahTitle2.png" id="3_1u42q"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=49 format=3 uid="uid://da2fj4psrta8w"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_qrvkd"]
-[ext_resource type="PackedScene" uid="uid://cn1da0gl32lys" path="res://Scenes/HUD.tscn" id="2_e2yg2"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
+[ext_resource type="PackedScene" uid="uid://cn1da0gl32lys" path="res://Scenes/SceneHelpers/HUD.tscn" id="2_e2yg2"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
-[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/Viewport.tscn" id="2_ux1fl"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="2_ux1fl"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_0fkrt"]
 [ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="4_6et88"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_026rr"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bkwqufn1rkh2c" path="res://Assets/Furniture-KennyNL/Modified-Furniture/ceiling_fan.tscn" id="12_ebbyu"]
 [ext_resource type="PackedScene" uid="uid://d08ba3u0bdygo" path="res://Assets/Furniture-KennyNL/Modified-Furniture/lounge_chair.tscn" id="14_a32yx"]
 [ext_resource type="PackedScene" uid="uid://cn37hpn158gol" path="res://Assets/Furniture-KennyNL/Modified-Furniture/rug_rectangle.tscn" id="15_j4phm"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LivingRoomLevel.gd" id="16_iohwg"]
 [ext_resource type="PackedScene" uid="uid://cp8dysnxerbi6" path="res://Assets/Furniture-KennyNL/Modified-Furniture/cabinet_television_doors.tscn" id="16_kxv3k"]
 [ext_resource type="PackedScene" uid="uid://df3wwv4675n08" path="res://Assets/Furniture-KennyNL/Modified-Furniture/television_modern.tscn" id="17_ybf6q"]
 [ext_resource type="PackedScene" uid="uid://dbqofaxpx61ae" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall_doorway_wide.tscn" id="18_tbu88"]
@@ -39,7 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://bnk3wja1m5dh1" path="res://Assets/Models/notebook.tscn" id="30_us4yp"]
 [ext_resource type="PackedScene" uid="uid://c3fcqqo7noqbx" path="res://Assets/Models/coffee_mug.tscn" id="31_yek65"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="32_wpm0v"]
-[ext_resource type="Script" path="res://Scenes/ScoreArea.gd" id="40_pg2f1"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/ScoreArea.gd" id="40_pg2f1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
 sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
@@ -59,13 +60,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_as4gy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ir4w"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttj4d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydd68"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_as4gy")
+albedo_texture = SubResource("ViewportTexture_5ir4w")
 texture_filter = 1
 
 [sub_resource type="Resource" id="Resource_ylkic"]
@@ -100,7 +101,7 @@ collision_layer = 4194304
 [node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("2_e2yg2")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ttj4d")
+surface_material_override/0 = SubResource("StandardMaterial3D_ydd68")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 4194304
@@ -155,6 +156,7 @@ player_height_max = 0.85
 [node name="StartXR" parent="." instance=ExtResource("8_2bkdu")]
 
 [node name="LivingRoomLevel" type="Node3D" parent="."]
+script = ExtResource("16_iohwg")
 
 [node name="paneling" parent="LivingRoomLevel" instance=ExtResource("11_37am6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33141, 1.99899, 2.23213)
