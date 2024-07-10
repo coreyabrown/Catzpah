@@ -45,8 +45,8 @@ func _on_body_entered(body):
 func endCombo():
 	comboEngaged = false
 	print("ENDED COMBO")
-	print("SCORE: "+str(score))
 	score += displayComboScore
+	print("SCORE: "+str(score))
 	$"../XROrigin3D/XRCamera3D/Menu/Viewport/HUD/VBoxContainer/ComboLabel".clear()
 	comboScore = 0
 	combo = []

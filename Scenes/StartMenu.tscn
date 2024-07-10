@@ -54,4 +54,5 @@ text = "Exit
 "
 
 [connection signal="pressed" from="MenuButtons/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MenuButtons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7gdpshkuyvpj"]
+
+[ext_resource type="Script" path="res://Scenes/CreditMenuUI.gd" id="1_0iehk"]
+[ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_hj4fo"]
+[ext_resource type="Texture2D" uid="uid://bwbfs1ykd0ilj" path="res://Assets/Images/CatzpahTitle2.png" id="3_dmuup"]
+[ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="4_rjdiy"]
+
+[node name="CreditMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0iehk")
+
+[node name="MainImage" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = -25.0
+offset_right = 268.0
+offset_bottom = 175.0
+texture = ExtResource("2_hj4fo")
+expand_mode = 1
+
+[node name="CatzpahTitle2" type="Sprite2D" parent="."]
+position = Vector2(151, 64)
+scale = Vector2(0.92446, 0.92446)
+texture = ExtResource("3_dmuup")
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 130.0
+offset_right = 238.0
+offset_bottom = 192.0
+
+[node name="Back To Menu" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("4_rjdiy")
+text = "Back To Menu
+"
+
+[node name="Label" type="Label" parent="MenuButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Created by Corey Brown"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MenuButtons/Back To Menu" to="." method="_on_back_to_menu_pressed"]

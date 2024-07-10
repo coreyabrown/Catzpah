@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3l37spkdc1iv"]
+
+[ext_resource type="Texture2D" uid="uid://di4nym7xxqa5q" path="res://Assets/Images/godot-logo-e1683901104756-3865633653.png" id="1_ypc1a"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 5.0
+offset_right = 274.0
+offset_bottom = 102.0
+
+[node name="Label" type="Label" parent="MenuButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Furniture Assets From Kenny.nl
+Music From bensound.com
+Sound Effects From freesound.org
+Cat Logo by Eriek Bagus
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 105.0
+offset_right = 274.0
+offset_bottom = 145.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Written using Godot"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(119, 58)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_ypc1a")
