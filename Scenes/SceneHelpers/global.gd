@@ -3,6 +3,7 @@ extends Node
 var current_scene = null
 var levelEndScore = 0
 var levelReference = ["Main Menu", "Living Room", "Office"]
+var levelPath = ["res://Scenes/StartScene.tscn", "res://Scenes/LivingRoom.tscn", "res://Scenes/Office.tscn"]
 var currentLevel = levelReference[0]
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +22,8 @@ func set_level(levelIndex):
 
 func get_level():
 	return currentLevel
+
+func get_next_level_path():
+	var current_index = levelReference.find(currentLevel)
+	return levelPath[current_index+1]
+	

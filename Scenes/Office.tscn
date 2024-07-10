@@ -1,0 +1,257 @@
+[gd_scene load_steps=34 format=3 uid="uid://wjdnlysdt6on"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_vxbxs"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="2_gaeti"]
+[ext_resource type="PackedScene" uid="uid://cn1da0gl32lys" path="res://Scenes/SceneHelpers/HUD.tscn" id="3_hymq1"]
+[ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="4_bty0c"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="5_36r82"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_1k6fq"]
+[ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="7_67mys"]
+[ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="8_4hj8u"]
+[ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="9_w81mj"]
+[ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="10_71och"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="11_xivn6"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="12_6bhy3"]
+[ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="13_aqf44"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="14_dbrtb"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="15_4gyx7"]
+[ext_resource type="PackedScene" uid="uid://nlibdjpoatqw" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall.tscn" id="16_5nnr8"]
+[ext_resource type="Script" path="res://Scenes/OfficeLevel.gd" id="16_fo6hb"]
+[ext_resource type="PackedScene" uid="uid://bqfglp5gpf4uk" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall_doorway.tscn" id="19_0k44y"]
+[ext_resource type="PackedScene" uid="uid://pl2cubiiaeg0" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall_corner.tscn" id="20_mns3b"]
+[ext_resource type="PackedScene" uid="uid://bejjnqdb8vrc8" path="res://Assets/Furniture-KennyNL/Modified-Furniture/wall_window_slide.tscn" id="21_odmvs"]
+[ext_resource type="PackedScene" uid="uid://c4y10olkr0hig" path="res://Assets/Furniture-KennyNL/Modified-Furniture/stairs.tscn" id="21_pa5w0"]
+[ext_resource type="PackedScene" uid="uid://51ls3vyte0jv" path="res://Assets/Furniture-KennyNL/Modified-Furniture/floor_full.tscn" id="22_ala04"]
+[ext_resource type="Material" uid="uid://f0je2heiahct" path="res://Assets/Materials/FurnitureFabric.tres" id="22_gmxhq"]
+[ext_resource type="PackedScene" uid="uid://uurbhaqoo5ep" path="res://Assets/Furniture-KennyNL/Modified-Furniture/doorway.tscn" id="22_pke6b"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/ScoreArea.gd" id="23_7nmbd"]
+[ext_resource type="PackedScene" uid="uid://bsxuf5yduct7t" path="res://Assets/Furniture-KennyNL/Modified-Furniture/desk_corner.tscn" id="24_0m3ip"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
+sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
+sky_horizon_color = Color(0.595934, 0.711037, 0.717363, 1)
+ground_bottom_color = Color(0.120155, 0.273968, 0.135592, 1)
+ground_horizon_color = Color(0.595934, 0.711037, 0.717363, 1)
+
+[sub_resource type="Sky" id="Sky_iwmfm"]
+sky_material = SubResource("ProceduralSkyMaterial_xklkx")
+
+[sub_resource type="Environment" id="Environment_8xa8g"]
+background_mode = 2
+sky = SubResource("Sky_iwmfm")
+ambient_light_source = 2
+ambient_light_color = Color(0.654902, 0.654902, 0.654902, 1)
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5qiq0"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rw0s"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_5qiq0")
+texture_filter = 1
+
+[sub_resource type="Resource" id="Resource_ylkic"]
+script = ExtResource("11_xivn6")
+open_pose = ExtResource("10_71och")
+closed_pose = ExtResource("9_w81mj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhkd4"]
+size = Vector3(23.914, 1.05005, 16.8676)
+
+[node name="Office" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
+script = ExtResource("1_vxbxs")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8xa8g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, 10.8968, 1.25485, -6.1946)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_gaeti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0894444, -1.72869, 2.64231)
+collision_layer = 4194304
+
+[node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("3_hymq1")]
+
+[node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6rw0s")
+
+[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
+collision_layer = 4194304
+
+[node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+pose = &"aim"
+
+[node name="left_cat_paw" parent="XROrigin3D/LeftPaw" instance=ExtResource("4_bty0c")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/LeftPaw"]
+script = ExtResource("5_36r82")
+pickup_axis_action = "trigger"
+grab_distance = 0.05
+grab_collision_mask = 327684
+ranged_enable = false
+
+[node name="MovementDirect" parent="XROrigin3D/LeftPaw" instance=ExtResource("6_1k6fq")]
+max_speed = 0.5
+strafe = true
+
+[node name="CollisionHandLeft" parent="XROrigin3D/LeftPaw" instance=ExtResource("7_67mys")]
+
+[node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+pose = &"aim"
+
+[node name="right_cat_paw" parent="XROrigin3D/RightPaw" instance=ExtResource("8_4hj8u")]
+default_pose = SubResource("Resource_ylkic")
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/RightPaw"]
+script = ExtResource("5_36r82")
+pickup_axis_action = "trigger"
+grab_distance = 0.05
+grab_collision_mask = 327684
+ranged_enable = false
+
+[node name="MovementTurn" parent="XROrigin3D/RightPaw" instance=ExtResource("12_6bhy3")]
+turn_mode = 1
+step_turn_angle = 10.0
+
+[node name="CollisionHandRight" parent="XROrigin3D/RightPaw" instance=ExtResource("13_aqf44")]
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("14_dbrtb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+player_radius = 0.1
+player_height_min = 0.2
+player_height_max = 0.85
+
+[node name="StartXR" parent="." instance=ExtResource("15_4gyx7")]
+
+[node name="OfficeLevel" type="Node3D" parent="."]
+script = ExtResource("16_fo6hb")
+
+[node name="walls" type="Node3D" parent="OfficeLevel"]
+
+[node name="wall5" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 2, 0, -4.37114e-08, -4.76508, -0.7, 2.54184)
+
+[node name="wallDoorway" parent="OfficeLevel/walls" instance=ExtResource("19_0k44y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54485, -0.7, 2.56482)
+
+[node name="wallCorner" parent="OfficeLevel/walls" instance=ExtResource("20_mns3b")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4.70679, -0.7, -0.183465)
+
+[node name="wallCorner5" parent="OfficeLevel/walls" instance=ExtResource("20_mns3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13426, -0.7, 2.56932)
+
+[node name="wallCorner2" parent="OfficeLevel/walls" instance=ExtResource("20_mns3b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.98443, -0.7, -10.3216)
+
+[node name="wall3" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 11.8607, -0.7, 7.10713)
+
+[node name="wallWindowSlide" parent="OfficeLevel/walls" instance=ExtResource("21_odmvs")]
+transform = Transform3D(-1, -8.74228e-08, 0, -8.74228e-08, 1, 8.74228e-08, -7.64274e-15, 8.74228e-08, -1, 4.425, -0.7, -10.3283)
+
+[node name="wallCorner4" parent="OfficeLevel/walls" instance=ExtResource("20_mns3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10669, -0.7, 9.54345)
+
+[node name="wall" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-7.86805e-08, 0, -1, 0, 1, 0, 1.8, 0, -4.37114e-08, -4.71749, -0.7, -8.907)
+
+[node name="wall2" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.319339, -0.7, -10.3233)
+
+[node name="wall6" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 9.24593, -0.7, -10.3233)
+
+[node name="backwall" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -5.30156, -0.7, 2.56653)
+
+[node name="wallWindowSlide2" parent="OfficeLevel/walls" instance=ExtResource("21_odmvs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8572, -0.7, -2.61757)
+
+[node name="wall4" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -4.90425, -0.7, 9.55193)
+
+[node name="wall7" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 2.46619, -0.7, 17.2099)
+
+[node name="wall8" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 2.46619, -7.0541, 17.2099)
+
+[node name="wall9" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 9.37333, -7.36254, 17.8735)
+
+[node name="wall12" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 9.29943, -0.873414, 19.4038)
+
+[node name="wall10" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 2, 0, -4.37114e-08, 4.84648, -7.17204, 8.77923)
+
+[node name="wall11" parent="OfficeLevel/walls" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 2, 0, -4.37114e-08, 4.84648, -0.716223, 9.35922)
+
+[node name="wallCorner3" parent="OfficeLevel/walls" instance=ExtResource("20_mns3b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.863, -0.7, -7.57519)
+
+[node name="ceiling and floor" type="Node3D" parent="OfficeLevel"]
+
+[node name="wall" parent="OfficeLevel/ceiling and floor" instance=ExtResource("16_5nnr8")]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.02181, 5.72434, -11.4045)
+visible = false
+
+[node name="floorFull" parent="OfficeLevel/ceiling and floor" instance=ExtResource("22_ala04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.745785, 9.66517)
+
+[node name="floorFull(Clone)" parent="OfficeLevel/ceiling and floor/floorFull" index="0"]
+surface_material_override/0 = ExtResource("22_gmxhq")
+
+[node name="stairs" parent="OfficeLevel" instance=ExtResource("21_pa5w0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.1174, -7.3468, 18.4538)
+
+[node name="doorway" parent="OfficeLevel" instance=ExtResource("22_pke6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83705, -0.7, 2.605)
+
+[node name="deskCorner" parent="OfficeLevel" instance=ExtResource("24_0m3ip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6156, -0.7, -5.13506)
+
+[node name="ScoringObjects" type="Node3D" parent="."]
+
+[node name="ScoreArea" type="Area3D" parent="."]
+transform = Transform3D(0.918881, 0, 0.394535, 0, 1, 0, -0.394535, 0, 0.918881, 1.70697, 0, -0.914512)
+collision_mask = 524295
+script = ExtResource("23_7nmbd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScoreArea"]
+transform = Transform3D(0.918391, 0, -0.395674, 0, 1, 0, 0.395674, 0, 0.918391, 2.49741, -0.140503, -2.64224)
+shape = SubResource("BoxShape3D_fhkd4")
+
+[node name="Timer" type="Timer" parent="ScoreArea"]
+wait_time = 2.0
+one_shot = true
+
+[node name="LevelEndTimer" type="Timer" parent="ScoreArea"]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
+[connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_combo_end"]
+[connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_update_combo_score"]
+[connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_update_combo_text"]
+
+[editable path="XROrigin3D/XRCamera3D/Menu"]
+[editable path="OfficeLevel/ceiling and floor/floorFull"]

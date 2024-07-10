@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6h12xobvibxb" path="res://Assets/Materials/MaterialHelpers/Carpet015_1K-JPG_Roughness.jpg" id="2_nd5s1"]
 
 [resource]
-albedo_color = Color(2.98411e-06, 0.499088, 0.65563, 1)
+albedo_color = Color(0.42801, 0.454935, 0.516083, 1)
 metallic_specular = 0.0
 roughness_texture = ExtResource("2_nd5s1")
 normal_enabled = true

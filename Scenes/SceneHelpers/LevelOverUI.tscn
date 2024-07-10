@@ -26,11 +26,19 @@ texture = ExtResource("2_4q3kx")
 expand_mode = 1
 
 [node name="CatzpahTitle2" type="Sprite2D" parent="."]
-position = Vector2(150, 50)
-scale = Vector2(0.7, 0.7)
+position = Vector2(150, 39.175)
+scale = Vector2(0.544245, 0.544245)
 texture = ExtResource("3_7e8og")
 
-[node name="Label" type="Label" parent="."]
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 105.0
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
@@ -63,5 +71,6 @@ theme = ExtResource("4_p35tr")
 text = "Exit
 "
 
+[connection signal="pressed" from="MenuButtons/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]
