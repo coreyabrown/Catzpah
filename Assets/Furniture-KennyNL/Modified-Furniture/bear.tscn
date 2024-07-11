@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcoogvf5tg2yi"]
+
+[ext_resource type="PackedScene" uid="uid://bdjmb2cnct1yx" path="res://Assets/Furniture-KennyNL/Models/GLTF format/bear.glb" id="1_wl3p6"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_dmcte"]
+[ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="3_emjqs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7a6mk"]
+albedo_color = Color(0.47427, 0.239398, 0.010445, 1)
+
+[node name="bear" instance=ExtResource("1_wl3p6")]
+
+[node name="bear(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_7a6mk")
+surface_material_override/1 = ExtResource("2_dmcte")
+surface_material_override/2 = ExtResource("3_emjqs")

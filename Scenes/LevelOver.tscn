@@ -27,7 +27,7 @@ ambient_light_color = Color(0.894922, 0.894922, 0.894922, 1)
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sil80"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4qyw"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 1
@@ -38,19 +38,19 @@ script = ExtResource("8_qjvdg")
 open_pose = ExtResource("7_x7l2m")
 closed_pose = ExtResource("6_10epd")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mk7g8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkogw"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6rq5k"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5k7qa"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvaia"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk060"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_6rq5k")
+albedo_texture = SubResource("ViewportTexture_5k7qa")
 texture_filter = 1
 
 [node name="Main" type="Node3D"]
@@ -82,7 +82,7 @@ script = ExtResource("3_btjk1")
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("4_mcibt")]
 show_laser = 2
 laser_length = 1
-laser_material = SubResource("StandardMaterial3D_sil80")
+laser_material = SubResource("StandardMaterial3D_p4qyw")
 
 [node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
@@ -98,7 +98,7 @@ script = ExtResource("3_btjk1")
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("4_mcibt")]
 show_laser = 2
 laser_length = 1
-laser_material = SubResource("StandardMaterial3D_mk7g8")
+laser_material = SubResource("StandardMaterial3D_pkogw")
 
 [node name="StartXR" parent="." instance=ExtResource("9_xf2so")]
 
@@ -107,6 +107,6 @@ laser_material = SubResource("StandardMaterial3D_mk7g8")
 [node name="LevelOverMenu" parent="Menu/Viewport" index="0" instance=ExtResource("11_xt4th")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_kvaia")
+surface_material_override/0 = SubResource("StandardMaterial3D_uk060")
 
 [editable path="Menu"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5a6yyay81ru4"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/3DHUD.gd" id="1_6yrk0"]
+
+[node name="HUD" type="Node3D"]
+script = ExtResource("1_6yrk0")
+
+[node name="ScoreLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.517774, 0.264936, -0.798309)
+text = "Score:"
+font_size = 16
+outline_size = 8
+horizontal_alignment = 0
+
+[node name="ComboLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0990934, 0.175285, -0.798215)
+text = "COMBO"
+font_size = 16
+outline_size = 8
+
+[node name="ComboScore" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.110189, 0.0766363, -0.798217)
+modulate = Color(0.980392, 0.619608, 0.215686, 1)
+text = "100"
+font_size = 16
+outline_size = 8

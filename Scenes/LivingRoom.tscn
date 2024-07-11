@@ -1,9 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=46 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
-[ext_resource type="PackedScene" uid="uid://cn1da0gl32lys" path="res://Scenes/SceneHelpers/HUD.tscn" id="2_e2yg2"]
+[ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="2_jeg32"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
-[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="2_ux1fl"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_0fkrt"]
 [ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="4_6et88"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_026rr"]
@@ -60,15 +59,6 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dtn0r"]
-viewport_path = NodePath("Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gpsv"]
-transparency = 1
-cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_dtn0r")
-texture_filter = 1
-
 [sub_resource type="Resource" id="Resource_ylkic"]
 script = ExtResource("7_urlt0")
 open_pose = ExtResource("6_wv3w0")
@@ -94,17 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801352, 0.486916, -2.04188)
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_ux1fl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0894444, -1.72869, 2.64231)
-collision_layer = 4194304
-
-[node name="HUD" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("2_e2yg2")]
-
-[node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_1gpsv")
-
-[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
-collision_layer = 4194304
+[node name="HUD" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_jeg32")]
 
 [node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -250,14 +230,10 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="Pencil" parent="ScoringObjects" instance=ExtResource("30_ulgaw")]
 transform = Transform3D(0.996101, 0.0881801, -0.00252778, 0, -0.0286544, -0.99959, -0.0882163, 0.995692, -0.0285427, 0.221541, 0.520417, -1.90647)
-collision_layer = 4
-collision_mask = 196615
 script = ExtResource("32_wpm0v")
 
 [node name="notebook" parent="ScoringObjects" instance=ExtResource("30_us4yp")]
 transform = Transform3D(0.531132, 0, -0.847289, 0, 1, 0, 0.847289, 0, 0.531132, 0.234223, 0.472775, -1.89634)
-collision_layer = 4
-collision_mask = 196615
 script = ExtResource("32_wpm0v")
 
 [node name="Coaster2" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
@@ -327,8 +303,6 @@ wait_time = 5.0
 one_shot = true
 
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
-[connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_combo_end"]
-[connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_update_combo_score"]
-[connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/Menu/Viewport/HUD" method="_on_score_area_update_combo_text"]
-
-[editable path="XROrigin3D/XRCamera3D/Menu"]
+[connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_combo_end"]
+[connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_score"]
+[connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_text"]

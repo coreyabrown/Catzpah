@@ -77,6 +77,8 @@ size = Vector3(0.390625, 0.247477, 0.026)
 
 [node name="computerScreen" type="RigidBody3D"]
 mass = 3.5
+linear_damp = 0.5
+angular_damp = 0.2
 
 [node name="computerScreen(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
