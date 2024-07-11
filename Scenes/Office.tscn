@@ -1,7 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://wjdnlysdt6on"]
+[gd_scene load_steps=53 format=3 uid="uid://wjdnlysdt6on"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_vxbxs"]
+[ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="2_tql5q"]
+[ext_resource type="AudioStream" uid="uid://bg5wd3ahahd0w" path="res://Assets/Audio/Music/melancholylull.mp3" id="3_n78u2"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="4_bty0c"]
+[ext_resource type="AudioStream" uid="uid://chpqp6m8imayk" path="res://Assets/Audio/Music/rainyday.mp3" id="4_kkjdn"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="4_lg7kx"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="5_36r82"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_1k6fq"]
@@ -83,6 +86,17 @@ size = Vector3(23.914, 1.05005, 16.8676)
 [node name="Office" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
 script = ExtResource("1_vxbxs")
+
+[node name="LevelMusic" type="Node3D" parent="."]
+script = ExtResource("2_tql5q")
+
+[node name="Melancholy" type="AudioStreamPlayer3D" parent="LevelMusic"]
+stream = ExtResource("3_n78u2")
+volume_db = 15.0
+
+[node name="Rainy" type="AudioStreamPlayer3D" parent="LevelMusic"]
+stream = ExtResource("4_kkjdn")
+volume_db = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xa8g")

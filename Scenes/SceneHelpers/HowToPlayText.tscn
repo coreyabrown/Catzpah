@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdvyrjc4vcy7i"]
+
+[ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="1_27f58"]
+[ext_resource type="AudioStream" uid="uid://c4rr0um2peg1u" path="res://Assets/Audio/ButtonHover.wav" id="2_0vfre"]
+[ext_resource type="AudioStream" uid="uid://irmbjxula10h" path="res://Assets/Audio/ButtonSelect.wav" id="3_2qrly"]
+
+[sub_resource type="GDScript" id="GDScript_movca"]
+script/source = "extends Control
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/StartScene.tscn\")
+
+func play_focus_sound():
+	$ButtonFocus.play()
+
+func play_select_sound():
+	$ButtonSelect.play()
+
+func _on_main_menu_focus_entered():
+	play_select_sound()
+
+func _on_main_menu_mouse_entered():
+	play_focus_sound()
+"
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_movca")
+
+[node name="ButtonFocus" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_0vfre")
+volume_db = 15.0
+
+[node name="ButtonSelect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_2qrly")
+volume_db = 15.0
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 5.0
+offset_right = 274.0
+offset_bottom = 102.0
+
+[node name="Title" type="Label" parent="MenuButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MenuButtons"]
+layout_mode = 2
+text = "Knock items off of the play 
+surface in each level to earn
+points. To end a level, walk off
+the play surface."
+
+[node name="MainMenu" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("1_27f58")
+text = "Main Menu"
+
+[connection signal="focus_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_mouse_entered"]
+[connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]

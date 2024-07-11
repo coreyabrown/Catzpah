@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cagdguind2agl"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/Settings.gd" id="1_unym4"]
+[ext_resource type="AudioStream" uid="uid://c4rr0um2peg1u" path="res://Assets/Audio/ButtonHover.wav" id="2_1vdoy"]
+[ext_resource type="AudioStream" uid="uid://irmbjxula10h" path="res://Assets/Audio/ButtonSelect.wav" id="3_k1vld"]
+[ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="4_w3qqs"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_unym4")
+
+[node name="ButtonFocus" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_1vdoy")
+volume_db = 15.0
+
+[node name="ButtonSelect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_k1vld")
+volume_db = 15.0
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 5.0
+offset_right = 274.0
+offset_bottom = 102.0
+
+[node name="MusicVolumeLabel" type="Label" parent="MenuButtons"]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="Music" type="HBoxContainer" parent="MenuButtons"]
+layout_mode = 2
+alignment = 1
+
+[node name="MusicVolumeIndicator" type="Label" parent="MenuButtons/Music"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "100"
+horizontal_alignment = 2
+
+[node name="MusicVolume" type="HSlider" parent="MenuButtons/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("4_w3qqs")
+value = 100.0
+rounded = true
+
+[node name="Credits" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("4_w3qqs")
+text = "Credits"
+
+[node name="MainMenu" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("4_w3qqs")
+text = "Main Menu"
+
+[connection signal="drag_ended" from="MenuButtons/Music/MusicVolume" to="." method="_on_music_volume_drag_ended"]
+[connection signal="value_changed" from="MenuButtons/Music/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="focus_entered" from="MenuButtons/Credits" to="." method="_on_credits_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="MenuButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="focus_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_mouse_entered"]
+[connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]

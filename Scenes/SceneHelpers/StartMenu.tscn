@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb1nhthuuwvs3"]
+[gd_scene load_steps=8 format=3 uid="uid://bb1nhthuuwvs3"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/StartMenuUI.gd" id="1_fmx3k"]
 [ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="2_0b6b2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_kptih"]
 [ext_resource type="Texture2D" uid="uid://bwbfs1ykd0ilj" path="res://Assets/Images/CatzpahTitle2.png" id="3_1u42q"]
 [ext_resource type="AudioStream" uid="uid://irmbjxula10h" path="res://Assets/Audio/ButtonSelect.wav" id="3_b4ejy"]
+[ext_resource type="Texture2D" uid="uid://dht7qnpqmwp7a" path="res://Assets/Images/smallSettings14.png" id="7_fica3"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -63,6 +64,25 @@ theme = ExtResource("2_0b6b2")
 text = "Exit
 "
 
+[node name="Settings_Help" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 10.0
+offset_right = 288.0
+offset_bottom = 50.0
+
+[node name="Settings" type="Button" parent="Settings_Help"]
+layout_mode = 2
+theme = ExtResource("2_0b6b2")
+icon = ExtResource("7_fica3")
+icon_alignment = 1
+
+[node name="How To Play" type="Button" parent="Settings_Help"]
+layout_mode = 2
+theme = ExtResource("2_0b6b2")
+theme_override_font_sizes/font_size = 10
+text = "?"
+
 [connection signal="focus_entered" from="MenuButtons/NewGame" to="." method="_on_new_game_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/NewGame" to="." method="_on_new_game_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/NewGame" to="." method="_on_new_game_pressed"]
@@ -72,3 +92,9 @@ text = "Exit
 [connection signal="focus_entered" from="MenuButtons/Exit" to="." method="_on_exit_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="Settings_Help/Settings" to="." method="_on_settings_focus_entered"]
+[connection signal="mouse_entered" from="Settings_Help/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="pressed" from="Settings_Help/Settings" to="." method="_on_settings_pressed"]
+[connection signal="focus_entered" from="Settings_Help/How To Play" to="." method="_on_how_to_play_focus_entered"]
+[connection signal="mouse_entered" from="Settings_Help/How To Play" to="." method="_on_how_to_play_mouse_entered"]
+[connection signal="pressed" from="Settings_Help/How To Play" to="." method="_on_how_to_play_pressed"]

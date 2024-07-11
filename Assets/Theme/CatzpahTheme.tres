@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cv2i00pwh2t3i"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cv2i00pwh2t3i"]
 
 [ext_resource type="StyleBox" uid="uid://bmtu5hauspacb" path="res://Assets/Theme/HoverFlat.tres" id="1_rhi6q"]
 [ext_resource type="StyleBox" uid="uid://cjel4nlbadfb2" path="res://Assets/Theme/LightOrangeFlat.tres" id="1_v7tas"]
 [ext_resource type="StyleBox" uid="uid://bsm7kryubnip" path="res://Assets/Theme/DarkOrangeFlat.tres" id="3_1v4u3"]
+[ext_resource type="StyleBox" uid="uid://uect8n75lf8v" path="res://Assets/Theme/LightOrangeSlider.tres" id="4_joneq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u86e"]
 bg_color = Color(1, 1, 1, 0)
@@ -17,3 +18,4 @@ Button/styles/focus = SubResource("StyleBoxFlat_2u86e")
 Button/styles/hover = ExtResource("1_rhi6q")
 Button/styles/normal = ExtResource("1_v7tas")
 Button/styles/pressed = ExtResource("3_1v4u3")
+HSlider/styles/grabber_area_highlight = ExtResource("4_joneq")

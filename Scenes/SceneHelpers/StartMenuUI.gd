@@ -1,11 +1,6 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 func play_focus_sound():
 	$ButtonFocus.play()
 
@@ -24,6 +19,14 @@ func _on_new_game_pressed():
 
 func _on_credits_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
+
+
+func _on_settings_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Settings.tscn")
+
+
+func _on_how_to_play_pressed():
+	get_tree().change_scene_to_file("res://Scenes/HowToPlay.tscn")
 
 
 func _on_new_game_focus_entered():
@@ -48,3 +51,20 @@ func _on_credits_mouse_entered():
 
 func _on_exit_mouse_entered():
 	play_focus_sound()
+
+
+func _on_settings_focus_entered():
+	play_select_sound()
+
+
+func _on_how_to_play_focus_entered():
+	play_select_sound()
+
+
+func _on_settings_mouse_entered():
+	play_focus_sound()
+
+
+func _on_how_to_play_mouse_entered():
+	play_focus_sound()
+

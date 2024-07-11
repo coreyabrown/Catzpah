@@ -1,9 +1,12 @@
-[gd_scene load_steps=46 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=49 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
+[ext_resource type="AudioStream" uid="uid://dgvon1afenxrj" path="res://Assets/Audio/Music/cozycoffeehouse.mp3" id="2_7d3od"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="2_jeg32"]
+[ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="2_sqql1"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_0fkrt"]
+[ext_resource type="AudioStream" uid="uid://cejsg5xe4xvwb" path="res://Assets/Audio/Music/sweet.mp3" id="3_rfbee"]
 [ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="4_6et88"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_026rr"]
 [ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="5_0tqia"]
@@ -70,6 +73,17 @@ size = Vector3(23.914, 1.05005, 16.8676)
 [node name="LivingRoom" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
 script = ExtResource("1_qrvkd")
+
+[node name="LevelMusic" type="Node3D" parent="."]
+script = ExtResource("2_sqql1")
+
+[node name="Cozy" type="AudioStreamPlayer3D" parent="LevelMusic"]
+stream = ExtResource("2_7d3od")
+volume_db = 15.0
+
+[node name="Sweet" type="AudioStreamPlayer3D" parent="LevelMusic"]
+stream = ExtResource("3_rfbee")
+volume_db = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xa8g")
