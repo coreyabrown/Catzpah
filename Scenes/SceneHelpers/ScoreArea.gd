@@ -17,6 +17,7 @@ signal update_combo_score(new_value)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	matty.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	# Get all Scoring Objects
 	var scoringObjNodes = get_node("../ScoringObjects").get_children()
 	scoringObjects.append_array(scoringObjNodes)
@@ -30,12 +31,10 @@ func _process(_delta):
 		Global.set_score(score)
 		get_tree().change_scene_to_file("res://Scenes/LevelOver.tscn")
 	if not $LevelEndTimer.is_stopped() and playerScored and $LevelEndTimer.time_left != 0:
-		print("TIME LEFT: "+str($LevelEndTimer.time_left))
 		var alpha = (1 / $LevelEndTimer.time_left)
-		print("ALPHA: "+str(alpha))
-		matty.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		
 		matty.albedo_color = Color(0, 0, 0, alpha)
-		$"../XROrigin3D/XRCamera3D/HUD/MeshInstance3D".set_surface_override_material(0, matty)
+		$"../XROrigin3D/XRCamera3D/HUD/Fade".set_surface_override_material(0, matty)
 
 
 func _on_body_entered(body):
