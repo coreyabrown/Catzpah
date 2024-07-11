@@ -102,24 +102,26 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8t2ka")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxl4e"]
-size = Vector3(0.304138, 0.0228424, 0.234192)
+size = Vector3(0.593674, 0.0398293, 0.510941)
 
 [node name="notebook" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 0.5
 linear_damp = 1.0
 angular_damp = 1.0
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.51319, 0, -9.74144e-08, 0, -0.106214, 0, 1.32287e-07, 0, 1.11429, 0, 0, 0)
+transform = Transform3D(-3, 0, 3.35211e-07, 0, 0.21, 0, -4.52987e-07, 0, -2.22, 0, 0, 0)
 mesh = SubResource("ArrayMesh_k8qf1")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_q53qm")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1.53867, 0, -1, -6.72575e-08, 0, 0, 0, 1, 0, 0, 0.110641)
+transform = Transform3D(-8.74228e-08, 3.078, 0, -2, -1.34544e-07, 0, 0, 0, 2, 0, 0, 0.248741)
 mesh = SubResource("ArrayMesh_tww3u")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000823975, -0.000205994, 0.00656128)
+transform = Transform3D(0.999871, 0, -0.0160563, 0, 1, 0, 0.0160563, 0, 0.999871, -0.000963643, -0.001688, 0.0271763)
 shape = SubResource("BoxShape3D_rxl4e")

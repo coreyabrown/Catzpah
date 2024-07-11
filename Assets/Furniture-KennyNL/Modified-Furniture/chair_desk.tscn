@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba6kj7nt08wba"]
+
+[ext_resource type="PackedScene" uid="uid://27xj4se42qw3" path="res://Assets/Furniture-KennyNL/Models/GLTF format/chairDesk.glb" id="1_64yfw"]
+[ext_resource type="Material" uid="uid://f0je2heiahct" path="res://Assets/Materials/FurnitureFabric.tres" id="2_4nipw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p16fw"]
+size = Vector3(1.33606, 0.223511, 1.28687)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7elw5"]
+size = Vector3(1.36578, 1.7486, 0.299622)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vuwx8"]
+height = 0.784362
+radius = 0.16485
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4nl7i"]
+size = Vector3(0.168533, 0.627197, 1.21362)
+
+[node name="chairDesk" instance=ExtResource("1_64yfw")]
+
+[node name="chairDesk(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="chair" parent="chairDesk(Clone)" index="0"]
+surface_material_override/0 = ExtResource("2_4nipw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83905, 1.06304, -0.643188)
+shape = SubResource("BoxShape3D_p16fw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83905, 0.104185, -0.696799)
+shape = SubResource("BoxShape3D_p16fw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.842621, 2.14792, -1.42743)
+shape = SubResource("BoxShape3D_7elw5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.831696, 0.575387, -0.778738)
+shape = SubResource("CylinderShape3D_vuwx8")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0822983, 1.4291, -0.853134)
+shape = SubResource("BoxShape3D_4nl7i")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59486, 1.4291, -0.853134)
+shape = SubResource("BoxShape3D_4nl7i")

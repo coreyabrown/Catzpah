@@ -163,21 +163,23 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ka7fy")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xg6qu"]
-radius = 0.0245191
-height = 0.352462
+radius = 0.036604
+height = 0.526396
 
 [node name="Pencil" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 0.15
 linear_damp = 0.1
 angular_damp = 0.1
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_dpb5a")
 skeleton = NodePath("")
 
 [node name="Cone" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.159484, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.238568, 0)
 mesh = SubResource("ArrayMesh_8m070")
 skeleton = NodePath("")
 

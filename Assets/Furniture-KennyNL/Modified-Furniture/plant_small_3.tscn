@@ -78,6 +78,8 @@ height = 0.39634
 radius = 0.155537
 
 [node name="plantSmall3" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 script = ExtResource("1_8u1wi")
 
 [node name="plantSmall3(Clone)" type="MeshInstance3D" parent="."]

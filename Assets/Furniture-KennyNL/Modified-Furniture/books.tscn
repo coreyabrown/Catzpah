@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtyg4m14ipk38"]
+
+[ext_resource type="PackedScene" uid="uid://c7nr587rx1b6j" path="res://Assets/Furniture-KennyNL/Models/GLTF format/books.glb" id="1_r52d5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfksg"]
+size = Vector3(0.739319, 0.513062, 0.473633)
+
+[node name="books" instance=ExtResource("1_r52d5")]
+
+[node name="books(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37851, 0.254089, -0.233887)
+shape = SubResource("BoxShape3D_bfksg")
