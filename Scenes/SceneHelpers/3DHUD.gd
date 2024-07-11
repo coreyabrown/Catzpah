@@ -35,7 +35,7 @@ func _on_score_area_combo_end(score):
 	update_score(score)
 
 func format_combo_text(combo_text):
-	if combo_text.length() > 15 * multiplier:
+	if combo_text.length() > 15 * multiplier and $ComboLabel.font_size > 4:
 		$ComboLabel.font_size -= 2
 		$ComboLabel.outline_size -= 1
 		multiplier += 1
