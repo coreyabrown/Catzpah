@@ -343,4 +343,5 @@ one_shot = true
 [connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_score"]
 [connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_text"]
 
+[editable path="XROrigin3D/XRCamera3D/HUD"]
 [editable path="OfficeLevel/ceiling and floor/floorFull"]

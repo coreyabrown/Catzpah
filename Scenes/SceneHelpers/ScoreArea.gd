@@ -6,6 +6,9 @@ var score = 0
 var comboScore = 0
 var displayComboScore = 0
 var combo = []
+
+var matty = StandardMaterial3D.new()
+
 signal combo_end(score)
 signal update_combo_text(new_value)
 signal update_combo_score(new_value)
@@ -26,6 +29,13 @@ func _process(_delta):
 	if $Timer.is_stopped() and $LevelEndTimer.is_stopped() and playerScored:
 		Global.set_score(score)
 		get_tree().change_scene_to_file("res://Scenes/LevelOver.tscn")
+	if not $LevelEndTimer.is_stopped() and playerScored and $LevelEndTimer.time_left != 0:
+		print("TIME LEFT: "+str($LevelEndTimer.time_left))
+		var alpha = (1 / $LevelEndTimer.time_left)
+		print("ALPHA: "+str(alpha))
+		matty.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		matty.albedo_color = Color(0, 0, 0, alpha)
+		$"../XROrigin3D/XRCamera3D/HUD/MeshInstance3D".set_surface_override_material(0, matty)
 
 
 func _on_body_entered(body):
