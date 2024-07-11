@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5a6yyay81ru4"]
+[gd_scene load_steps=6 format=3 uid="uid://b5a6yyay81ru4"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/3DHUD.gd" id="1_6yrk0"]
+[ext_resource type="AudioStream" uid="uid://ckgk8yaavnl2x" path="res://Assets/Audio/SingleTrickMeow.wav" id="2_yitke"]
+[ext_resource type="AudioStream" uid="uid://bk3em0jef8bv5" path="res://Assets/Audio/ComboEndMeow.wav" id="3_uyquo"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_q2y10"]
 
@@ -39,3 +41,11 @@ outline_size = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.256026)
 mesh = SubResource("QuadMesh_q2y10")
 surface_material_override/0 = SubResource("StandardMaterial3D_7l1vu")
+
+[node name="SingleTrickMeow" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_yitke")
+volume_db = 20.0
+
+[node name="ComboEndMeow" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_uyquo")
+volume_db = 20.0

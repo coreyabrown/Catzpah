@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btem7lplgv2ai"]
+[gd_scene load_steps=7 format=3 uid="uid://btem7lplgv2ai"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelOverUI.gd" id="1_tqtmy"]
 [ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="2_4q3kx"]
+[ext_resource type="AudioStream" uid="uid://c4rr0um2peg1u" path="res://Assets/Audio/ButtonHover.wav" id="2_ux5a5"]
 [ext_resource type="Texture2D" uid="uid://bwbfs1ykd0ilj" path="res://Assets/Images/CatzpahTitle2.png" id="3_7e8og"]
+[ext_resource type="AudioStream" uid="uid://irmbjxula10h" path="res://Assets/Audio/ButtonSelect.wav" id="3_wc4dy"]
 [ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="4_p35tr"]
 
 [node name="LevelOverMenu" type="Control"]
@@ -14,6 +16,14 @@ offset_bottom = -0.23201
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tqtmy")
+
+[node name="ButtonFocus" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_ux5a5")
+volume_db = 15.0
+
+[node name="ButtonSelect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_wc4dy")
+volume_db = 15.0
 
 [node name="MainImage" type="TextureRect" parent="."]
 visible = false
@@ -71,6 +81,12 @@ theme = ExtResource("4_p35tr")
 text = "Exit
 "
 
+[connection signal="focus_entered" from="MenuButtons/NextLevel" to="." method="_on_next_level_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/NextLevel" to="." method="_on_next_level_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="focus_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="focus_entered" from="MenuButtons/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]

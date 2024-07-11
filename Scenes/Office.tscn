@@ -315,7 +315,7 @@ script = ExtResource("36_mjjab")
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 6.94021, 1.63614, -9.41565)
 script = ExtResource("36_mjjab")
 
-[node name="lampSquareTable" parent="ScoringObjects" instance=ExtResource("42_v7lnp")]
+[node name="desk lamp" parent="ScoringObjects" instance=ExtResource("42_v7lnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98564, 1.34498, -9.01956)
 
 [node name="succulent3" parent="ScoringObjects" instance=ExtResource("32_vwnbe")]
