@@ -220,7 +220,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.863
 
 [node name="wall" parent="OfficeLevel/ceiling and floor" instance=ExtResource("16_5nnr8")]
 transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.02181, 5.72434, -11.4045)
-visible = false
 
 [node name="floorFull" parent="OfficeLevel/ceiling and floor" instance=ExtResource("22_ala04")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.745785, 9.66517)
