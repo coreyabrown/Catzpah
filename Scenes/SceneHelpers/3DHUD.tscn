@@ -13,7 +13,7 @@ outline_size = 8
 horizontal_alignment = 0
 
 [node name="ComboLabel" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0990934, 0.139985, -0.798215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0990934, 0.131022, -0.798215)
 ignore_occlusion_culling = true
 text = "COMBO"
 font_size = 16
