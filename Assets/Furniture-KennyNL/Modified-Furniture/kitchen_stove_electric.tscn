@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhm5sgkqchiu5"]
+
+[ext_resource type="PackedScene" uid="uid://dq5f2nfbdw562" path="res://Assets/Furniture-KennyNL/Models/GLTF format/kitchenStoveElectric.glb" id="1_gkgqx"]
+[ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="2_3l27p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6crab"]
+albedo_color = Color(0.662452, 0.662452, 0.662452, 1)
+roughness = 0.31
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_krc47"]
+size = Vector3(2.15778, 2.11212, 2.2605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ss87l"]
+size = Vector3(1.78571, 0.0269165, 1.75427)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qxgf2"]
+size = Vector3(2.16064, 0.157715, 0.157837)
+
+[node name="kitchenStoveElectric" instance=ExtResource("1_gkgqx")]
+
+[node name="kitchenStoveElectric(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_3l27p")
+surface_material_override/1 = SubResource("StandardMaterial3D_6crab")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07748, 1.04483, -1.12219)
+shape = SubResource("BoxShape3D_krc47")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06821, 2.11064, -1.14874)
+shape = SubResource("BoxShape3D_ss87l")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07788, 2.17703, -2.17481)
+shape = SubResource("BoxShape3D_qxgf2")

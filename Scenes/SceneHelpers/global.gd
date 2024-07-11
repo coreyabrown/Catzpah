@@ -2,8 +2,8 @@ extends Node
 
 var current_scene = null
 var levelEndScore = 0
-var levelReference = ["Main Menu", "Living Room", "Office"]
-var levelPath = ["res://Scenes/StartScene.tscn", "res://Scenes/LivingRoom.tscn", "res://Scenes/Office.tscn"]
+var levelReference = ["Main Menu", "Living Room", "Office", "Kitchen"]
+var levelPath = ["res://Scenes/StartScene.tscn", "res://Scenes/LivingRoom.tscn", "res://Scenes/Office.tscn", "res://Scenes/Kitchen.tscn"]
 var currentLevel = levelReference[0]
 var musicLevel = 100
 

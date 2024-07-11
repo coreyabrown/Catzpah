@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=50 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
 [ext_resource type="AudioStream" uid="uid://dgvon1afenxrj" path="res://Assets/Audio/Music/cozycoffeehouse.mp3" id="2_7d3od"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://c3fcqqo7noqbx" path="res://Assets/Models/coffee_mug.tscn" id="31_yek65"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="32_wpm0v"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/ScoreArea.gd" id="40_pg2f1"]
+[ext_resource type="PackedScene" uid="uid://1x37gc47xaou" path="res://Assets/Models/tissue_box.tscn" id="42_x4nvt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
 sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
@@ -292,6 +293,9 @@ transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161
 collision_layer = 4
 collision_mask = 196615
 script = ExtResource("32_wpm0v")
+
+[node name="TissueBox" parent="ScoringObjects" instance=ExtResource("42_x4nvt")]
+transform = Transform3D(0.0189008, 0, -0.999821, 0, 1, 0, 0.999821, 0, 0.0189008, -1.9979, 1.13991, -8.27962)
 
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("29_etiyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277834, 0.455535, -2.59381)

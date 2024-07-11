@@ -115,6 +115,8 @@ radius = 0.181048
 size = Vector3(0.122936, 0.307529, 0.0295258)
 
 [node name="CoffeeMug" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 0.35
 linear_damp = 1.0
 angular_damp = 1.0

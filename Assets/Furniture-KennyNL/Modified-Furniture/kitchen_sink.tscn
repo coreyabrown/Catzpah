@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtslin5vxndow"]
+
+[ext_resource type="PackedScene" uid="uid://d2lakv3y0g4y0" path="res://Assets/Furniture-KennyNL/Models/GLTF format/kitchenSink.glb" id="1_oygk3"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_e2tl8"]
+[ext_resource type="Material" uid="uid://dydb7pbdm88si" path="res://Assets/Materials/Countertop.tres" id="3_7pxf2"]
+[ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="4_amqx1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ai5k7"]
+albedo_color = Color(0.552956, 0.552956, 0.552956, 1)
+roughness = 0.31
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgqow"]
+size = Vector3(2.15723, 1.63919, 2.18115)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4dah"]
+size = Vector3(0.276825, 0.492188, 2.0974)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dmwv"]
+size = Vector3(2.15836, 0.497986, 0.468994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ujfa"]
+size = Vector3(2.16656, 0.648804, 0.15097)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n26v5"]
+size = Vector3(0.322266, 0.35022, 0.608765)
+
+[node name="kitchenSink" instance=ExtResource("1_oygk3")]
+
+[node name="kitchenSink(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_e2tl8")
+surface_material_override/1 = ExtResource("3_7pxf2")
+surface_material_override/2 = ExtResource("4_amqx1")
+surface_material_override/3 = SubResource("StandardMaterial3D_ai5k7")
+
+[node name="door" parent="kitchenSink(Clone)" index="0"]
+surface_material_override/0 = ExtResource("2_e2tl8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07861, 0.7957, -1.17456)
+shape = SubResource("BoxShape3D_qgqow")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149811, 1.85529, -1.05051)
+shape = SubResource("BoxShape3D_l4dah")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00592, 1.85529, -1.05051)
+shape = SubResource("BoxShape3D_l4dah")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07542, 1.85376, -0.234985)
+shape = SubResource("BoxShape3D_0dmwv")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07542, 1.85376, -1.86376)
+shape = SubResource("BoxShape3D_0dmwv")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07602, 1.92569, -2.17204)
+shape = SubResource("BoxShape3D_5ujfa")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07846, 2.27615, -1.66065)
+shape = SubResource("BoxShape3D_n26v5")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://du1mvx3irjoai"]
+
+[ext_resource type="PackedScene" uid="uid://dn3sjk1jc3hku" path="res://Assets/Furniture-KennyNL/Models/GLTF format/kitchenBar.glb" id="1_q7i4m"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_e0nvm"]
+[ext_resource type="Material" uid="uid://dydb7pbdm88si" path="res://Assets/Materials/Countertop.tres" id="3_i51rr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phm3x"]
+size = Vector3(2.15778, 2.29919, 1.06836)
+
+[node name="kitchenBar" instance=ExtResource("1_q7i4m")]
+
+[node name="kitchenBar(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5.5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_e0nvm")
+surface_material_override/1 = ExtResource("3_i51rr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0853, 1.16009, -0.530273)
+shape = SubResource("BoxShape3D_phm3x")

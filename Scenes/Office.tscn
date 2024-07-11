@@ -93,10 +93,12 @@ script = ExtResource("2_tql5q")
 [node name="Melancholy" type="AudioStreamPlayer3D" parent="LevelMusic"]
 stream = ExtResource("3_n78u2")
 volume_db = 15.0
+max_db = 5.0
 
 [node name="Rainy" type="AudioStreamPlayer3D" parent="LevelMusic"]
 stream = ExtResource("4_kkjdn")
 volume_db = 15.0
+max_db = 5.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xa8g")
@@ -333,10 +335,10 @@ script = ExtResource("36_mjjab")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98564, 1.34498, -9.01956)
 
 [node name="succulent3" parent="ScoringObjects" instance=ExtResource("32_vwnbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101828, -0.34339, 1.67373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101828, 0.897084, 1.67373)
 
 [node name="ScoreArea" type="Area3D" parent="."]
-transform = Transform3D(0.925104, 0, 0.379714, 0, 1, 0, -0.379714, 0, 0.925104, 7.54649, 0, -3.90965)
+transform = Transform3D(0.925104, 0, 0.379714, 0, 1, 0, -0.379714, 0, 0.925104, 5.04754, 0, -1.52721)
 collision_mask = 524295
 script = ExtResource("23_7nmbd")
 
