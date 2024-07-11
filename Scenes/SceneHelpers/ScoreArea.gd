@@ -69,6 +69,6 @@ func addCombo(trickScore, itemName):
 	combo.append(itemName.to_upper())
 	comboScore += trickScore
 	var comboLength = combo.size()
-	displayComboScore = clamp(round(comboScore * pow(1.2, comboLength)),10,10000)
+	displayComboScore = clamp(round(comboScore * pow(1.2, comboLength)),10,50000)
 	update_combo_text.emit(combo)
 	update_combo_score.emit(displayComboScore)
