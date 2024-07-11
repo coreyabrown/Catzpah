@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq22ctie3moo3"]
+
+[ext_resource type="PackedScene" uid="uid://cifis4cqee6af" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/kitchenCabinetUpperDouble.glb" id="1_pmuud"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_w055u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a2213"]
+size = Vector3(2.12671, 1.96246, 1.04846)
+
+[node name="kitchenCabinetUpperDouble" instance=ExtResource("1_pmuud")]
+
+[node name="kitchenCabinetUpperDouble(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_w055u")
+
+[node name="doorLeft" parent="kitchenCabinetUpperDouble(Clone)" index="0"]
+surface_material_override/1 = ExtResource("2_w055u")
+
+[node name="doorRight" parent="kitchenCabinetUpperDouble(Clone)" index="1"]
+surface_material_override/0 = ExtResource("2_w055u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07385, 0.971039, -0.524109)
+shape = SubResource("BoxShape3D_a2213")

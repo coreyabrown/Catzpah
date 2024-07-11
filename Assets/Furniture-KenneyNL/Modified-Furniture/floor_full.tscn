@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://51ls3vyte0jv"]
+
+[ext_resource type="PackedScene" uid="uid://clkjt6iqa74tn" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/floorFull.glb" id="1_hkyj8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkd48"]
+albedo_color = Color(0.666478, 0.538622, 0.339447, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1nro"]
+size = Vector3(20, 1, 20)
+
+[node name="floorFull" instance=ExtResource("1_hkyj8")]
+
+[node name="floorFull(Clone)" parent="." index="0"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jkd48")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.45, -10)
+shape = SubResource("BoxShape3D_p1nro")

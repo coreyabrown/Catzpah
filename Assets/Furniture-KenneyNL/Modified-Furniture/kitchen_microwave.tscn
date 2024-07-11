@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://82wmv22wxwbu"]
+
+[ext_resource type="PackedScene" uid="uid://b0m61ewypqm4j" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/kitchenMicrowave.glb" id="1_qw3yv"]
+[ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="2_7fl1t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nt8vo"]
+size = Vector3(1.45337, 0.907227, 1.13611)
+
+[node name="kitchenMicrowave" instance=ExtResource("1_qw3yv")]
+
+[node name="kitchenMicrowave(Clone)" parent="." index="0"]
+transform = Transform3D(7, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/1 = ExtResource("2_7fl1t")
+
+[node name="Group" parent="kitchenMicrowave(Clone)" index="0"]
+surface_material_override/0 = ExtResource("2_7fl1t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726929, 0.444824, -0.541809)
+shape = SubResource("BoxShape3D_nt8vo")

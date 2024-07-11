@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2vdv4keyhccf"]
+
+[ext_resource type="PackedScene" uid="uid://3ly2jcd3ydte" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/kitchenFridge.glb" id="1_uvb5a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dvvar"]
+size = Vector3(2.12982, 4.59204, 1.41956)
+
+[node name="kitchenFridge" instance=ExtResource("1_uvb5a")]
+
+[node name="kitchenFridge(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06485, 2.2738, -0.687683)
+shape = SubResource("BoxShape3D_dvvar")

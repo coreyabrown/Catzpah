@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg1rqhixw570m"]
+
+[ext_resource type="PackedScene" uid="uid://d5uklk1t5tg7" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/stoolBarSquare.glb" id="1_pm111"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_idpa0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn7in"]
+albedo_color = Color(0.95703, 0.28341, 0.175371, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uxk3x"]
+size = Vector3(0.762268, 2.0188, 0.746582)
+
+[node name="stoolBarSquare" instance=ExtResource("1_pm111")]
+
+[node name="stoolBarSquare(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_idpa0")
+surface_material_override/1 = SubResource("StandardMaterial3D_sn7in")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.674408, 1.00964, -0.55835)
+shape = SubResource("BoxShape3D_uxk3x")

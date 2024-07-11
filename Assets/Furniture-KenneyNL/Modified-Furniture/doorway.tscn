@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://uurbhaqoo5ep"]
+
+[ext_resource type="PackedScene" uid="uid://te80yvgxbhmv" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/doorway.glb" id="1_qc3qs"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_h7e1t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1g3h7"]
+size = Vector3(2.20972, 4.91461, 0.3396)
+
+[node name="doorway" instance=ExtResource("1_qc3qs")]
+
+[node name="doorway(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="door" parent="doorway(Clone)" index="0"]
+surface_material_override/0 = ExtResource("2_h7e1t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13831, 2.49301, -0.228149)
+shape = SubResource("BoxShape3D_1g3h7")

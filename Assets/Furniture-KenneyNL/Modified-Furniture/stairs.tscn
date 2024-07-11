@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4y10olkr0hig"]
+
+[ext_resource type="PackedScene" uid="uid://br7gg5ukxri76" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/stairs.glb" id="1_7mwmi"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_7k0w8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jta67"]
+albedo_color = Color(0.446777, 0.446777, 0.446777, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_th4n6"]
+size = Vector3(9.08209, 6.6181, 4.08362)
+
+[node name="stairs" instance=ExtResource("1_7mwmi")]
+
+[node name="stairs(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_7k0w8")
+surface_material_override/1 = SubResource("StandardMaterial3D_jta67")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57626, 3.34415, -2.00653)
+shape = SubResource("BoxShape3D_th4n6")

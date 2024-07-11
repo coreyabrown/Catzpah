@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkwqufn1rkh2c"]
+
+[ext_resource type="PackedScene" uid="uid://b7rsrvfff28p8" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/ceilingFan.glb" id="1_u1huk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p6fs"]
+albedo_color = Color(0.461898, 0.465865, 0.437473, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a441w"]
+albedo_color = Color(0.413456, 0.344904, 0.140752, 1)
+
+[node name="ceilingFan" instance=ExtResource("1_u1huk")]
+
+[node name="ceilingFan(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+gi_lightmap_scale = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_0p6fs")
+surface_material_override/2 = SubResource("StandardMaterial3D_a441w")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.692293, 0)
+light_energy = 5.0
+omni_range = 16.0
