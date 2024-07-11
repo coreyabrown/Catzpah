@@ -29,7 +29,7 @@ func _process(_delta):
 
 
 func _on_body_entered(body):
-	if body in scoringObjects:
+	if scoringObjects.find(body) > -1:
 		var arrayIndex = scoringObjects.find(body)
 		scoringObjects.pop_at(arrayIndex)
 		
@@ -55,8 +55,7 @@ func endCombo():
 	comboEngaged = false
 	# print("ENDED COMBO")
 	score += displayComboScore
-	# print("SCORE: "+str(score))
-	
+
 	combo_end.emit(score)
 	
 	comboScore = 0
@@ -68,10 +67,8 @@ func addCombo(trickScore, itemName):
 	
 	itemName = itemName.rstrip("0123456789")
 	combo.append(itemName.to_upper())
-	
 	comboScore += trickScore
 	var comboLength = combo.size()
-	displayComboScore = clamp(round(comboScore * pow(1.2, comboLength)),10,1000)
-	# print("COMBO: "+str(combo) +"\nDISPLAY COMBO SCORE: " +str(displayComboScore))
+	displayComboScore = clamp(round(comboScore * pow(1.2, comboLength)),10,10000)
 	update_combo_text.emit(combo)
 	update_combo_score.emit(displayComboScore)

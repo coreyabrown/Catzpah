@@ -13,13 +13,17 @@ outline_size = 8
 horizontal_alignment = 0
 
 [node name="ComboLabel" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0990934, 0.175285, -0.798215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0990934, 0.139985, -0.798215)
+ignore_occlusion_culling = true
 text = "COMBO"
 font_size = 16
 outline_size = 8
+vertical_alignment = 0
+autowrap_mode = 3
+width = 200.0
 
 [node name="ComboScore" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.110189, 0.0766363, -0.798217)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.110189, 0.168337, -0.798217)
 modulate = Color(0.980392, 0.619608, 0.215686, 1)
 text = "100"
 font_size = 16
