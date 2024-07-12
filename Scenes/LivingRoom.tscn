@@ -292,7 +292,7 @@ angular_damp = 1.0
 transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.647381, -1.87986)
 script = ExtResource("32_wpm0v")
 
-[node name="TissueBox" parent="ScoringObjects" instance=ExtResource("42_x4nvt")]
+[node name="Tissue Box" parent="ScoringObjects" instance=ExtResource("42_x4nvt")]
 transform = Transform3D(0.0189008, 0, -0.999821, 0, 1, 0, 0.999821, 0, 0.0189008, -1.9979, 1.13991, -8.27962)
 
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("29_etiyv")]
