@@ -14,7 +14,7 @@ config/name="Catzpah"
 run/main_scene="res://Scenes/StartScene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Assets/Images/FreshSqueezedLemonade.png"
-config/icon="res://Assets/Images/CatzpahIcon.png"
+config/icon="res://Assets/Images/CatzpahTitle2.png"
 
 [autoload]
 
