@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwgdvvn24slg5"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelSelect.gd" id="1_thi3c"]
+[ext_resource type="AudioStream" uid="uid://c4rr0um2peg1u" path="res://Assets/Audio/ButtonHover.wav" id="2_0n0gg"]
+[ext_resource type="AudioStream" uid="uid://irmbjxula10h" path="res://Assets/Audio/ButtonSelect.wav" id="3_kp5iv"]
+[ext_resource type="Texture2D" uid="uid://b1301ri66nf8b" path="res://Assets/Images/CatzpahTitle.png" id="4_7vy37"]
+[ext_resource type="Theme" uid="uid://cv2i00pwh2t3i" path="res://Assets/Theme/CatzpahTheme.tres" id="6_s5dns"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.309
+offset_right = 0.47998
+offset_bottom = -0.23201
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thi3c")
+
+[node name="ButtonFocus" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_0n0gg")
+volume_db = 15.0
+
+[node name="ButtonSelect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_kp5iv")
+volume_db = 15.0
+
+[node name="MainImage" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = -25.0
+offset_right = 268.0
+offset_bottom = 175.0
+texture = ExtResource("4_7vy37")
+expand_mode = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 200.0
+theme = ExtResource("6_s5dns")

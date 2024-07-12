@@ -18,7 +18,7 @@ func _on_new_game_pressed():
 
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
+	get_tree().change_scene_to_file("res://Scenes/LevelSelectScene.tscn")
 
 
 func _on_settings_pressed():

@@ -53,10 +53,10 @@ layout_mode = 2
 theme = ExtResource("2_0b6b2")
 text = "New Game"
 
-[node name="Credits" type="Button" parent="MenuButtons"]
+[node name="LevelSelect" type="Button" parent="MenuButtons"]
 layout_mode = 2
 theme = ExtResource("2_0b6b2")
-text = "Credits"
+text = "Level Select"
 
 [node name="Exit" type="Button" parent="MenuButtons"]
 layout_mode = 2
@@ -86,9 +86,9 @@ text = "?"
 [connection signal="focus_entered" from="MenuButtons/NewGame" to="." method="_on_new_game_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/NewGame" to="." method="_on_new_game_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="focus_entered" from="MenuButtons/Credits" to="." method="_on_credits_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/Credits" to="." method="_on_credits_mouse_entered"]
-[connection signal="pressed" from="MenuButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="focus_entered" from="MenuButtons/LevelSelect" to="." method="_on_credits_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/LevelSelect" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="MenuButtons/LevelSelect" to="." method="_on_credits_pressed"]
 [connection signal="focus_entered" from="MenuButtons/Exit" to="." method="_on_exit_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]

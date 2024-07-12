@@ -1,7 +1,7 @@
 [gd_scene load_steps=62 format=3 uid="uid://dvel7blicofgx"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_0f2bx"]
-[ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="2_6l1nx"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_6l1nx"]
 [ext_resource type="AudioStream" uid="uid://dwbajptrgqyax" path="res://Assets/Audio/Music/allthat.mp3" id="3_opeaf"]
 [ext_resource type="AudioStream" uid="uid://c3yimccxb7w5b" path="res://Assets/Audio/Music/dreams.mp3" id="4_chrvo"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="5_8b5sj"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
 [ext_resource type="AudioStream" uid="uid://dgvon1afenxrj" path="res://Assets/Audio/Music/cozycoffeehouse.mp3" id="2_7d3od"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="2_jeg32"]
-[ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="2_sqql1"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_sqql1"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_0fkrt"]
 [ext_resource type="AudioStream" uid="uid://cejsg5xe4xvwb" path="res://Assets/Audio/Music/sweet.mp3" id="3_rfbee"]

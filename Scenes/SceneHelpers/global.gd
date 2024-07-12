@@ -33,3 +33,9 @@ func get_music_level():
 
 func set_music_level(value):
 	musicLevel = clamp(value,0,100)
+
+func get_level_list():
+	return levelReference
+
+func get_level_paths():
+	return levelPath

@@ -1,7 +1,7 @@
 [gd_scene load_steps=53 format=3 uid="uid://wjdnlysdt6on"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_vxbxs"]
-[ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="2_tql5q"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_tql5q"]
 [ext_resource type="AudioStream" uid="uid://bg5wd3ahahd0w" path="res://Assets/Audio/Music/melancholylull.mp3" id="3_n78u2"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="4_bty0c"]
 [ext_resource type="AudioStream" uid="uid://chpqp6m8imayk" path="res://Assets/Audio/Music/rainyday.mp3" id="4_kkjdn"]
