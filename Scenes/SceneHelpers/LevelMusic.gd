@@ -8,9 +8,10 @@ func _ready():
 	update_music_level(Global.get_music_level())
 	musicList.append_array($".".get_children())
 	var songChoice = randi_range(0, musicList.size()-1)
-	print(str(songChoice))
+	print(str(musicLevel))
 	musicList[songChoice].volume_db = (20 * (musicLevel / 100)) - 30
 	musicList[songChoice].play()
+	print(str(musicList[songChoice].volume_db))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

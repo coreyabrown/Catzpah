@@ -24,15 +24,10 @@ extends XRToolsMovementProvider
 ## Input action for movement direction
 @export var input_action : String = "primary"
 
-## Input action for pause
-@export var pause_action : String = "menu_button"
-@onready var pauseMenuNode = $"../../XRCamera3D/Menu"
 
 # Controller node
 @onready var _controller := XRHelpers.get_xr_controller(self)
 
-func _ready():
-	_controller.connect("button_pressed", _on_button_pressed)
 
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
@@ -90,35 +85,3 @@ static func find_right(node : Node) -> XRToolsMovementDirect:
 		XRHelpers.get_right_controller(node),
 		"*",
 		"XRToolsMovementDirect") as XRToolsMovementDirect
-
-func _on_button_pressed(p_button) -> void:
-	if p_button == pause_action:
-		togglePauseMenu()
-
-func togglePauseMenu():
-	if pauseMenuNode.visible:
-		pauseMenuNode.visible = false
-		# Left Paw
-		$"../XRToolsFunctionPointer".visible = false
-		$"../XRToolsFunctionPickup".visible = true
-		$"../CollisionHandLeft".visible = true
-		
-		# Right Paw
-		$"../../RightPaw/XRToolsFunctionPointer".visible = false
-		$"../../RightPaw/XRToolsFunctionPickup".visible = true
-		$"../../RightPaw/CollisionHandRight".visible = true
-	else:
-		pauseMenuNode.visible = true
-		# Left Paw
-		$"../XRToolsFunctionPointer".visible = true
-		$"../XRToolsFunctionPickup".visible = false
-		$"../CollisionHandLeft".visible = false
-		
-		# Right Paw
-		$"../../RightPaw/XRToolsFunctionPointer".visible = true
-		$"../../RightPaw/XRToolsFunctionPickup".visible = false
-		$"../../RightPaw/CollisionHandRight".visible = false
-
-
-func _on_pause_menu_close_menu():
-	togglePauseMenu()

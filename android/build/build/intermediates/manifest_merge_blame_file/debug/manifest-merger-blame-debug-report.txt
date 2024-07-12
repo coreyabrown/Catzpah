@@ -42,212 +42,188 @@
 27-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:12:87-110
 28        android:version="0x400003" />
 28-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:12:111-137
-29    <uses-feature
-29-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:7:5-10:31
-30        android:name="android.hardware.vr.headtracking"
-30-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:8:9-56
-31        android:required="true"
-31-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:9:9-32
-32        android:version="1" />
-32-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:10:9-28
-33
-34    <application
-34-->C:\Code\Catzpah\android\build\AndroidManifest.xml:18:5-52:19
-35        android:allowBackup="false"
-35-->C:\Code\Catzpah\android\build\AndroidManifest.xml:20:9-36
-36        android:appCategory="game"
-36-->C:\Code\Catzpah\android\build\AndroidManifest.xml:22:9-35
-37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-37-->[androidx.core:core:1.8.0] C:\Users\corey\.gradle\caches\transforms-3\245f1aa0863a677574781ac0a1900f6e\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
-38        android:debuggable="true"
-39        android:extractNativeLibs="false"
-40        android:hasFragileUserData="false"
-40-->C:\Code\Catzpah\android\build\AndroidManifest.xml:24:9-43
-41        android:icon="@mipmap/icon"
-41-->C:\Code\Catzpah\android\build\AndroidManifest.xml:21:9-36
-42        android:isGame="true"
-42-->C:\Code\Catzpah\android\build\AndroidManifest.xml:23:9-30
-43        android:label="@string/godot_project_name_string"
-43-->C:\Code\Catzpah\android\build\AndroidManifest.xml:19:9-58
-44        android:requestLegacyExternalStorage="false" >
-44-->C:\Code\Catzpah\android\build\AndroidManifest.xml:25:9-53
-45        <meta-data
-45-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:9-125
-46            android:name="com.oculus.supportedDevices"
-46-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:41-83
-47            android:value="quest2|quest3|questpro" />
-47-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:84-122
-48
-49        <activity
-49-->C:\Code\Catzpah\android\build\AndroidManifest.xml:33:9-50:20
-50            android:name="com.godot.game.GodotApp"
-50-->C:\Code\Catzpah\android\build\AndroidManifest.xml:34:13-37
-51            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-51-->C:\Code\Catzpah\android\build\AndroidManifest.xml:41:13-141
-52            android:excludeFromRecents="false"
-52-->C:\Code\Catzpah\android\build\AndroidManifest.xml:38:13-47
-53            android:exported="true"
-53-->C:\Code\Catzpah\android\build\AndroidManifest.xml:39:13-36
-54            android:label="@string/godot_project_name_string"
-54-->C:\Code\Catzpah\android\build\AndroidManifest.xml:35:13-62
-55            android:launchMode="singleInstancePerTask"
-55-->C:\Code\Catzpah\android\build\AndroidManifest.xml:37:13-55
-56            android:resizeableActivity="true"
-56-->C:\Code\Catzpah\android\build\AndroidManifest.xml:42:13-47
-57            android:screenOrientation="landscape"
-57-->C:\Code\Catzpah\android\build\AndroidManifest.xml:40:13-50
-58            android:theme="@style/GodotAppSplashTheme" >
-58-->C:\Code\Catzpah\android\build\AndroidManifest.xml:36:13-55
-59            <intent-filter>
-59-->C:\Code\Catzpah\android\build\AndroidManifest.xml:45:13-49:29
-60                <action android:name="android.intent.action.MAIN" />
-60-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:17-69
-60-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:25-66
+29
+30    <application
+30-->C:\Code\Catzpah\android\build\AndroidManifest.xml:18:5-52:19
+31        android:allowBackup="false"
+31-->C:\Code\Catzpah\android\build\AndroidManifest.xml:20:9-36
+32        android:appCategory="game"
+32-->C:\Code\Catzpah\android\build\AndroidManifest.xml:22:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.8.0] C:\Users\corey\.gradle\caches\transforms-3\245f1aa0863a677574781ac0a1900f6e\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:hasFragileUserData="false"
+36-->C:\Code\Catzpah\android\build\AndroidManifest.xml:24:9-43
+37        android:icon="@mipmap/icon"
+37-->C:\Code\Catzpah\android\build\AndroidManifest.xml:21:9-36
+38        android:isGame="true"
+38-->C:\Code\Catzpah\android\build\AndroidManifest.xml:23:9-30
+39        android:label="@string/godot_project_name_string"
+39-->C:\Code\Catzpah\android\build\AndroidManifest.xml:19:9-58
+40        android:requestLegacyExternalStorage="false" >
+40-->C:\Code\Catzpah\android\build\AndroidManifest.xml:25:9-53
+41        <activity
+41-->C:\Code\Catzpah\android\build\AndroidManifest.xml:33:9-50:20
+42            android:name="com.godot.game.GodotApp"
+42-->C:\Code\Catzpah\android\build\AndroidManifest.xml:34:13-37
+43            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+43-->C:\Code\Catzpah\android\build\AndroidManifest.xml:41:13-141
+44            android:excludeFromRecents="false"
+44-->C:\Code\Catzpah\android\build\AndroidManifest.xml:38:13-47
+45            android:exported="true"
+45-->C:\Code\Catzpah\android\build\AndroidManifest.xml:39:13-36
+46            android:label="@string/godot_project_name_string"
+46-->C:\Code\Catzpah\android\build\AndroidManifest.xml:35:13-62
+47            android:launchMode="singleInstancePerTask"
+47-->C:\Code\Catzpah\android\build\AndroidManifest.xml:37:13-55
+48            android:resizeableActivity="true"
+48-->C:\Code\Catzpah\android\build\AndroidManifest.xml:42:13-47
+49            android:screenOrientation="landscape"
+49-->C:\Code\Catzpah\android\build\AndroidManifest.xml:40:13-50
+50            android:theme="@style/GodotAppSplashTheme" >
+50-->C:\Code\Catzpah\android\build\AndroidManifest.xml:36:13-55
+51            <intent-filter>
+51-->C:\Code\Catzpah\android\build\AndroidManifest.xml:45:13-49:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:17-69
+52-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:25-66
+53
+54                <category android:name="android.intent.category.DEFAULT" />
+54-->C:\Code\Catzpah\android\build\AndroidManifest.xml:47:17-76
+54-->C:\Code\Catzpah\android\build\AndroidManifest.xml:47:27-73
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:17-77
+55-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:27-74
+56            </intent-filter>
+57            <intent-filter>
+57-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:30:5-37:21
+58                <action android:name="android.intent.action.MAIN" />
+58-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:17-69
+58-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:17-77
+60-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:27-74
 61
-62                <category android:name="android.intent.category.DEFAULT" />
-62-->C:\Code\Catzpah\android\build\AndroidManifest.xml:47:17-76
-62-->C:\Code\Catzpah\android\build\AndroidManifest.xml:47:27-73
-63                <category android:name="android.intent.category.LAUNCHER" />
-63-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:17-77
-63-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:27-74
-64            </intent-filter>
-65            <intent-filter>
-65-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:32:5-43:21
-66                <action android:name="android.intent.action.MAIN" />
-66-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:17-69
-66-->C:\Code\Catzpah\android\build\AndroidManifest.xml:46:25-66
-67
-68                <category android:name="android.intent.category.LAUNCHER" />
-68-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:17-77
-68-->C:\Code\Catzpah\android\build\AndroidManifest.xml:48:27-74
-69
-70                <!--
-71                    Enable access to OpenXR on Oculus mobile devices, no-op on other Android
-72					platforms.
-73                -->
-74                <category android:name="com.oculus.intent.category.VR" />
-74-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:38:6-63
-74-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:38:16-60
-75
-76                <!--
-77                    OpenXR category tag to indicate the activity starts in an immersive OpenXR mode.
-78					See https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#android-runtime-category.
-79                -->
-80                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
-80-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:42:6-82
-80-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:42:16-79
-81            </intent-filter>
-82        </activity>
-83        <!-- Records the version of the Godot editor used for building -->
-84        <meta-data
-85            android:name="org.godotengine.editor.version"
-86            android:value="4.2.2.stable" /> <!-- Records the version of the Godot library -->
-87        <meta-data
-87-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:12:9-14:44
-88            android:name="org.godotengine.library.version"
-88-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:13:13-59
-89            android:value="4.2.2.stable" />
-89-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:13-41
-90
-91        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-91-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:9-80
-91-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:18-77
-92
-93        <activity
-93-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:9-22:75
-94            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-94-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:19:13-70
-95            android:exported="false"
-95-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:20:13-37
-96            android:process=":phoenix"
-96-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:21:13-39
-97            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-97-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:22:13-72
-98
-99        <provider
-99-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:24:9-32:20
-100            android:name="androidx.core.content.FileProvider"
-100-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:25:13-62
-101            android:authorities="com.example.catzpah.fileprovider"
-101-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:26:13-64
-102            android:exported="false"
-102-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:27:13-37
-103            android:grantUriPermissions="true" >
-103-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:28:13-47
-104            <meta-data
-104-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:29:13-31:64
-105                android:name="android.support.FILE_PROVIDER_PATHS"
-105-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:17-67
-106                android:resource="@xml/godot_provider_paths" />
-106-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:17-61
-107        </provider>
-108
-109        <meta-data
-109-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:13:9-15:83
-110            android:name="org.godotengine.plugin.v2.GodotOpenXRMeta"
-110-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:14:13-69
-111            android:value="org.godotengine.openxr.vendors.meta.GodotOpenXRMeta" />
-111-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:15:13-80
-112        <meta-data
-112-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:19:9-21:36
-113            android:name="com.oculus.vr.focusaware"
-113-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:20:13-52
-114            android:value="true" />
-114-->[godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:21:13-33
-115
-116        <provider
-116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
-117            android:name="androidx.startup.InitializationProvider"
-117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
-118            android:authorities="com.example.catzpah.androidx-startup"
-118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
-119            android:exported="false" >
-119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
-120            <meta-data
-120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-121                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-122                android:value="androidx.startup" />
-122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-123        </provider>
-124
-125        <receiver
-125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-126            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-127            android:directBootAware="false"
-127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-128            android:enabled="true"
-128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-129            android:exported="true"
-129-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-130            android:permission="android.permission.DUMP" >
-130-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-131            <intent-filter>
-131-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-132                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-133            </intent-filter>
-134            <intent-filter>
-134-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-135                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-136            </intent-filter>
-137            <intent-filter>
-137-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-138                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-139            </intent-filter>
-140            <intent-filter>
-140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-141                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-142            </intent-filter>
-143        </receiver>
-144    </application>
-145
-146</manifest>
+62                <!--
+63                    OpenXR category tag to indicate the activity starts in an immersive OpenXR mode.
+64					See https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#android-runtime-category.
+65                -->
+66                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
+66-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:36:6-82
+66-->C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:36:16-79
+67            </intent-filter>
+68        </activity>
+69        <!-- Records the version of the Godot editor used for building -->
+70        <meta-data
+71            android:name="org.godotengine.editor.version"
+72            android:value="4.2.2.stable" /> <!-- Records the version of the Godot library -->
+73        <meta-data
+73-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:12:9-14:44
+74            android:name="org.godotengine.library.version"
+74-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:13:13-59
+75            android:value="4.2.2.stable" />
+75-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:13-41
+76
+77        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+77-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:9-80
+77-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:18-77
+78
+79        <activity
+79-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:9-22:75
+80            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+80-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:19:13-70
+81            android:exported="false"
+81-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:20:13-37
+82            android:process=":phoenix"
+82-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:21:13-39
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+83-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:22:13-72
+84
+85        <provider
+85-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:24:9-32:20
+86            android:name="androidx.core.content.FileProvider"
+86-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:25:13-62
+87            android:authorities="com.example.catzpah.fileprovider"
+87-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:26:13-64
+88            android:exported="false"
+88-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:27:13-37
+89            android:grantUriPermissions="true" >
+89-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:28:13-47
+90            <meta-data
+90-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:29:13-31:64
+91                android:name="android.support.FILE_PROVIDER_PATHS"
+91-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:17-67
+92                android:resource="@xml/godot_provider_paths" />
+92-->[godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:17-61
+93        </provider> <!-- Godot plugin registration -->
+94        <meta-data
+94-->[godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:10:9-12:83
+95            android:name="org.godotengine.plugin.v2.GodotOpenXRPico"
+95-->[godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:11:13-69
+96            android:value="org.godotengine.openxr.vendors.pico.GodotOpenXRPico" /> <!-- Enable VR mode on Pico headsets -->
+96-->[godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:12:13-80
+97        <meta-data
+97-->[godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:15:9-17:34
+98            android:name="pvr.app.type"
+98-->[godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:16:13-40
+99            android:value="vr" />
+99-->[godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:17:13-31
+100
+101        <provider
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+102            android:name="androidx.startup.InitializationProvider"
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
+103            android:authorities="com.example.catzpah.androidx-startup"
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
+104            android:exported="false" >
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
+105            <meta-data
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+106                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+107                android:value="androidx.startup" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+108        </provider>
+109
+110        <receiver
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+111            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+112            android:directBootAware="false"
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+113            android:enabled="true"
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+114            android:exported="true"
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+115            android:permission="android.permission.DUMP" >
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+116            <intent-filter>
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+117                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+118            </intent-filter>
+119            <intent-filter>
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+120                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+121            </intent-filter>
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+123                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+124            </intent-filter>
+125            <intent-filter>
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+126                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+127            </intent-filter>
+128        </receiver>
+129    </application>
+130
+131</manifest>

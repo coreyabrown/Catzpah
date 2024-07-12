@@ -69,7 +69,6 @@ func endCombo():
 	score += displayComboScore
 
 	combo_end.emit(score)
-	Global.set_score(score)
 	
 	comboScore = 0
 	combo = []

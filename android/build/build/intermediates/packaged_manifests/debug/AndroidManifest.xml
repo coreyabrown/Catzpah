@@ -26,10 +26,6 @@
         android:name="android.hardware.vulkan.version"
         android:required="true"
         android:version="0x400003" />
-    <uses-feature
-        android:name="android.hardware.vr.headtracking"
-        android:required="true"
-        android:version="1" />
 
     <application
         android:allowBackup="false"
@@ -42,10 +38,6 @@
         android:isGame="true"
         android:label="@string/godot_project_name_string"
         android:requestLegacyExternalStorage="false" >
-        <meta-data
-            android:name="com.oculus.supportedDevices"
-            android:value="quest2|quest3|questpro" />
-
         <activity
             android:name="com.godot.game.GodotApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
@@ -66,12 +58,6 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
-                <!--
-                    Enable access to OpenXR on Oculus mobile devices, no-op on other Android
-					platforms.
-                -->
-                <category android:name="com.oculus.intent.category.VR" />
 
                 <!--
                     OpenXR category tag to indicate the activity starts in an immersive OpenXR mode.
@@ -104,14 +90,13 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/godot_provider_paths" />
-        </provider>
-
+        </provider> <!-- Godot plugin registration -->
         <meta-data
-            android:name="org.godotengine.plugin.v2.GodotOpenXRMeta"
-            android:value="org.godotengine.openxr.vendors.meta.GodotOpenXRMeta" />
+            android:name="org.godotengine.plugin.v2.GodotOpenXRPico"
+            android:value="org.godotengine.openxr.vendors.pico.GodotOpenXRPico" /> <!-- Enable VR mode on Pico headsets -->
         <meta-data
-            android:name="com.oculus.vr.focusaware"
-            android:value="true" />
+            android:name="pvr.app.type"
+            android:value="vr" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

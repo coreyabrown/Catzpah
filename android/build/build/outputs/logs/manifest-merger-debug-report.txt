@@ -6,11 +6,11 @@ INJECTED from C:\Code\Catzpah\android\build\AndroidManifest.xml:29:9-31:53
 manifest
 ADDED from C:\Code\Catzpah\android\build\AndroidManifest.xml:2:1-54:12
 MERGED from C:\Code\Catzpah\android\build\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:2:1-41:12
 MERGED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:2:1-35:12
-MERGED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:2:1-24:12
+MERGED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\corey\.gradle\caches\transforms-3\a1052a08c437a0cfe93531a0770d912d\transformed\fragment-1.6.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.7.2] C:\Users\corey\.gradle\caches\transforms-3\17217bd060487ee6e9dd0a6d5894ffa1\transformed\jetified-activity-1.7.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\corey\.gradle\caches\transforms-3\0e21b8b143a9eca812fc37f7cee0557f\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -72,11 +72,11 @@ application
 ADDED from C:\Code\Catzpah\android\build\AndroidManifest.xml:18:5-52:19
 MERGED from C:\Code\Catzpah\android\build\AndroidManifest.xml:18:5-52:19
 MERGED from C:\Code\Catzpah\android\build\AndroidManifest.xml:18:5-52:19
-INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:13:5-46:19
+INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:13:5-40:19
 MERGED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
 MERGED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
-MERGED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:12:5-22:19
-MERGED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:12:5-22:19
+MERGED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:7:5-18:19
+MERGED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:7:5-18:19
 MERGED from [androidx.core:core:1.8.0] C:\Users\corey\.gradle\caches\transforms-3\245f1aa0863a677574781ac0a1900f6e\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.8.0] C:\Users\corey\.gradle\caches\transforms-3\245f1aa0863a677574781ac0a1900f6e\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\corey\.gradle\caches\transforms-3\93a030528cee287bd3c372bd0198e42f\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
@@ -118,7 +118,7 @@ MERGED from C:\Code\Catzpah\android\build\AndroidManifest.xml:33:9-50:20
 MERGED from C:\Code\Catzpah\android\build\AndroidManifest.xml:33:9-50:20
 REJECTED from C:\Code\Catzpah\android\build\AndroidManifest.xml:45:13-49:29
 	tools:node
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:25:154-186
+		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:154-186
 	android:screenOrientation
 		ADDED from C:\Code\Catzpah\android\build\AndroidManifest.xml:40:13-50
 		REJECTED from C:\Code\Catzpah\android\build\AndroidManifest.xml:40:13-50
@@ -147,7 +147,7 @@ REJECTED from C:\Code\Catzpah\android\build\AndroidManifest.xml:45:13-49:29
 		ADDED from C:\Code\Catzpah\android\build\AndroidManifest.xml:36:13-55
 		ADDED from C:\Code\Catzpah\android\build\AndroidManifest.xml:36:13-55
 	tools:replace
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:25:58-153
+		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:58-153
 	android:name
 		ADDED from C:\Code\Catzpah\android\build\AndroidManifest.xml:34:13-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
@@ -184,33 +184,20 @@ ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:12:5-140
 		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:12:87-110
 	android:name
 		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:12:40-86
-meta-data#com.oculus.supportedDevices
-ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:9-125
-REJECTED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:16:9-18:54
-	tools:node
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:20-40
-	android:value
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:84-122
-	android:name
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:23:41-83
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:com.oculus.intent.category.VR+category:name:org.khronos.openxr.intent.category.IMMERSIVE_HMD
-ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:32:5-43:21
-category#com.oculus.intent.category.VR
-ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:38:6-63
-	android:name
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:38:16-60
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:org.khronos.openxr.intent.category.IMMERSIVE_HMD
+ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:30:5-37:21
 category#org.khronos.openxr.intent.category.IMMERSIVE_HMD
-ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:42:6-82
+ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:36:6-82
 	android:name
-		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:42:16-79
+		ADDED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml:36:16-79
 uses-sdk
 INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml
 INJECTED from C:\Code\Catzpah\android\build\src\debug\AndroidManifest.xml
 MERGED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:7:5-44
 MERGED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:7:5-44
-MERGED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:5:5-44
-MERGED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:5:5-44
+MERGED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:5:5-44
+MERGED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\corey\.gradle\caches\transforms-3\a1052a08c437a0cfe93531a0770d912d\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\corey\.gradle\caches\transforms-3\a1052a08c437a0cfe93531a0770d912d\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.7.2] C:\Users\corey\.gradle\caches\transforms-3\17217bd060487ee6e9dd0a6d5894ffa1\transformed\jetified-activity-1.7.2\AndroidManifest.xml:20:5-44
@@ -289,26 +276,18 @@ ADDED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transfor
 		ADDED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:17-61
 	android:name
 		ADDED from [godot-lib.template_debug.aar] C:\Users\corey\.gradle\caches\transforms-3\1d2f4d75c034fbcf1699ed1528521307\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:17-67
-uses-feature#android.hardware.vr.headtracking
-ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:7:5-10:31
-	android:version
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:10:9-28
-	android:required
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:9:9-32
-	android:name
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:8:9-56
-meta-data#org.godotengine.plugin.v2.GodotOpenXRMeta
-ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:13:9-15:83
+meta-data#org.godotengine.plugin.v2.GodotOpenXRPico
+ADDED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:10:9-12:83
 	android:value
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:15:13-80
+		ADDED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:12:13-80
 	android:name
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:14:13-69
-meta-data#com.oculus.vr.focusaware
-ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:19:9-21:36
+		ADDED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:11:13-69
+meta-data#pvr.app.type
+ADDED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:15:9-17:34
 	android:value
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:21:13-33
+		ADDED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:17:13-31
 	android:name
-		ADDED from [godotopenxrmeta-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\8446baab8a2d772242734cd98de8c7fc\transformed\jetified-godotopenxrmeta-debug\AndroidManifest.xml:20:13-52
+		ADDED from [godotopenxrpico-debug.aar] C:\Users\corey\.gradle\caches\transforms-3\46a88185b04450adf406cac1c26ee8e2\transformed\jetified-godotopenxrpico-debug\AndroidManifest.xml:16:13-40
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\corey\.gradle\caches\transforms-3\b72b7b82f0312570e02e9e180c961d22\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\corey\.gradle\caches\transforms-3\9e5db9b26d9392a98e8f1e9350d92494\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
