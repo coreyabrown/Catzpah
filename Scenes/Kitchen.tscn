@@ -1,17 +1,20 @@
-[gd_scene load_steps=62 format=3 uid="uid://dvel7blicofgx"]
+[gd_scene load_steps=69 format=3 uid="uid://dvel7blicofgx"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_0f2bx"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_6l1nx"]
 [ext_resource type="AudioStream" uid="uid://dwbajptrgqyax" path="res://Assets/Audio/Music/allthat.mp3" id="3_opeaf"]
 [ext_resource type="AudioStream" uid="uid://c3yimccxb7w5b" path="res://Assets/Audio/Music/dreams.mp3" id="4_chrvo"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="5_8b5sj"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="5_ocqey"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="6_03xl5"]
+[ext_resource type="PackedScene" uid="uid://ciyulu3mwv57u" path="res://Scenes/SceneHelpers/PauseMenu.tscn" id="6_terrr"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="7_qrb8h"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="8_jqc87"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="9_d6k50"]
 [ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="10_pxokt"]
 [ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="11_o713b"]
 [ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="12_bgkwi"]
+[ext_resource type="PackedScene" uid="uid://bjjdccpbgb2kb" path="res://Assets/Paw/xr_tools_function_pointer.tscn" id="12_pf1bb"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="13_sn0b1"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="14_vtgkh"]
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="15_bmnvt"]
@@ -75,10 +78,31 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ajhx5"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lx57"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_ajhx5")
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw212"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
+
 [sub_resource type="Resource" id="Resource_ylkic"]
 script = ExtResource("13_sn0b1")
 open_pose = ExtResource("12_bgkwi")
 closed_pose = ExtResource("11_o713b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spe2b"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhkd4"]
 size = Vector3(23.914, 1.05005, 16.8676)
@@ -92,11 +116,11 @@ script = ExtResource("2_6l1nx")
 
 [node name="AllThat" type="AudioStreamPlayer3D" parent="LevelMusic"]
 stream = ExtResource("3_opeaf")
-volume_db = 15.0
+volume_db = 3.0
 
 [node name="Dreams" type="AudioStreamPlayer3D" parent="LevelMusic"]
 stream = ExtResource("4_chrvo")
-volume_db = 15.0
+volume_db = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xa8g")
@@ -110,6 +134,20 @@ transform = Transform3D(0.0351437, 0, 0.999382, 0, 1, 0, -0.999382, 0, 0.0351437
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("5_ocqey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+visible = false
+collision_layer = 5242880
+
+[node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_terrr")]
+
+[node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8lx57")
+
+[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
+collision_layer = 5242880
+collision_mask = 0
 
 [node name="HUD" parent="XROrigin3D/XRCamera3D" instance=ExtResource("5_8b5sj")]
 
@@ -133,6 +171,10 @@ strafe = true
 
 [node name="CollisionHandLeft" parent="XROrigin3D/LeftPaw" instance=ExtResource("9_d6k50")]
 
+[node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("12_pf1bb")]
+visible = false
+laser_material = SubResource("StandardMaterial3D_lw212")
+
 [node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
@@ -153,6 +195,10 @@ turn_mode = 1
 step_turn_angle = 10.0
 
 [node name="CollisionHandRight" parent="XROrigin3D/RightPaw" instance=ExtResource("15_bmnvt")]
+
+[node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("12_pf1bb")]
+visible = false
+laser_material = SubResource("StandardMaterial3D_spe2b")
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("16_ro4o4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
@@ -403,7 +449,10 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[connection signal="closeMenu" from="XROrigin3D/XRCamera3D/Menu/Viewport/PauseMenu" to="XROrigin3D/LeftPaw/MovementDirect" method="_on_pause_menu_close_menu"]
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
 [connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_combo_end"]
 [connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_score"]
 [connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_text"]
+
+[editable path="XROrigin3D/XRCamera3D/Menu"]
