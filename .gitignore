@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 Releases/
+android/build/build/outputs/apk/debug/
