@@ -169,7 +169,7 @@ script = ExtResource("18_wkfdr")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.98318, 1.41662, 7.73645)
 
 [node name="ceilingFan" parent="KitchenLevel" instance=ExtResource("21_4ilrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.06238, 2.44851)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.10291, 2.44851)
 
 [node name="counter" type="Node3D" parent="KitchenLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168144, 0, 0)
