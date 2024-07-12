@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="15_bmnvt"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="16_ro4o4"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="17_n7dw8"]
-[ext_resource type="Script" path="res://Scenes/SceneHelpers/LivingRoomLevel.gd" id="18_wkfdr"]
+[ext_resource type="Script" path="res://Scenes/KitchenLevel.gd" id="18_2dvcg"]
 [ext_resource type="PackedScene" uid="uid://np2qm52l5tse" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/kitchen_coffee_machine.tscn" id="19_20llq"]
 [ext_resource type="PackedScene" uid="uid://du1mvx3irjoai" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/kitchen_bar.tscn" id="21_1a2bp"]
 [ext_resource type="PackedScene" uid="uid://bkwqufn1rkh2c" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/ceiling_fan.tscn" id="21_4ilrv"]
@@ -163,7 +163,7 @@ player_height_max = 0.85
 [node name="StartXR" parent="." instance=ExtResource("17_n7dw8")]
 
 [node name="KitchenLevel" type="Node3D" parent="."]
-script = ExtResource("18_wkfdr")
+script = ExtResource("18_2dvcg")
 
 [node name="kitchenCoffeeMachine" parent="KitchenLevel" instance=ExtResource("19_20llq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.98318, 1.41662, 7.73645)

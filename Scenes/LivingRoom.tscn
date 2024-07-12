@@ -290,8 +290,6 @@ angular_damp = 1.0
 
 [node name="coffee mug" parent="ScoringObjects" instance=ExtResource("31_yek65")]
 transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.647381, -1.87986)
-collision_layer = 4
-collision_mask = 196615
 script = ExtResource("32_wpm0v")
 
 [node name="TissueBox" parent="ScoringObjects" instance=ExtResource("42_x4nvt")]
