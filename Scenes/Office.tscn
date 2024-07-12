@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="14_dbrtb"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="15_4gyx7"]
 [ext_resource type="PackedScene" uid="uid://nlibdjpoatqw" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall.tscn" id="16_5nnr8"]
-[ext_resource type="Script" path="res://Scenes/OfficeLevel.gd" id="16_fo6hb"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/OfficeLevel.gd" id="16_fo6hb"]
 [ext_resource type="PackedScene" uid="uid://bqfglp5gpf4uk" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_doorway.tscn" id="19_0k44y"]
 [ext_resource type="PackedScene" uid="uid://pl2cubiiaeg0" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_corner.tscn" id="20_mns3b"]
 [ext_resource type="PackedScene" uid="uid://bejjnqdb8vrc8" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_window_slide.tscn" id="21_odmvs"]
