@@ -44,13 +44,13 @@ shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4vj1p"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hi3ur"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1iwer"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwdcv"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_4vj1p")
+albedo_texture = SubResource("ViewportTexture_hi3ur")
 texture_filter = 1
 
 [node name="Main" type="Node3D"]
@@ -99,12 +99,11 @@ laser_material = SubResource("StandardMaterial3D_slvui")
 [node name="StartXR" parent="." instance=ExtResource("8_a4ibg")]
 
 [node name="Menu" parent="." instance=ExtResource("9_k1htl")]
-enableSettings = null
-offset = null
+offset = 0.0
 
 [node name="StartMenu" parent="Menu/Viewport" index="0" instance=ExtResource("9_71cef")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_1iwer")
+surface_material_override/0 = SubResource("StandardMaterial3D_kwdcv")
 
 [editable path="Menu"]

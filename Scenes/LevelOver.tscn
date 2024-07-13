@@ -44,13 +44,13 @@ shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5k7qa"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_06usl"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk060"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6hnf"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_5k7qa")
+albedo_texture = SubResource("ViewportTexture_06usl")
 texture_filter = 1
 
 [node name="Main" type="Node3D"]
@@ -80,8 +80,6 @@ pose = &"aim"
 script = ExtResource("3_btjk1")
 
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("4_mcibt")]
-show_laser = 2
-laser_length = 1
 laser_material = SubResource("StandardMaterial3D_p4qyw")
 
 [node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
@@ -96,17 +94,16 @@ default_pose = SubResource("Resource_ylkic")
 script = ExtResource("3_btjk1")
 
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("4_mcibt")]
-show_laser = 2
-laser_length = 1
 laser_material = SubResource("StandardMaterial3D_pkogw")
 
 [node name="StartXR" parent="." instance=ExtResource("9_xf2so")]
 
 [node name="Menu" parent="." instance=ExtResource("10_7ybjh")]
+offset = 0.0
 
 [node name="LevelOverMenu" parent="Menu/Viewport" index="0" instance=ExtResource("11_xt4th")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_uk060")
+surface_material_override/0 = SubResource("StandardMaterial3D_k6hnf")
 
 [editable path="Menu"]
