@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=57 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
 [ext_resource type="AudioStream" uid="uid://dgvon1afenxrj" path="res://Assets/Audio/Music/cozycoffeehouse.mp3" id="2_7d3od"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_026rr"]
 [ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="5_0tqia"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="5_x3bft"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="6_5n3uq"]
 [ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="6_wv3w0"]
+[ext_resource type="PackedScene" uid="uid://di1qtibd4qfvu" path="res://Scenes/SceneHelpers/PauseMenu.tscn" id="7_mulnv"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_urlt0"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="8_2bkdu"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_qm6bj"]
@@ -21,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://de7xhifpdg1y8" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/table_coffee_glass.tscn" id="11_5wtwv"]
 [ext_resource type="PackedScene" uid="uid://bt73s6j22obbe" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/paneling.tscn" id="11_37am6"]
 [ext_resource type="PackedScene" uid="uid://51ls3vyte0jv" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/floor_full.tscn" id="11_iib7y"]
+[ext_resource type="PackedScene" uid="uid://bjjdccpbgb2kb" path="res://Assets/Paw/xr_tools_function_pointer.tscn" id="12_3hj4k"]
 [ext_resource type="PackedScene" uid="uid://bkwqufn1rkh2c" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/ceiling_fan.tscn" id="12_ebbyu"]
 [ext_resource type="PackedScene" uid="uid://d08ba3u0bdygo" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/lounge_chair.tscn" id="14_a32yx"]
 [ext_resource type="PackedScene" uid="uid://cn37hpn158gol" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/rug_rectangle.tscn" id="15_j4phm"]
@@ -63,10 +66,31 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_k6tbe"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csxhw"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_k6tbe")
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
+
 [sub_resource type="Resource" id="Resource_ylkic"]
 script = ExtResource("7_urlt0")
 open_pose = ExtResource("6_wv3w0")
 closed_pose = ExtResource("5_0tqia")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr1ir"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhkd4"]
 size = Vector3(23.914, 1.05005, 16.8676)
@@ -80,11 +104,11 @@ script = ExtResource("2_sqql1")
 
 [node name="Cozy" type="AudioStreamPlayer3D" parent="LevelMusic"]
 stream = ExtResource("2_7d3od")
-volume_db = 15.0
+volume_db = 3.0
 
 [node name="Sweet" type="AudioStreamPlayer3D" parent="LevelMusic"]
 stream = ExtResource("3_rfbee")
-volume_db = 15.0
+volume_db = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xa8g")
@@ -100,6 +124,22 @@ transform = Transform3D(0.777881, 0, 0.628411, 0, 1, 0, -0.628411, 0, 0.777881, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="HUD" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_jeg32")]
+
+[node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("6_5n3uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+visible = false
+enableSettings = false
+offset = 0
+collision_layer = 5242880
+
+[node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
+
+[node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_csxhw")
+
+[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
+collision_layer = 5242880
+collision_mask = 0
 
 [node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -121,6 +161,10 @@ strafe = true
 
 [node name="CollisionHandLeft" parent="XROrigin3D/LeftPaw" instance=ExtResource("5_x3bft")]
 
+[node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("12_3hj4k")]
+visible = false
+laser_material = SubResource("StandardMaterial3D_adegd")
+
 [node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
@@ -141,6 +185,10 @@ turn_mode = 1
 step_turn_angle = 10.0
 
 [node name="CollisionHandRight" parent="XROrigin3D/RightPaw" instance=ExtResource("10_noudu")]
+
+[node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("12_3hj4k")]
+visible = false
+laser_material = SubResource("StandardMaterial3D_vr1ir")
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("9_37r5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
@@ -318,7 +366,10 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[connection signal="closeMenu" from="XROrigin3D/XRCamera3D/Menu/Viewport/PauseMenu" to="XROrigin3D/LeftPaw/MovementDirect" method="_on_pause_menu_close_menu"]
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
 [connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_combo_end"]
 [connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_score"]
 [connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_text"]
+
+[editable path="XROrigin3D/XRCamera3D/Menu"]

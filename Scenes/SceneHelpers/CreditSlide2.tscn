@@ -13,15 +13,15 @@ grow_vertical = 2
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 27.0
+offset_left = 25.0
 offset_top = 5.0
-offset_right = 274.0
+offset_right = 283.0
 offset_bottom = 102.0
 
 [node name="Label" type="Label" parent="MenuButtons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Furniture Assets From Kenny.nl
+text = "Furniture/Food Assets By Kenney.nl
 Music From bensound.com
 Sound Effects From freesound.org
 Cat Logo by Eriek Bagus

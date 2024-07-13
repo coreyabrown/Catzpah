@@ -45,22 +45,22 @@ shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_eo6x4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r82ni"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slxnl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e35rd"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_eo6x4")
+albedo_texture = SubResource("ViewportTexture_r82ni")
 texture_filter = 1
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_aoafs"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k3up1"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aslx6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omitw"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_aoafs")
+albedo_texture = SubResource("ViewportTexture_k3up1")
 texture_filter = 1
 
 [node name="Credits" type="Node3D"]
@@ -77,7 +77,7 @@ environment = SubResource("Environment_oyj4y")
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+transform = Transform3D(0.408082, 0, -0.912945, 0, 1, 0, 0.912945, 0, 0.408082, 0, 0, 0)
 
 [node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -90,8 +90,6 @@ pose = &"aim"
 script = ExtResource("3_nfuxq")
 
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("4_i7ddr")]
-show_laser = 2
-laser_length = 1
 laser_material = SubResource("StandardMaterial3D_801a1")
 
 [node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
@@ -106,27 +104,27 @@ default_pose = SubResource("Resource_ylkic")
 script = ExtResource("3_nfuxq")
 
 [node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("4_i7ddr")]
-show_laser = 2
-laser_length = 1
 laser_material = SubResource("StandardMaterial3D_ggane")
 
 [node name="StartXR" parent="." instance=ExtResource("9_fjepk")]
 
 [node name="Menu" parent="." instance=ExtResource("10_kaumc")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -0.5, 0, 0)
+transform = Transform3D(0.408082, 0, -0.912945, 0, 1, 0, 0.912945, 0, 0.408082, 0, 0, 0)
+offset = 0.35
 
 [node name="StartMenu" parent="Menu/Viewport" index="0" instance=ExtResource("11_rx7nj")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_slxnl")
+surface_material_override/0 = SubResource("StandardMaterial3D_e35rd")
 
 [node name="Menu2" parent="." instance=ExtResource("10_kaumc")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0.5, 0, 0)
+transform = Transform3D(0.408082, 0, -0.912945, 0, 1, 0, 0.912945, 0, 0.408082, 0, 0, 0)
+offset = -0.35
 
 [node name="StartMenu" parent="Menu2/Viewport" index="0" instance=ExtResource("12_2mc24")]
 
 [node name="Screen" parent="Menu2" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_aslx6")
+surface_material_override/0 = SubResource("StandardMaterial3D_omitw")
 
 [editable path="Menu"]
 [editable path="Menu2"]
