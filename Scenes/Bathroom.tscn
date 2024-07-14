@@ -46,16 +46,16 @@
 [ext_resource type="PackedScene" uid="uid://cj4x03qow4md3" path="res://Assets/Models/towel.tscn" id="43_4vb8u"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/ScoreArea.gd" id="49_bg77w"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l71w3"]
 sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
 sky_horizon_color = Color(0.595934, 0.711037, 0.717363, 1)
 ground_bottom_color = Color(0.120155, 0.273968, 0.135592, 1)
 ground_horizon_color = Color(0.595934, 0.711037, 0.717363, 1)
 
 [sub_resource type="Sky" id="Sky_iwmfm"]
-sky_material = SubResource("ProceduralSkyMaterial_xklkx")
+sky_material = SubResource("ProceduralSkyMaterial_l71w3")
 
-[sub_resource type="Environment" id="Environment_8xa8g"]
+[sub_resource type="Environment" id="Environment_sheco"]
 background_mode = 2
 sky = SubResource("Sky_iwmfm")
 ambient_light_source = 2
@@ -64,13 +64,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tkg4v"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_om2rr"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sj2y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcgpc"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_tkg4v")
+albedo_texture = SubResource("ViewportTexture_om2rr")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -113,12 +113,12 @@ stream = ExtResource("4_edtu1")
 volume_db = 5.0
 max_db = 5.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_8xa8g")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sheco")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, 1.55082, 2.89612, -1.14136)
@@ -136,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_78px8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_0sj2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_jcgpc")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880

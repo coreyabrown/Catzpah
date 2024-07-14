@@ -44,6 +44,8 @@ shadow_mesh = SubResource("ArrayMesh_p6wni")
 size = Vector3(0.296265, 0.0664673, 0.0767822)
 
 [node name="Candy Bar" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 0.1
 
 [node name="candy-bar-wrapper" type="MeshInstance3D" parent="."]
