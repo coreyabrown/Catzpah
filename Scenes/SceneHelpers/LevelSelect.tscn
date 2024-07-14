@@ -41,3 +41,4 @@ offset_top = 10.0
 offset_right = 190.0
 offset_bottom = 200.0
 theme = ExtResource("6_s5dns")
+alignment = 1
