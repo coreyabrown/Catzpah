@@ -67,13 +67,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_d7ljk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_g63d7"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wab78"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15gvj"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_d7ljk")
+albedo_texture = SubResource("ViewportTexture_g63d7")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
@@ -137,7 +137,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_wab78")
+surface_material_override/0 = SubResource("StandardMaterial3D_15gvj")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -295,6 +295,7 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="Candy Bar" parent="ScoringObjects" instance=ExtResource("38_5tst2")]
 transform = Transform3D(-0.411435, 0, -0.911439, 0, 1, 0, 0.911439, 0, -0.411435, 1.22042, 0.457655, -3.34237)
+script = ExtResource("32_wpm0v")
 
 [node name="Pencil" parent="ScoringObjects" instance=ExtResource("30_ulgaw")]
 transform = Transform3D(0.996101, 0.0881801, -0.00252778, 0, -0.0286544, -0.99959, -0.0882163, 0.995692, -0.0285427, 0.221541, 0.520417, -1.90647)
