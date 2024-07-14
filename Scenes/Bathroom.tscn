@@ -1,0 +1,345 @@
+[gd_scene load_steps=55 format=3 uid="uid://h876k52m6mwj"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_uuwf8"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_7yi5x"]
+[ext_resource type="AudioStream" uid="uid://8p2ii3dkfg17" path="res://Assets/Audio/Music/hope.mp3" id="3_pcvpq"]
+[ext_resource type="AudioStream" uid="uid://c4yyfabnbqb17" path="res://Assets/Audio/Music/longtrip.mp3" id="4_edtu1"]
+[ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="5_58q6a"]
+[ext_resource type="PackedScene" uid="uid://di1qtibd4qfvu" path="res://Scenes/SceneHelpers/PauseMenu.tscn" id="6_78px8"]
+[ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="7_khpvk"]
+[ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="8_o0gqv"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="9_n71sg"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="10_tuuvr"]
+[ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="11_dpkg6"]
+[ext_resource type="PackedScene" uid="uid://bjjdccpbgb2kb" path="res://Assets/Paw/xr_tools_function_pointer.tscn" id="12_mjn4j"]
+[ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="13_gwcga"]
+[ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="14_8772t"]
+[ext_resource type="Animation" uid="uid://ds70dbo5dh40d" path="res://Assets/Paw/RightPawAnimationPlayer_Open.tres" id="15_hbqkc"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="16_4bba2"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="17_ftofg"]
+[ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="18_g3k46"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="19_5jje3"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="20_v0us0"]
+[ext_resource type="Script" path="res://Scenes/BathroomLevel.gd" id="21_mc52w"]
+[ext_resource type="PackedScene" uid="uid://nlibdjpoatqw" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall.tscn" id="22_po213"]
+[ext_resource type="PackedScene" uid="uid://bqfglp5gpf4uk" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_doorway.tscn" id="23_0y75l"]
+[ext_resource type="PackedScene" uid="uid://pl2cubiiaeg0" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_corner.tscn" id="24_8xqx4"]
+[ext_resource type="PackedScene" uid="uid://bejjnqdb8vrc8" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_window_slide.tscn" id="25_bkohx"]
+[ext_resource type="PackedScene" uid="uid://51ls3vyte0jv" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/floor_full.tscn" id="26_j2y8s"]
+[ext_resource type="PackedScene" uid="uid://b7i4ayu2mjdau" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bathroom_mirror.tscn" id="29_r0m68"]
+[ext_resource type="PackedScene" uid="uid://uurbhaqoo5ep" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/doorway.tscn" id="30_37lle"]
+[ext_resource type="PackedScene" uid="uid://cef0o5yimddj8" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bathroom_sink.tscn" id="30_744kg"]
+[ext_resource type="PackedScene" uid="uid://dk5au1p00vusf" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/shower_round.tscn" id="31_yv63j"]
+[ext_resource type="PackedScene" uid="uid://cwp6k7c8qx0ca" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/toilet.tscn" id="32_8qv3d"]
+[ext_resource type="PackedScene" uid="uid://bil07og2d57n0" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/trashcan.tscn" id="33_wp3xg"]
+[ext_resource type="PackedScene" uid="uid://cnie7i1oln6jb" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bookcase_open.tscn" id="34_7dbpm"]
+[ext_resource type="PackedScene" uid="uid://xo2m7aiala36" path="res://Assets/Models/pill_bottle.tscn" id="35_t85sw"]
+[ext_resource type="PackedScene" uid="uid://1x37gc47xaou" path="res://Assets/Models/tissue_box.tscn" id="36_f1u63"]
+[ext_resource type="PackedScene" uid="uid://0c108qxcq823" path="res://Assets/Models/ToiletPaper.tscn" id="37_saees"]
+[ext_resource type="PackedScene" uid="uid://bkwqufn1rkh2c" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/ceiling_fan.tscn" id="38_fdfni"]
+[ext_resource type="PackedScene" uid="uid://b5p17ors3f34a" path="res://Assets/Models/hairbrush.tscn" id="38_u5mrv"]
+[ext_resource type="PackedScene" uid="uid://dhqx733sv53v8" path="res://Assets/Models/cup.tscn" id="39_e02ay"]
+[ext_resource type="PackedScene" uid="uid://st4do0m4d4mg" path="res://Assets/Models/toothbrush.tscn" id="40_pj2e3"]
+[ext_resource type="PackedScene" uid="uid://ndr04uqefydx" path="res://Assets/Models/razor.tscn" id="41_vjga0"]
+[ext_resource type="PackedScene" uid="uid://t5xyhkxja477" path="res://Assets/Models/hand_soap.tscn" id="42_02cyo"]
+[ext_resource type="PackedScene" uid="uid://cj4x03qow4md3" path="res://Assets/Models/towel.tscn" id="43_4vb8u"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/ScoreArea.gd" id="49_bg77w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
+sky_top_color = Color(0.263582, 0.570182, 0.73386, 1)
+sky_horizon_color = Color(0.595934, 0.711037, 0.717363, 1)
+ground_bottom_color = Color(0.120155, 0.273968, 0.135592, 1)
+ground_horizon_color = Color(0.595934, 0.711037, 0.717363, 1)
+
+[sub_resource type="Sky" id="Sky_iwmfm"]
+sky_material = SubResource("ProceduralSkyMaterial_xklkx")
+
+[sub_resource type="Environment" id="Environment_8xa8g"]
+background_mode = 2
+sky = SubResource("Sky_iwmfm")
+ambient_light_source = 2
+ambient_light_color = Color(0.654902, 0.654902, 0.654902, 1)
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1wtij"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghls6"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_1wtij")
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
+
+[sub_resource type="Resource" id="Resource_ylkic"]
+script = ExtResource("16_4bba2")
+open_pose = ExtResource("15_hbqkc")
+closed_pose = ExtResource("14_8772t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f2vhs"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 1
+albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13i36"]
+albedo_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhkd4"]
+size = Vector3(23.914, 1.05005, 16.8676)
+
+[node name="Bathroom" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
+script = ExtResource("1_uuwf8")
+
+[node name="LevelMusic" type="Node3D" parent="."]
+script = ExtResource("2_7yi5x")
+
+[node name="Hope" type="AudioStreamPlayer3D" parent="LevelMusic"]
+stream = ExtResource("3_pcvpq")
+volume_db = 5.0
+max_db = 5.0
+
+[node name="LongTrip" type="AudioStreamPlayer3D" parent="LevelMusic"]
+stream = ExtResource("4_edtu1")
+volume_db = 5.0
+max_db = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8xa8g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, 1.55082, 2.89612, -1.14136)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Menu" parent="XROrigin3D/XRCamera3D" instance=ExtResource("5_58q6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+visible = false
+enableSettings = false
+offset = 0.0
+collision_layer = 5242880
+
+[node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_78px8")]
+
+[node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ghls6")
+
+[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
+collision_layer = 5242880
+collision_mask = 0
+
+[node name="HUD" parent="XROrigin3D/XRCamera3D" instance=ExtResource("7_khpvk")]
+
+[node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+pose = &"aim"
+
+[node name="left_cat_paw" parent="XROrigin3D/LeftPaw" instance=ExtResource("8_o0gqv")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/LeftPaw"]
+script = ExtResource("9_n71sg")
+pickup_axis_action = "trigger"
+grab_distance = 0.05
+grab_collision_mask = 327684
+ranged_enable = false
+
+[node name="MovementDirect" parent="XROrigin3D/LeftPaw" instance=ExtResource("10_tuuvr")]
+max_speed = 0.5
+strafe = true
+
+[node name="CollisionHandLeft" parent="XROrigin3D/LeftPaw" instance=ExtResource("11_dpkg6")]
+
+[node name="XRToolsFunctionPointer" parent="XROrigin3D/LeftPaw" instance=ExtResource("12_mjn4j")]
+visible = false
+laser_material = SubResource("StandardMaterial3D_npkrr")
+
+[node name="RightPaw" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+pose = &"aim"
+
+[node name="right_cat_paw" parent="XROrigin3D/RightPaw" instance=ExtResource("13_gwcga")]
+default_pose = SubResource("Resource_ylkic")
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/RightPaw"]
+script = ExtResource("9_n71sg")
+pickup_axis_action = "trigger"
+grab_distance = 0.05
+grab_collision_mask = 327684
+ranged_enable = false
+
+[node name="MovementTurn" parent="XROrigin3D/RightPaw" instance=ExtResource("17_ftofg")]
+turn_mode = 1
+step_turn_angle = 10.0
+
+[node name="CollisionHandRight" parent="XROrigin3D/RightPaw" instance=ExtResource("18_g3k46")]
+
+[node name="XRToolsFunctionPointer" parent="XROrigin3D/RightPaw" instance=ExtResource("12_mjn4j")]
+visible = false
+laser_material = SubResource("StandardMaterial3D_f2vhs")
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("19_5jje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+player_radius = 0.1
+player_height_min = 0.2
+player_height_max = 0.85
+
+[node name="StartXR" parent="." instance=ExtResource("20_v0us0")]
+
+[node name="BathroomLevel" type="Node3D" parent="."]
+script = ExtResource("21_mc52w")
+
+[node name="walls" type="Node3D" parent="BathroomLevel"]
+
+[node name="wallDoorway" parent="BathroomLevel/walls" instance=ExtResource("23_0y75l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.71636, -0.7, -4.23224)
+
+[node name="wallCorner" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4.71927, -0.7, -0.183465)
+
+[node name="wallCorner5" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471954, -0.7, 2.56932)
+
+[node name="wallCorner2" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.98443, -0.7, -10.3216)
+
+[node name="wall3" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 2.25449, -0.7, 7.10713)
+
+[node name="wall" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.71749, -0.7, -8.907)
+
+[node name="wall2" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.319339, -0.7, -10.3233)
+
+[node name="backwall" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -8.13738, -0.7, 2.56653)
+
+[node name="wallWindowSlide2" parent="BathroomLevel/walls" instance=ExtResource("25_bkohx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.25099, -0.7, -2.61757)
+
+[node name="wallCorner3" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.25679, -0.7, -7.57519)
+
+[node name="ceiling and floor" type="Node3D" parent="BathroomLevel"]
+
+[node name="wall" parent="BathroomLevel/ceiling and floor" instance=ExtResource("22_po213")]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.02181, 5.72434, -11.4045)
+
+[node name="floorFull" parent="BathroomLevel/ceiling and floor" instance=ExtResource("26_j2y8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4916, -0.745785, 9.66517)
+
+[node name="floorFull(Clone)" parent="BathroomLevel/ceiling and floor/floorFull" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_13i36")
+
+[node name="doorway" parent="BathroomLevel" instance=ExtResource("30_37lle")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.3574, -0.7, -0.530364)
+
+[node name="ceilingFan" parent="BathroomLevel" instance=ExtResource("38_fdfni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5763, 6.10317, -4.80832)
+
+[node name="bathroomMirror" parent="BathroomLevel" instance=ExtResource("29_r0m68")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.74947, 2.5635, -1.94418)
+
+[node name="bathroomSink" parent="BathroomLevel" instance=ExtResource("30_744kg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.528302, 1.29467, -1.96278)
+
+[node name="showerRound" parent="BathroomLevel" instance=ExtResource("31_yv63j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.625, -0.7, -7.248)
+
+[node name="toilet" parent="BathroomLevel" instance=ExtResource("32_8qv3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.625715, -0.7, -9.882)
+
+[node name="trashcan" parent="BathroomLevel" instance=ExtResource("33_wp3xg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.20594, -1.55009, -2.77959)
+
+[node name="bookcaseOpen" parent="BathroomLevel" instance=ExtResource("34_7dbpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34, -0.7, 2.162)
+
+[node name="ScoringObjects" type="Node3D" parent="."]
+
+[node name="Pill Bottle" parent="ScoringObjects" instance=ExtResource("35_t85sw")]
+transform = Transform3D(-0.888937, 0, 0.458029, 0, 1, 0, -0.458029, 0, -0.888937, 1.64187, 2.7488, -1.83352)
+
+[node name="Pill Bottle2" parent="ScoringObjects" instance=ExtResource("35_t85sw")]
+transform = Transform3D(-0.952783, 0, -0.303651, 0, 1, 0, 0.303651, 0, -0.952783, 1.4506, 2.7488, -1.80998)
+
+[node name="Tissue Box" parent="ScoringObjects" instance=ExtResource("36_f1u63")]
+transform = Transform3D(-0.17327, 0, -0.984874, 0, 1, 0, 0.984874, 0, -0.17327, 0.114671, 1.92317, -9.58506)
+
+[node name="Toilet Paper" parent="ScoringObjects" instance=ExtResource("37_saees")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78786, 3.56514, 1.7802)
+
+[node name="Toilet Paper2" parent="ScoringObjects" instance=ExtResource("37_saees")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10714, 3.56514, 1.7802)
+
+[node name="Toilet Paper3" parent="ScoringObjects" instance=ExtResource("37_saees")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.56514, 1.45597)
+
+[node name="Toilet Paper4" parent="ScoringObjects" instance=ExtResource("37_saees")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.91091, 1.64065)
+
+[node name="Toilet Paper5" parent="ScoringObjects" instance=ExtResource("37_saees")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.796276, 1.68412, -9.64755)
+
+[node name="Hairbrush" parent="ScoringObjects" instance=ExtResource("38_u5mrv")]
+transform = Transform3D(0.960299, 0, 0.278974, 0, 1, 0, -0.278974, 0, 0.960299, 1.52268, 2.77598, -1.65626)
+
+[node name="Cup" parent="ScoringObjects" instance=ExtResource("39_e02ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56701, 2.74083, -0.582745)
+
+[node name="Toothbrush" parent="ScoringObjects" instance=ExtResource("40_pj2e3")]
+transform = Transform3D(0.955268, 0.0558118, -0.290427, 0, 0.982031, 0.188718, 0.295741, -0.180277, 0.938103, 1.57507, 2.84038, -0.555094)
+
+[node name="Razor" parent="ScoringObjects" instance=ExtResource("41_vjga0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.894467, 1.77048, -0.344261)
+
+[node name="Hand Soap" parent="ScoringObjects" instance=ExtResource("42_02cyo")]
+transform = Transform3D(-0.962772, 0, -0.270315, 0, 1, 0, 0.270315, 0, -0.962772, 1.60169, 1.91499, -1.85728)
+
+[node name="Towel" parent="ScoringObjects" instance=ExtResource("43_4vb8u")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.93067, 2.54003, 1.56708)
+
+[node name="Towel2" parent="ScoringObjects" instance=ExtResource("43_4vb8u")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.93067, 2.88833, 1.56708)
+
+[node name="ScoreArea" type="Area3D" parent="."]
+transform = Transform3D(0.925104, 0, 0.379714, 0, 1, 0, -0.379714, 0, 0.925104, -3.45245, 1.06615, -1.52721)
+collision_mask = 524295
+script = ExtResource("49_bg77w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScoreArea"]
+transform = Transform3D(0.918391, 0, -0.395674, 0, 1, 0, 0.395674, 0, 0.918391, 2.49741, -0.140503, -2.64224)
+shape = SubResource("BoxShape3D_fhkd4")
+
+[node name="Timer" type="Timer" parent="ScoreArea"]
+wait_time = 2.0
+one_shot = true
+
+[node name="LevelEndTimer" type="Timer" parent="ScoreArea"]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="closeMenu" from="XROrigin3D/XRCamera3D/Menu/Viewport/PauseMenu" to="XROrigin3D/LeftPaw/MovementDirect" method="_on_pause_menu_close_menu"]
+[connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
+[connection signal="combo_end" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_combo_end"]
+[connection signal="update_combo_score" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_score"]
+[connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_text"]
+
+[editable path="XROrigin3D/XRCamera3D/Menu"]
+[editable path="XROrigin3D/XRCamera3D/HUD"]
+[editable path="BathroomLevel/ceiling and floor/floorFull"]

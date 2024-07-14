@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7i4ayu2mjdau"]
+
+[ext_resource type="PackedScene" uid="uid://fecgupr0ih8k" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/bathroomMirror.glb" id="1_r6hk4"]
+[ext_resource type="Material" uid="uid://bmig46gbbg881" path="res://Assets/Materials/Wood.tres" id="2_a5d3w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eg0f7"]
+size = Vector3(1.50287, 0.0718994, 0.723389)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yk6xy"]
+size = Vector3(1.49219, 2.16315, 0.141357)
+
+[node name="bathroomMirror" instance=ExtResource("1_r6hk4")]
+
+[node name="bathroomMirror(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_a5d3w")
+surface_material_override/2 = ExtResource("2_a5d3w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.751373, 0.136414, 0.121216)
+shape = SubResource("BoxShape3D_eg0f7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754883, 1.08163, -0.17688)
+shape = SubResource("BoxShape3D_yk6xy")

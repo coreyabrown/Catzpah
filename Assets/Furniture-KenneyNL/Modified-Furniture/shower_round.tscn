@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk5au1p00vusf"]
+
+[ext_resource type="PackedScene" uid="uid://dhs5jk7qb8uwd" path="res://Assets/Furniture-KenneyNL/Models/GLTF format/showerRound.glb" id="1_ceacw"]
+[ext_resource type="Material" uid="uid://dydb7pbdm88si" path="res://Assets/Materials/Countertop.tres" id="2_m6tlu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xefwm"]
+albedo_color = Color(0.393086, 0.393086, 0.393085, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsmkc"]
+albedo_color = Color(0.552956, 0.552956, 0.552956, 1)
+roughness = 0.29
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vsai1"]
+height = 5.41719
+radius = 2.79182
+
+[node name="showerRound" instance=ExtResource("1_ceacw")]
+
+[node name="showerRound(Clone)" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_m6tlu")
+surface_material_override/1 = SubResource("StandardMaterial3D_xefwm")
+
+[node name="faucet" parent="showerRound(Clone)" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fsmkc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80161, 2.71266, -2.8016)
+shape = SubResource("CylinderShape3D_vsai1")
