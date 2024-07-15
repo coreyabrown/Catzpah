@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciyulu3mwv57u"]
+[gd_scene load_steps=7 format=3 uid="uid://di1qtibd4qfvu"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/PauseMenuUI.gd" id="1_c0k5u"]
 [ext_resource type="AudioStream" uid="uid://c4rr0um2peg1u" path="res://Assets/Audio/ButtonHover.wav" id="2_pbxku"]
@@ -62,12 +62,6 @@ layout_mode = 2
 theme = ExtResource("6_rlygm")
 text = "Main Menu"
 
-[connection signal="focus_entered" from="MenuButtons/Resume" to="." method="_on_resume_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/Resume" to="." method="_on_resume_pressed"]
-[connection signal="focus_entered" from="MenuButtons/EndLevel" to="." method="_on_end_level_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/EndLevel" to="." method="_on_end_level_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/EndLevel" to="." method="_on_end_level_pressed"]
-[connection signal="focus_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]

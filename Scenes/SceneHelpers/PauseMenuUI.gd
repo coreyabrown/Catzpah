@@ -2,6 +2,9 @@ extends Control
 
 signal closeMenu()
 
+func _ready():
+	connectButtons()
+
 func play_focus_sound():
 	$ButtonFocus.play()
 
@@ -17,20 +20,13 @@ func _on_end_level_pressed():
 func _on_resume_pressed():
 	closeMenu.emit()
 
-func _on_resume_focus_entered():
+func connectButtons():
+	for button in $MenuButtons.get_children():
+		button.focus_entered.connect(self._focus_entered)
+		button.mouse_entered.connect(self._mouse_entered)
+
+func _focus_entered():
 	play_select_sound()
 
-func _on_end_level_focus_entered():
-	play_select_sound()
-
-func _on_main_menu_focus_entered():
-	play_select_sound()
-
-func _on_resume_mouse_entered():
-	play_focus_sound()
-
-func _on_end_level_mouse_entered():
-	play_focus_sound()
-
-func _on_main_menu_mouse_entered():
+func _mouse_entered():
 	play_focus_sound()

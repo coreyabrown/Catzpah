@@ -80,12 +80,6 @@ layout_mode = 2
 theme = ExtResource("4_p35tr")
 text = "Main Menu"
 
-[connection signal="focus_entered" from="MenuButtons/Replay Level" to="." method="_on_exit_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/Replay Level" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/Replay Level" to="." method="_on_exit_pressed"]
-[connection signal="focus_entered" from="MenuButtons/NextLevel" to="." method="_on_next_level_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/NextLevel" to="." method="_on_next_level_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="focus_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]
