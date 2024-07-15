@@ -64,6 +64,11 @@ offset_top = 130.0
 offset_right = 190.0
 offset_bottom = 192.0
 
+[node name="Replay Level" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme = ExtResource("4_p35tr")
+text = "Replay Level"
+
 [node name="NextLevel" type="Button" parent="MenuButtons"]
 visible = false
 layout_mode = 2
@@ -75,18 +80,12 @@ layout_mode = 2
 theme = ExtResource("4_p35tr")
 text = "Main Menu"
 
-[node name="Exit" type="Button" parent="MenuButtons"]
-layout_mode = 2
-theme = ExtResource("4_p35tr")
-text = "Exit
-"
-
+[connection signal="focus_entered" from="MenuButtons/Replay Level" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_entered" from="MenuButtons/Replay Level" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="MenuButtons/Replay Level" to="." method="_on_exit_pressed"]
 [connection signal="focus_entered" from="MenuButtons/NextLevel" to="." method="_on_next_level_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/NextLevel" to="." method="_on_next_level_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="focus_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="focus_entered" from="MenuButtons/Exit" to="." method="_on_exit_focus_entered"]
-[connection signal="mouse_entered" from="MenuButtons/Exit" to="." method="_on_exit_mouse_entered"]
-[connection signal="pressed" from="MenuButtons/Exit" to="." method="_on_exit_pressed"]

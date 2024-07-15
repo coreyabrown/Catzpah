@@ -18,8 +18,7 @@ func play_select_sound():
 	$ButtonSelect.play()
 
 func _on_exit_pressed():
-	# Haptic feedback on button press?
-	get_tree().quit()
+	get_tree().change_scene_to_file(Global.get_curr_level_path())
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/StartScene.tscn")

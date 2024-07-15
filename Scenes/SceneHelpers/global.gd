@@ -28,6 +28,10 @@ func get_next_level_path():
 	var current_index = levelReference.find(currentLevel)
 	return levelPath[current_index+1]
 
+func get_curr_level_path():
+	var current_index = levelReference.find(currentLevel)
+	return levelPath[current_index]
+
 func get_music_level():
 	return musicLevel
 
