@@ -6,6 +6,7 @@ var levelReference = ["Main Menu", "Living Room", "Office", "Kitchen", "Bathroom
 var levelPath = ["res://Scenes/StartScene.tscn", "res://Scenes/LivingRoom.tscn", "res://Scenes/Office.tscn", "res://Scenes/Kitchen.tscn", "res://Scenes/Bathroom.tscn"]
 var currentLevel = levelReference[0]
 var musicLevel = 100
+var sfxLevel = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +38,12 @@ func get_music_level():
 
 func set_music_level(value):
 	musicLevel = clamp(value,0,100)
+
+func get_sfx_level():
+	return sfxLevel
+
+func set_sfx_level(value):
+	sfxLevel = clamp(value,0,100)
 
 func get_level_list():
 	return levelReference

@@ -44,7 +44,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7l1vu")
 
 [node name="SingleTrickMeow" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_yitke")
-volume_db = 20.0
 
 [node name="ComboEndMeow" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_uyquo")

@@ -54,6 +54,30 @@ theme = ExtResource("4_w3qqs")
 value = 100.0
 rounded = true
 
+[node name="Sound Effects" type="Label" parent="MenuButtons"]
+layout_mode = 2
+text = "Sound Effects"
+horizontal_alignment = 1
+
+[node name="SFX" type="HBoxContainer" parent="MenuButtons"]
+layout_mode = 2
+alignment = 1
+
+[node name="SFXIndicator" type="Label" parent="MenuButtons/SFX"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "100"
+horizontal_alignment = 2
+
+[node name="SFXVolume" type="HSlider" parent="MenuButtons/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("4_w3qqs")
+value = 100.0
+rounded = true
+
 [node name="Credits" type="Button" parent="MenuButtons"]
 layout_mode = 2
 theme = ExtResource("4_w3qqs")
@@ -66,6 +90,8 @@ text = "Main Menu"
 
 [connection signal="drag_ended" from="MenuButtons/Music/MusicVolume" to="." method="_on_music_volume_drag_ended"]
 [connection signal="value_changed" from="MenuButtons/Music/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="drag_ended" from="MenuButtons/SFX/SFXVolume" to="." method="_on_sfx_volume_drag_ended"]
+[connection signal="value_changed" from="MenuButtons/SFX/SFXVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="focus_entered" from="MenuButtons/Credits" to="." method="_on_credits_focus_entered"]
 [connection signal="mouse_entered" from="MenuButtons/Credits" to="." method="_on_credits_mouse_entered"]
 [connection signal="pressed" from="MenuButtons/Credits" to="." method="_on_credits_pressed"]
