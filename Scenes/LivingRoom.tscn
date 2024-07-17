@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://da2fj4psrta8w"]
+[gd_scene load_steps=57 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
 [ext_resource type="AudioStream" uid="uid://dgvon1afenxrj" path="res://Assets/Audio/Music/cozycoffeehouse.mp3" id="2_7d3od"]
@@ -44,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://0fh3bljptvgg" path="res://Assets/Models/pencil.tscn" id="30_ulgaw"]
 [ext_resource type="PackedScene" uid="uid://bnk3wja1m5dh1" path="res://Assets/Models/notebook.tscn" id="30_us4yp"]
 [ext_resource type="PackedScene" uid="uid://c3fcqqo7noqbx" path="res://Assets/Models/coffee_mug.tscn" id="31_yek65"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="32_wpm0v"]
 [ext_resource type="PackedScene" uid="uid://cmk75e10yrweb" path="res://Assets/Food-KenneyNL/Modified/candy_bar.tscn" id="38_5tst2"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/ScoreArea.gd" id="40_pg2f1"]
 [ext_resource type="PackedScene" uid="uid://1x37gc47xaou" path="res://Assets/Models/tissue_box.tscn" id="42_x4nvt"]
@@ -67,13 +66,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tvhpn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7a13i"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odnhe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pula"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_tvhpn")
+albedo_texture = SubResource("ViewportTexture_7a13i")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
@@ -137,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_odnhe")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pula")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -295,45 +294,27 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="Candy Bar" parent="ScoringObjects" instance=ExtResource("38_5tst2")]
 transform = Transform3D(-0.411435, 0, -0.911439, 0, 1, 0, 0.911439, 0, -0.411435, 1.22042, 0.457655, -3.34237)
-script = ExtResource("32_wpm0v")
 
 [node name="Pencil" parent="ScoringObjects" instance=ExtResource("30_ulgaw")]
 transform = Transform3D(0.996101, 0.0881801, -0.00252778, 0, -0.0286544, -0.99959, -0.0882163, 0.995692, -0.0285427, 0.221541, 0.520417, -1.90647)
-script = ExtResource("32_wpm0v")
 
 [node name="notebook" parent="ScoringObjects" instance=ExtResource("30_us4yp")]
 transform = Transform3D(0.531132, 0, -0.847289, 0, 1, 0, 0.847289, 0, 0.531132, 0.234223, 0.472775, -1.89634)
-script = ExtResource("32_wpm0v")
 
 [node name="Coaster2" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(0.122788, 0.696364, 0.707107, 0.984808, -0.173648, 0, 0.122788, 0.696364, -0.707107, -0.356504, 0.702963, -2.63282)
-collision_layer = 4
-collision_mask = 196615
-script = ExtResource("32_wpm0v")
 
 [node name="Coaster3" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(0.0616284, 0.704416, 0.707107, 0.996195, -0.0871558, 0, 0.0616284, 0.704416, -0.707107, -0.316877, 0.702963, -2.58651)
-collision_layer = 4
-collision_mask = 196615
-script = ExtResource("32_wpm0v")
 
 [node name="Coaster4" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(-0.0616284, 0.704416, 0.707107, 0.996195, 0.0871558, 0, -0.0616284, 0.704416, -0.707107, -0.258651, 0.702963, -2.55567)
-collision_layer = 4
-collision_mask = 196615
-script = ExtResource("32_wpm0v")
 
 [node name="Coaster" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28313, 0.465659, -1.91903)
-collision_layer = 4
-collision_mask = 196615
-script = ExtResource("32_wpm0v")
 
 [node name="coaster holder" parent="ScoringObjects" instance=ExtResource("30_f8rc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302129, 0.563027, -2.56158)
-collision_layer = 4
-collision_mask = 196615
-script = ExtResource("32_wpm0v")
 
 [node name="floor lamp" parent="ScoringObjects" instance=ExtResource("30_s868l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86914, -0.7, 1.63137)
@@ -344,7 +325,6 @@ angular_damp = 1.0
 
 [node name="coffee mug" parent="ScoringObjects" instance=ExtResource("31_yek65")]
 transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.647381, -1.87986)
-script = ExtResource("32_wpm0v")
 
 [node name="Tissue Box" parent="ScoringObjects" instance=ExtResource("42_x4nvt")]
 transform = Transform3D(0.0189008, 0, -0.999821, 0, 1, 0, 0.999821, 0, 0.0189008, -2.0742, 1.13991, -8.27962)

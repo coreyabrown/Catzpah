@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6l8xk14w336p"]
+[gd_scene load_steps=11 format=3 uid="uid://c6l8xk14w336p"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_3tg1o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddmyq"]
 resource_name = "lamp"
@@ -86,6 +88,8 @@ collision_mask = 196615
 mass = 4.0
 linear_damp = 0.1
 angular_damp = 0.1
+script = ExtResource("1_3tg1o")
+sound_material = 3
 
 [node name="lampSquareTable(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

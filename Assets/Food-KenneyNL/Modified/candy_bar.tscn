@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmk75e10yrweb"]
+[gd_scene load_steps=7 format=3 uid="uid://cmk75e10yrweb"]
 
 [ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_b0qnq"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_kvshx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5thwy"]
 resource_name = "colormap"
@@ -47,6 +48,8 @@ size = Vector3(0.296265, 0.0664673, 0.0767822)
 collision_layer = 4
 collision_mask = 196615
 mass = 0.1
+script = ExtResource("1_kvshx")
+sound_material = 2
 
 [node name="candy-bar-wrapper" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_nun1u")

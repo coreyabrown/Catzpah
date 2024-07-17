@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw0xxwht65n4q"]
+[gd_scene load_steps=7 format=3 uid="uid://dw0xxwht65n4q"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_wdvs3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goigc"]
 resource_name = "Material.001"
@@ -73,9 +75,13 @@ height = 0.0146768
 radius = 0.182901
 
 [node name="Coaster" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 0.1
 linear_damp = 0.1
 angular_damp = 0.1
+script = ExtResource("1_wdvs3")
+sound_material = 1
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

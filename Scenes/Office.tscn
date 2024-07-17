@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://wjdnlysdt6on"]
+[gd_scene load_steps=59 format=3 uid="uid://wjdnlysdt6on"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_vxbxs"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_tql5q"]
@@ -47,7 +47,6 @@
 [ext_resource type="PackedScene" uid="uid://c4f1p6fpjxron" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/computer_mouse.tscn" id="35_pebqs"]
 [ext_resource type="PackedScene" uid="uid://dhkuees5u2vbu" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/computer_keyboard.tscn" id="36_3wyr6"]
 [ext_resource type="PackedScene" uid="uid://bnk3wja1m5dh1" path="res://Assets/Models/notebook.tscn" id="36_fuwu8"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="36_mjjab"]
 [ext_resource type="PackedScene" uid="uid://c6l8xk14w336p" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/lamp_square_table.tscn" id="42_v7lnp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xklkx"]
@@ -68,13 +67,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ng5o5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dblbn"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpdl5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isshp"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_ng5o5")
+albedo_texture = SubResource("ViewportTexture_dblbn")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -147,7 +146,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_vklk8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_qpdl5")
+surface_material_override/0 = SubResource("StandardMaterial3D_isshp")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -337,15 +336,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23375, 5.72822, -3.87298)
 
 [node name="pencil holder" parent="ScoringObjects" instance=ExtResource("33_qcbyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95512, 1.43128, -9.35366)
-script = ExtResource("36_mjjab")
 
 [node name="Pen" parent="ScoringObjects" instance=ExtResource("35_3m2ob")]
 transform = Transform3D(-0.873055, 0.217625, -0.436365, -0.44462, 0.0121609, 0.895637, 0.20022, 0.975957, 0.0861436, 8.42085, 1.30943, -8.49552)
-script = ExtResource("36_mjjab")
 
 [node name="notebook" parent="ScoringObjects" instance=ExtResource("36_fuwu8")]
 transform = Transform3D(0.138914, 0, -0.990304, 0, 1, 0, 0.990304, 0, 0.138914, 7.98266, 1.2688, -8.55704)
-script = ExtResource("36_mjjab")
 
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("32_vwnbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20626, 2.08363, 1.64288)
@@ -357,7 +353,6 @@ collision_mask = 196615
 
 [node name="Mouse" parent="ScoringObjects" instance=ExtResource("35_pebqs")]
 transform = Transform3D(0.122632, 0, 0.992452, 0, 1, 0, -0.992452, 0, 0.122632, 10.1914, 1.24, -5.89497)
-script = ExtResource("36_mjjab")
 
 [node name="Keyboard" parent="ScoringObjects" instance=ExtResource("36_3wyr6")]
 transform = Transform3D(-0.0223732, 0, -0.99975, 0, 1, 0, 0.99975, 0, -0.0223732, 9.80596, 1.24, -7.73629)
@@ -369,15 +364,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73676, 0.902486, -1.82856)
 
 [node name="Pencil" parent="ScoringObjects" instance=ExtResource("34_wg0et")]
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 6.88944, 1.64883, -9.32302)
-script = ExtResource("36_mjjab")
 
 [node name="Pencil2" parent="ScoringObjects" instance=ExtResource("34_wg0et")]
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 7.01259, 1.66989, -9.32103)
-script = ExtResource("36_mjjab")
 
 [node name="Pencil3" parent="ScoringObjects" instance=ExtResource("34_wg0et")]
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 6.94021, 1.63614, -9.41565)
-script = ExtResource("36_mjjab")
 
 [node name="desk lamp" parent="ScoringObjects" instance=ExtResource("42_v7lnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98564, 1.34498, -9.01956)

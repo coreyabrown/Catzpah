@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgflyec44ck8a"]
+[gd_scene load_steps=7 format=3 uid="uid://cgflyec44ck8a"]
 
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_1ugd1"]
 [ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_wpoux"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25e4h"]
@@ -50,6 +51,8 @@ radius = 0.0699656
 collision_layer = 4
 collision_mask = 196615
 mass = 0.4
+script = ExtResource("1_1ugd1")
+sound_material = 10
 
 [node name="pepper-mill" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_mp83e")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhkuees5u2vbu"]
+[gd_scene load_steps=9 format=3 uid="uid://dhkuees5u2vbu"]
 
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_p1qub"]
 [ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="1_sxxaw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg7im"]
@@ -74,6 +75,7 @@ size = Vector3(1.41382, 0.137634, 0.59668)
 
 [node name="computerKeyboard" type="RigidBody3D"]
 mass = 0.6
+script = ExtResource("1_p1qub")
 
 [node name="computerKeyboard(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

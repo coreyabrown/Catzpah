@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgbop21vsu3yi"]
+[gd_scene load_steps=7 format=3 uid="uid://cgbop21vsu3yi"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ynqnl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2e2g3"]
 resource_name = "Material.001"
@@ -48,9 +50,13 @@ size = Vector3(1.02344, 0.0579834, 1.026)
 size = Vector3(0.910156, 0.421906, 0.0829811)
 
 [node name="coasterholder" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 0.6
 linear_damp = 0.1
 angular_damp = 0.1
+script = ExtResource("1_ynqnl")
+sound_material = 4
 
 [node name="Cone" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

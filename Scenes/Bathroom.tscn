@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://pl2cubiiaeg0" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_corner.tscn" id="24_8xqx4"]
 [ext_resource type="PackedScene" uid="uid://bejjnqdb8vrc8" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/wall_window_slide.tscn" id="25_bkohx"]
 [ext_resource type="PackedScene" uid="uid://51ls3vyte0jv" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/floor_full.tscn" id="26_j2y8s"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/floor.gd" id="27_qfibg"]
 [ext_resource type="PackedScene" uid="uid://b7i4ayu2mjdau" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bathroom_mirror.tscn" id="29_r0m68"]
 [ext_resource type="PackedScene" uid="uid://uurbhaqoo5ep" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/doorway.tscn" id="30_37lle"]
 [ext_resource type="PackedScene" uid="uid://cef0o5yimddj8" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bathroom_sink.tscn" id="30_744kg"]
@@ -35,7 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://cnie7i1oln6jb" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bookcase_open.tscn" id="34_7dbpm"]
 [ext_resource type="PackedScene" uid="uid://xo2m7aiala36" path="res://Assets/Models/pill_bottle.tscn" id="35_t85sw"]
 [ext_resource type="PackedScene" uid="uid://1x37gc47xaou" path="res://Assets/Models/tissue_box.tscn" id="36_f1u63"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="36_r1tdl"]
 [ext_resource type="PackedScene" uid="uid://0c108qxcq823" path="res://Assets/Models/ToiletPaper.tscn" id="37_saees"]
 [ext_resource type="PackedScene" uid="uid://bkwqufn1rkh2c" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/ceiling_fan.tscn" id="38_fdfni"]
 [ext_resource type="PackedScene" uid="uid://b5p17ors3f34a" path="res://Assets/Models/hairbrush.tscn" id="38_u5mrv"]
@@ -64,13 +64,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kw3jt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qod8a"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbdmq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kjku"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_kw3jt")
+albedo_texture = SubResource("ViewportTexture_qod8a")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -136,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_78px8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_lbdmq")
+surface_material_override/0 = SubResource("StandardMaterial3D_0kjku")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -243,6 +243,7 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="floorFull" parent="BathroomLevel/ceiling and floor" instance=ExtResource("26_j2y8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4916, -0.745785, 9.66517)
+script = ExtResource("27_qfibg")
 
 [node name="floorFull(Clone)" parent="BathroomLevel/ceiling and floor/floorFull" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_13i36")
@@ -275,50 +276,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34, -0.7, 2.162)
 
 [node name="Pill Bottle" parent="ScoringObjects" instance=ExtResource("35_t85sw")]
 transform = Transform3D(-0.888937, 0, 0.458029, 0, 1, 0, -0.458029, 0, -0.888937, 1.64187, 2.7488, -1.83352)
-script = ExtResource("36_r1tdl")
 
 [node name="Pill Bottle2" parent="ScoringObjects" instance=ExtResource("35_t85sw")]
 transform = Transform3D(-0.952783, 0, -0.303651, 0, 1, 0, 0.303651, 0, -0.952783, 1.4506, 2.7488, -1.80998)
-script = ExtResource("36_r1tdl")
 
 [node name="Tissue Box" parent="ScoringObjects" instance=ExtResource("36_f1u63")]
 transform = Transform3D(-0.17327, 0, -0.984874, 0, 1, 0, 0.984874, 0, -0.17327, 0.114671, 1.92317, -9.58506)
 
 [node name="Toilet Paper" parent="ScoringObjects" instance=ExtResource("37_saees")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78786, 3.56514, 1.7802)
-script = ExtResource("36_r1tdl")
 
 [node name="Toilet Paper2" parent="ScoringObjects" instance=ExtResource("37_saees")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10714, 3.56514, 1.7802)
-script = ExtResource("36_r1tdl")
 
 [node name="Toilet Paper3" parent="ScoringObjects" instance=ExtResource("37_saees")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.56514, 1.45597)
-script = ExtResource("36_r1tdl")
 
 [node name="Toilet Paper4" parent="ScoringObjects" instance=ExtResource("37_saees")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.91091, 1.64065)
-script = ExtResource("36_r1tdl")
 
 [node name="Toilet Paper5" parent="ScoringObjects" instance=ExtResource("37_saees")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.796276, 1.68412, -9.64755)
-script = ExtResource("36_r1tdl")
 
 [node name="Hairbrush" parent="ScoringObjects" instance=ExtResource("38_u5mrv")]
 transform = Transform3D(0.960299, 0, 0.278974, 0, 1, 0, -0.278974, 0, 0.960299, 1.52268, 2.77598, -1.65626)
-script = ExtResource("36_r1tdl")
 
 [node name="Cup" parent="ScoringObjects" instance=ExtResource("39_e02ay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56701, 2.74083, -0.582745)
-script = ExtResource("36_r1tdl")
 
 [node name="Toothbrush" parent="ScoringObjects" instance=ExtResource("40_pj2e3")]
 transform = Transform3D(0.955268, 0.0558118, -0.290427, 0, 0.982031, 0.188718, 0.295741, -0.180277, 0.938103, 1.57507, 2.84038, -0.555094)
-script = ExtResource("36_r1tdl")
 
 [node name="Razor" parent="ScoringObjects" instance=ExtResource("41_vjga0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.894467, 1.77048, -0.344261)
-script = ExtResource("36_r1tdl")
 
 [node name="Hand Soap" parent="ScoringObjects" instance=ExtResource("42_02cyo")]
 transform = Transform3D(-0.962772, 0, -0.270315, 0, 1, 0, 0.270315, 0, -0.962772, 1.60169, 1.91499, -1.85728)

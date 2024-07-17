@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cek418owls1nd"]
+[gd_scene load_steps=10 format=3 uid="uid://cek418owls1nd"]
 
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_3r05m"]
 [ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="1_apu5w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi8p3"]
@@ -79,6 +80,7 @@ size = Vector3(0.390625, 0.247477, 0.026)
 mass = 3.5
 linear_damp = 0.5
 angular_damp = 0.2
+script = ExtResource("1_3r05m")
 
 [node name="computerScreen(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

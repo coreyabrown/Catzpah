@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://rbhcpdpau6ia"]
+[gd_scene load_steps=7 format=3 uid="uid://rbhcpdpau6ia"]
 
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_4i1v3"]
 [ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_w47o4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5daxn"]
@@ -49,6 +50,8 @@ size = Vector3(0.491638, 0.0263672, 0.105957)
 collision_layer = 4
 collision_mask = 196615
 mass = 0.15
+script = ExtResource("1_4i1v3")
+sound_material = 4
 
 [node name="utensil-spoon" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_rxcnc")

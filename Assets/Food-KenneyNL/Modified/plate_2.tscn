@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://brib76x71d5up"]
+[gd_scene load_steps=8 format=3 uid="uid://brib76x71d5up"]
 
 [ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_52e0g"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_h3sry"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3knv1"]
 resource_name = "colormap"
@@ -53,6 +54,8 @@ radius = 0.437886
 collision_layer = 4
 collision_mask = 196615
 mass = 0.4
+script = ExtResource("1_h3sry")
+sound_material = 1
 
 [node name="plate" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_eqb7p")

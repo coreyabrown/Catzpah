@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://1x37gc47xaou"]
+[gd_scene load_steps=9 format=3 uid="uid://1x37gc47xaou"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_oy3nb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1q0x"]
 resource_name = "Material.002"
@@ -87,6 +89,8 @@ collision_mask = 196615
 mass = 0.2
 linear_damp = 0.01
 angular_damp = 0.1
+script = ExtResource("1_oy3nb")
+sound_material = 0
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
