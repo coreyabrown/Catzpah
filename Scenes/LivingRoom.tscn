@@ -66,13 +66,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7a13i"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p3xwm"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pula"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd6ba"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_7a13i")
+albedo_texture = SubResource("ViewportTexture_p3xwm")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
@@ -136,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_8pula")
+surface_material_override/0 = SubResource("StandardMaterial3D_qd6ba")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -199,95 +199,95 @@ player_height_max = 0.85
 
 [node name="StartXR" parent="." instance=ExtResource("8_2bkdu")]
 
-[node name="LivingRoomLevel" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="."]
 script = ExtResource("16_iohwg")
 
-[node name="paneling" parent="LivingRoomLevel" instance=ExtResource("11_37am6")]
+[node name="paneling" parent="Level" instance=ExtResource("11_37am6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33141, 1.99899, 2.23213)
 
-[node name="tableCoffeeGlass" parent="LivingRoomLevel" instance=ExtResource("11_5wtwv")]
+[node name="tableCoffeeGlass" parent="Level" instance=ExtResource("11_5wtwv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466497, -0.7, -2.04029)
 
-[node name="ceilingFan" parent="LivingRoomLevel" instance=ExtResource("12_ebbyu")]
+[node name="ceilingFan" parent="Level" instance=ExtResource("12_ebbyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341129, 5.88786, -4.49867)
 
-[node name="floorFull" parent="LivingRoomLevel" instance=ExtResource("11_iib7y")]
+[node name="Floor" parent="Level" instance=ExtResource("11_iib7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.745785, 9.66517)
 
-[node name="loungeSofa" parent="LivingRoomLevel" instance=ExtResource("9_puv1g")]
+[node name="loungeSofa" parent="Level" instance=ExtResource("9_puv1g")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.249, -0.7, -0.297)
 
-[node name="loungeChair" parent="LivingRoomLevel" instance=ExtResource("14_a32yx")]
+[node name="loungeChair" parent="Level" instance=ExtResource("14_a32yx")]
 transform = Transform3D(-0.628818, 0, 0.777552, 0, 1, 0, -0.777552, 0, -0.628818, -4.317, -0.7, -1.95201)
 
-[node name="rugRectangle" parent="LivingRoomLevel" instance=ExtResource("15_j4phm")]
+[node name="rugRectangle" parent="Level" instance=ExtResource("15_j4phm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.725002, -0.371)
 
-[node name="rugRectangle2" parent="LivingRoomLevel" instance=ExtResource("15_j4phm")]
+[node name="rugRectangle2" parent="Level" instance=ExtResource("15_j4phm")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.82452, -0.7, -8.50331)
 
-[node name="cabinetTelevisionDoors" parent="LivingRoomLevel" instance=ExtResource("16_kxv3k")]
+[node name="cabinetTelevisionDoors" parent="Level" instance=ExtResource("16_kxv3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.283, -0.7, -8.15122)
 
-[node name="televisionModern" parent="LivingRoomLevel" instance=ExtResource("17_ybf6q")]
+[node name="televisionModern" parent="Level" instance=ExtResource("17_ybf6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179605, 0.848103, -8.68613)
 
-[node name="stairs" parent="LivingRoomLevel" instance=ExtResource("21_luaok")]
+[node name="stairs" parent="Level" instance=ExtResource("21_luaok")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4.5325, -0.7, 6.297)
 
-[node name="walls" type="Node3D" parent="LivingRoomLevel"]
+[node name="walls" type="Node3D" parent="Level"]
 
-[node name="wall5" parent="LivingRoomLevel/walls" instance=ExtResource("23_3ebhc")]
+[node name="wall5" parent="Level/walls" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 2, 0, -4.37114e-08, -4.76508, -0.7, 2.54184)
 
-[node name="wallDoorwayWide" parent="LivingRoomLevel/walls" instance=ExtResource("18_tbu88")]
+[node name="wallDoorwayWide" parent="Level/walls" instance=ExtResource("18_tbu88")]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 4.33205, -0.7, 2.56602)
 
-[node name="doorwayFront" parent="LivingRoomLevel/walls" instance=ExtResource("19_3tplp")]
+[node name="doorwayFront" parent="Level/walls" instance=ExtResource("19_3tplp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83996, -0.7, -9.95942)
 
-[node name="wallDoorway" parent="LivingRoomLevel/walls" instance=ExtResource("20_7li6h")]
+[node name="wallDoorway" parent="Level/walls" instance=ExtResource("20_7li6h")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.543, -0.7, -10.325)
 
-[node name="wallCorner" parent="LivingRoomLevel/walls" instance=ExtResource("21_bunn1")]
+[node name="wallCorner" parent="Level/walls" instance=ExtResource("21_bunn1")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -8.01595, -0.7, -0.183465)
 
-[node name="wallCorner2" parent="LivingRoomLevel/walls" instance=ExtResource("21_bunn1")]
+[node name="wallCorner2" parent="Level/walls" instance=ExtResource("21_bunn1")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.29359, -0.7, -10.3216)
 
-[node name="wall3" parent="LivingRoomLevel/walls" instance=ExtResource("23_3ebhc")]
+[node name="wall3" parent="Level/walls" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8607, -0.7, 7.10713)
 
-[node name="wallWindowSlide" parent="LivingRoomLevel/walls" instance=ExtResource("22_alhjg")]
+[node name="wallWindowSlide" parent="Level/walls" instance=ExtResource("22_alhjg")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -8.0235, -0.7, -5.14127)
 
-[node name="wallCorner4" parent="LivingRoomLevel/walls" instance=ExtResource("21_bunn1")]
+[node name="wallCorner4" parent="Level/walls" instance=ExtResource("21_bunn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10669, -0.7, 9.54345)
 
-[node name="wall" parent="LivingRoomLevel/walls" instance=ExtResource("23_3ebhc")]
+[node name="wall" parent="Level/walls" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -8.02665, -0.7, -8.907)
 
-[node name="wall2" parent="LivingRoomLevel/walls" instance=ExtResource("23_3ebhc")]
+[node name="wall2" parent="Level/walls" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(-2, 0, -8.74228e-08, 0, 1, 0, 1.74846e-07, 0, -1, 4.57757, -0.7, -10.3233)
 
-[node name="backwall" parent="LivingRoomLevel/walls" instance=ExtResource("23_3ebhc")]
+[node name="backwall" parent="Level/walls" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -5.30156, -0.7, 2.56653)
 
-[node name="wallWindowSlide2" parent="LivingRoomLevel/walls" instance=ExtResource("22_alhjg")]
+[node name="wallWindowSlide2" parent="Level/walls" instance=ExtResource("22_alhjg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8572, -0.7, -2.61757)
 
-[node name="wall4" parent="LivingRoomLevel/walls" instance=ExtResource("23_3ebhc")]
+[node name="wall4" parent="Level/walls" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -0.661193, -0.7, 9.55193)
 
-[node name="wallWindowSlide3" parent="LivingRoomLevel/walls" instance=ExtResource("22_alhjg")]
+[node name="wallWindowSlide3" parent="Level/walls" instance=ExtResource("22_alhjg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.858, -0.7, 2.271)
 
-[node name="wallCorner3" parent="LivingRoomLevel/walls" instance=ExtResource("21_bunn1")]
+[node name="wallCorner3" parent="Level/walls" instance=ExtResource("21_bunn1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.863, -0.7, -7.57519)
 
-[node name="ceiling" type="Node3D" parent="LivingRoomLevel"]
+[node name="ceiling" type="Node3D" parent="Level"]
 
-[node name="wall" parent="LivingRoomLevel/ceiling" instance=ExtResource("23_3ebhc")]
+[node name="wall" parent="Level/ceiling" instance=ExtResource("23_3ebhc")]
 transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.02181, 5.72434, -11.4045)
 
 [node name="ScoringObjects" type="Node3D" parent="."]
@@ -359,3 +359,4 @@ one_shot = true
 [connection signal="update_combo_text" from="ScoreArea" to="XROrigin3D/XRCamera3D/HUD" method="_on_score_area_update_combo_text"]
 
 [editable path="XROrigin3D/XRCamera3D/Menu"]
+[editable path="Level/Floor"]

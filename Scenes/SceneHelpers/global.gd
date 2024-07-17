@@ -8,6 +8,32 @@ var currentLevel = levelReference[0]
 var musicLevel = 100
 var sfxLevel = 100
 
+enum SoundMat {
+	CARDBOARD = 0,
+	CERAMIC = 1,
+	FOOD = 2,
+	LAMP = 3,
+	METAL = 4,
+	NOTEBOOK = 5,
+	PILLBOTTLE = 6,
+	PLASTIC = 7,
+	POTTEDPLANT = 8,
+	TOILETPAPER = 9,
+	WOOD = 10
+}
+
+var masterSoundList = [["res://Assets/Audio/CollisionSounds/Cardboard1.wav", "res://Assets/Audio/CollisionSounds/Cardboard2.wav"],
+["res://Assets/Audio/CollisionSounds/Ceramic1.wav", "res://Assets/Audio/CollisionSounds/Ceramic2.wav"],
+["res://Assets/Audio/CollisionSounds/Food1.wav", "res://Assets/Audio/CollisionSounds/Food2.wav"],
+["res://Assets/Audio/CollisionSounds/Lamp1.wav"],
+["res://Assets/Audio/CollisionSounds/Metal1.wav", "res://Assets/Audio/CollisionSounds/Metal2.wav", "res://Assets/Audio/CollisionSounds/Metal3.wav"],
+["res://Assets/Audio/CollisionSounds/Notebook1.wav"],
+["res://Assets/Audio/CollisionSounds/Pills1.wav", "res://Assets/Audio/CollisionSounds/Pills2.wav"],
+["res://Assets/Audio/CollisionSounds/Plastic1.wav", "res://Assets/Audio/CollisionSounds/plastic2.wav", "res://Assets/Audio/CollisionSounds/Plastic3.wav", "res://Assets/Audio/CollisionSounds/Plastic4.wav"],
+["res://Assets/Audio/CollisionSounds/Plant1.wav", "res://Assets/Audio/CollisionSounds/Plant2.wav"],
+["res://Assets/Audio/CollisionSounds/ToiletPaper1.wav", "res://Assets/Audio/CollisionSounds/ToiletPaper2.wav"],
+["res://Assets/Audio/CollisionSounds/Wood1.wav", "res://Assets/Audio/CollisionSounds/Wood2.wav", "res://Assets/Audio/CollisionSounds/Wood3.wav"]]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var root = get_tree().root
