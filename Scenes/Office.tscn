@@ -67,13 +67,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wejer"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_42pdx"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okpev"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw2ds"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_wejer")
+albedo_texture = SubResource("ViewportTexture_42pdx")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -146,7 +146,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_vklk8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_okpev")
+surface_material_override/0 = SubResource("StandardMaterial3D_lw2ds")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
