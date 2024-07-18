@@ -77,13 +77,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4qmkj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pvf5t"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vn3os"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_760i7"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_4qmkj")
+albedo_texture = SubResource("ViewportTexture_pvf5t")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw212"]
@@ -144,7 +144,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_terrr")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_vn3os")
+surface_material_override/0 = SubResource("StandardMaterial3D_760i7")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -354,60 +354,96 @@ transform = Transform3D(0.0965754, 0, -0.995326, 0, 1, 0, 0.995326, 0, 0.0965754
 
 [node name="plate" parent="ScoringObjects" instance=ExtResource("42_pig4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87701, 1.40728, 7.21738)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="plate2" parent="ScoringObjects" instance=ExtResource("42_pig4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87701, 1.51556, 7.21738)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="plate3" parent="ScoringObjects" instance=ExtResource("42_pig4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87701, 1.62879, 7.21738)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="plate5" parent="ScoringObjects" instance=ExtResource("42_pig4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63632, 1.41097, 3.91534)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="plate4" parent="ScoringObjects" instance=ExtResource("42_pig4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70993, 1.62879, 3.34398)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="fried egg" parent="ScoringObjects" instance=ExtResource("42_cyy0v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63177, 1.5174, 3.87683)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="hot dog" parent="ScoringObjects" instance=ExtResource("43_r3yd5")]
 transform = Transform3D(0.675359, 0, -0.73749, 0, 1, 0, 0.73749, 0, 0.675359, 5.68631, 1.66684, 3.31079)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="pepper mill" parent="ScoringObjects" instance=ExtResource("45_uqgvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26209, 1.42959, 8.66271)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="salt shaker" parent="ScoringObjects" instance=ExtResource("45_uqgvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05805, 1.42959, 8.66271)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="carrot" parent="ScoringObjects" instance=ExtResource("47_1igtx")]
 transform = Transform3D(0.861706, -0.491237, 0.127081, 0.476443, 0.697179, -0.535671, 0.174543, 0.522138, 0.83481, 0.344258, 1.6265, 7.98355)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="celery" parent="ScoringObjects" instance=ExtResource("48_lchvk")]
 transform = Transform3D(1, 0, 0, 0, 0.616514, 0.787344, 0, -0.787344, 0.616514, 0.160809, 1.6265, 8.08712)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="onion" parent="ScoringObjects" instance=ExtResource("49_6ifrw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321532, 1.71843, 7.90225)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="peanut butter" parent="ScoringObjects" instance=ExtResource("46_5sjkk")]
 transform = Transform3D(0.514335, 0, 0.857589, 0, 1, 0, -0.857589, 0, 0.514335, 5.78245, 1.63195, 6.64783)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="spoon" parent="ScoringObjects" instance=ExtResource("47_nlf2y")]
 transform = Transform3D(0.759169, 0, -0.650893, 0, 1, 0, 0.650893, 0, 0.759169, 5.8101, 1.94489, 6.65206)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="potted plant" parent="ScoringObjects" instance=ExtResource("41_vx4q0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25346, 1.45927, -1.83052)
 
 [node name="Coffee Mug" parent="ScoringObjects" instance=ExtResource("41_82r7o")]
 transform = Transform3D(-0.75346, 0, 0.657494, 0, 1, 0, -0.657494, 0, -0.75346, -2.5672, 1.81818, 8.22181)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coffee Mug3" parent="ScoringObjects" instance=ExtResource("41_82r7o")]
 transform = Transform3D(-0.129626, -0.0346051, 0.990959, 8.75487e-08, -0.999391, -0.0348995, 0.991563, -0.0045238, 0.129547, 4.36296, 1.5911, 4.93165)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coffee Mug4" parent="ScoringObjects" instance=ExtResource("41_82r7o")]
 transform = Transform3D(-0.475901, -0.0306941, 0.878963, 8.7087e-08, -0.999391, -0.0348995, 0.879499, -0.0166086, 0.475611, 3.73818, 1.5911, 4.93165)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coffee Mug2" parent="ScoringObjects" instance=ExtResource("41_82r7o")]
 transform = Transform3D(0.454597, 0, 0.890697, 0, 1, 0, -0.890697, 0, 0.454597, -1.59786, 1.58604, 8.57162)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="toaster" parent="ScoringObjects" instance=ExtResource("41_pc4ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98218, 1.41168, 8.44848)

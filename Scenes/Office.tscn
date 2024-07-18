@@ -67,13 +67,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q6avy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wejer"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfgx1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okpev"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_q6avy")
+albedo_texture = SubResource("ViewportTexture_wejer")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -113,12 +113,12 @@ script = ExtResource("1_vxbxs")
 [node name="LevelMusic" type="Node3D" parent="."]
 script = ExtResource("2_tql5q")
 
-[node name="Melancholy" type="AudioStreamPlayer3D" parent="LevelMusic"]
+[node name="Melancholy" type="AudioStreamPlayer3D" parent="LevelMusic" groups=["sound"]]
 stream = ExtResource("3_n78u2")
 volume_db = 5.0
 max_db = 5.0
 
-[node name="Rainy" type="AudioStreamPlayer3D" parent="LevelMusic"]
+[node name="Rainy" type="AudioStreamPlayer3D" parent="LevelMusic" groups=["sound"]]
 stream = ExtResource("4_kkjdn")
 volume_db = 5.0
 max_db = 5.0
@@ -146,13 +146,17 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_vklk8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_pfgx1")
+surface_material_override/0 = SubResource("StandardMaterial3D_okpev")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
 collision_mask = 0
 
 [node name="HUD" parent="XROrigin3D/XRCamera3D" instance=ExtResource("4_lg7kx")]
+
+[node name="SingleTrickMeow" parent="XROrigin3D/XRCamera3D/HUD" index="4" groups=["sound"]]
+
+[node name="ComboEndMeow" parent="XROrigin3D/XRCamera3D/HUD" index="5" groups=["sound"]]
 
 [node name="LeftPaw" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -336,15 +340,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23375, 5.72822, -3.87298)
 
 [node name="pencil holder" parent="ScoringObjects" instance=ExtResource("33_qcbyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95512, 1.43128, -9.35366)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Pen" parent="ScoringObjects" instance=ExtResource("35_3m2ob")]
 transform = Transform3D(-0.873055, 0.217625, -0.436365, -0.44462, 0.0121609, 0.895637, 0.20022, 0.975957, 0.0861436, 8.42085, 1.30943, -8.49552)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="notebook" parent="ScoringObjects" instance=ExtResource("36_fuwu8")]
 transform = Transform3D(0.138914, 0, -0.990304, 0, 1, 0, 0.990304, 0, 0.138914, 7.98266, 1.2688, -8.55704)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("32_vwnbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20626, 2.08363, 1.64288)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Monitor" parent="ScoringObjects" instance=ExtResource("34_r2err")]
 transform = Transform3D(0.00162324, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00162324, 10.723, 1.24, -8.05212)
@@ -353,6 +365,8 @@ collision_mask = 196615
 
 [node name="Mouse" parent="ScoringObjects" instance=ExtResource("35_pebqs")]
 transform = Transform3D(0.122632, 0, 0.992452, 0, 1, 0, -0.992452, 0, 0.122632, 10.1914, 1.24, -5.89497)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Keyboard" parent="ScoringObjects" instance=ExtResource("36_3wyr6")]
 transform = Transform3D(-0.0223732, 0, -0.99975, 0, 1, 0, 0.99975, 0, -0.0223732, 9.80596, 1.24, -7.73629)
@@ -361,21 +375,33 @@ collision_mask = 196615
 
 [node name="succulent2" parent="ScoringObjects" instance=ExtResource("32_vwnbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73676, 0.902486, -1.82856)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Pencil" parent="ScoringObjects" instance=ExtResource("34_wg0et")]
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 6.88944, 1.64883, -9.32302)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Pencil2" parent="ScoringObjects" instance=ExtResource("34_wg0et")]
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 7.01259, 1.66989, -9.32103)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Pencil3" parent="ScoringObjects" instance=ExtResource("34_wg0et")]
 transform = Transform3D(-0.999433, -0.0336785, 0, 0.0336785, -0.999433, 0, 0, 0, 1, 6.94021, 1.63614, -9.41565)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="desk lamp" parent="ScoringObjects" instance=ExtResource("42_v7lnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98564, 1.34498, -9.01956)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="succulent3" parent="ScoringObjects" instance=ExtResource("32_vwnbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101828, 0.897084, 1.67373)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="ScoreArea" type="Area3D" parent="."]
 transform = Transform3D(0.925104, 0, 0.379714, 0, 1, 0, -0.379714, 0, 0.925104, 5.04754, 0, -1.52721)
@@ -403,3 +429,4 @@ one_shot = true
 [editable path="XROrigin3D/XRCamera3D/Menu"]
 [editable path="XROrigin3D/XRCamera3D/HUD"]
 [editable path="Level/Floor"]
+[editable path="ScoringObjects/desk lamp"]

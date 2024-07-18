@@ -66,13 +66,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p3xwm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cuq5r"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd6ba"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mds55"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_p3xwm")
+albedo_texture = SubResource("ViewportTexture_cuq5r")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
@@ -136,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_qd6ba")
+surface_material_override/0 = SubResource("StandardMaterial3D_mds55")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -221,10 +221,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.249,
 transform = Transform3D(-0.628818, 0, 0.777552, 0, 1, 0, -0.777552, 0, -0.628818, -4.317, -0.7, -1.95201)
 
 [node name="rugRectangle" parent="Level" instance=ExtResource("15_j4phm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.725002, -0.371)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.7, -0.371)
 
 [node name="rugRectangle2" parent="Level" instance=ExtResource("15_j4phm")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.82452, -0.7, -8.50331)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.825, -0.69, -8.503)
 
 [node name="cabinetTelevisionDoors" parent="Level" instance=ExtResource("16_kxv3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.283, -0.7, -8.15122)
@@ -294,37 +294,56 @@ transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.021
 
 [node name="Candy Bar" parent="ScoringObjects" instance=ExtResource("38_5tst2")]
 transform = Transform3D(-0.411435, 0, -0.911439, 0, 1, 0, 0.911439, 0, -0.411435, 1.22042, 0.457655, -3.34237)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Pencil" parent="ScoringObjects" instance=ExtResource("30_ulgaw")]
 transform = Transform3D(0.996101, 0.0881801, -0.00252778, 0, -0.0286544, -0.99959, -0.0882163, 0.995692, -0.0285427, 0.221541, 0.520417, -1.90647)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="notebook" parent="ScoringObjects" instance=ExtResource("30_us4yp")]
 transform = Transform3D(0.531132, 0, -0.847289, 0, 1, 0, 0.847289, 0, 0.531132, 0.234223, 0.472775, -1.89634)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coaster2" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(0.122788, 0.696364, 0.707107, 0.984808, -0.173648, 0, 0.122788, 0.696364, -0.707107, -0.356504, 0.702963, -2.63282)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coaster3" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(0.0616284, 0.704416, 0.707107, 0.996195, -0.0871558, 0, 0.0616284, 0.704416, -0.707107, -0.316877, 0.702963, -2.58651)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coaster4" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(-0.0616284, 0.704416, 0.707107, 0.996195, 0.0871558, 0, -0.0616284, 0.704416, -0.707107, -0.258651, 0.702963, -2.55567)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Coaster" parent="ScoringObjects" instance=ExtResource("30_ppub1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28313, 0.465659, -1.91903)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="coaster holder" parent="ScoringObjects" instance=ExtResource("30_f8rc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302129, 0.563027, -2.56158)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="floor lamp" parent="ScoringObjects" instance=ExtResource("30_s868l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86914, -0.7, 1.63137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.869, -0.7, 1.631)
 collision_layer = 2
 collision_mask = 196615
 linear_damp = 1.0
 angular_damp = 1.0
+sound_material = 7
 
 [node name="coffee mug" parent="ScoringObjects" instance=ExtResource("31_yek65")]
 transform = Transform3D(-0.986161, 0, -0.165788, 0, 1, 0, 0.165788, 0, -0.986161, -1.26528, 0.647381, -1.87986)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Tissue Box" parent="ScoringObjects" instance=ExtResource("42_x4nvt")]
 transform = Transform3D(0.0189008, 0, -0.999821, 0, 1, 0, 0.999821, 0, 0.0189008, -2.0742, 1.13991, -8.27962)
@@ -332,6 +351,8 @@ transform = Transform3D(0.0189008, 0, -0.999821, 0, 1, 0, 0.999821, 0, 0.0189008
 [node name="succulent" parent="ScoringObjects" instance=ExtResource("29_etiyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277834, 0.455535, -2.59381)
 mass = 0.5
+max_contacts_reported = 1
+contact_monitor = true
 linear_damp = 1.0
 angular_damp = 1.0
 
