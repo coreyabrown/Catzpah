@@ -8,7 +8,6 @@ func _ready():
 	update_music_level(Global.get_music_level())
 	musicList.append_array($".".get_children())
 	var songChoice = randi_range(0, musicList.size()-1)
-	print(str(songChoice))
 	musicList[songChoice].volume_db = (20 * (musicLevel / 100)) - 30
 	musicList[songChoice].play()
 

@@ -10,6 +10,8 @@ func _ready():
 		nextButton.visible = false
 	else:
 		nextButton.visible = true
+	
+	connectButtons()
 
 func play_focus_sound():
 	$ButtonFocus.play()
@@ -17,9 +19,19 @@ func play_focus_sound():
 func play_select_sound():
 	$ButtonSelect.play()
 
+func connectButtons():
+	for button in $MenuButtons.get_children():
+		button.focus_entered.connect(self._focus_entered)
+		button.mouse_entered.connect(self._mouse_entered)
+
+func _focus_entered():
+	play_select_sound()
+
+func _mouse_entered():
+	play_focus_sound()
+
 func _on_exit_pressed():
-	# Haptic feedback on button press?
-	get_tree().quit()
+	get_tree().change_scene_to_file(Global.get_curr_level_path())
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/StartScene.tscn")
@@ -28,26 +40,3 @@ func _on_main_menu_pressed():
 func _on_next_level_pressed():
 	get_tree().change_scene_to_file(Global.get_next_level_path())
 
-
-func _on_next_level_focus_entered():
-	play_select_sound()
-
-
-func _on_main_menu_focus_entered():
-	play_select_sound()
-
-
-func _on_exit_focus_entered():
-	play_select_sound()
-
-
-func _on_next_level_mouse_entered():
-	play_focus_sound()
-
-
-func _on_main_menu_mouse_entered():
-	play_focus_sound()
-
-
-func _on_exit_mouse_entered():
-	play_focus_sound()

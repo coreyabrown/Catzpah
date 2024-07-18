@@ -420,6 +420,7 @@ func _button_pressed() -> void:
 		target = $RayCast.get_collider()
 		last_collided_at = $RayCast.get_collision_point()
 		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		# $"..".trigger_haptic_pulse("haptic", 0.0, 0.5, 0.1, 0.0)
 
 
 # Pointer-activation button released handler
