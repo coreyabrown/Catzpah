@@ -7,6 +7,8 @@ func _ready():
 
 func play_focus_sound():
 	$ButtonFocus.play()
+	# $"../../../../LeftPaw".trigger_haptic_pulse("haptic", 0.0, 0.5, 0.1, 0.0)
+	# $"../../../../RightPaw".trigger_haptic_pulse("haptic", 0.0, 0.5, 0.1, 0.0)
 
 func play_select_sound():
 	$ButtonSelect.play()
