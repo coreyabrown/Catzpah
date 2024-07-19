@@ -125,8 +125,11 @@ func _ready():
 	
 	#update location and rotation
 	if enableSettings:
-		$".".transform = $"../XROrigin3D".transform
-		$".".rotation.y = $"../XROrigin3D/XRCamera3D".rotation.y + offset
+		XRServer.center_on_hmd(1, true)
+		var origin = $"../XROrigin3D"
+		var cam = $"../XROrigin3D/XRCamera3D"
+		$".".transform = origin.transform
+		$".".rotation.y = offset
 
 	# Listen for pointer events on the screen body
 	$StaticBody3D.connect("pointer_event", _on_pointer_event)

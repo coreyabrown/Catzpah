@@ -63,13 +63,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cpce5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_kyu31"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swo04"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy4wm"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_cpce5")
+albedo_texture = SubResource("ViewportTexture_kyu31")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -135,7 +135,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_78px8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_swo04")
+surface_material_override/0 = SubResource("StandardMaterial3D_uy4wm")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -319,7 +319,7 @@ max_contacts_reported = 1
 contact_monitor = true
 
 [node name="Toothbrush" parent="ScoringObjects" instance=ExtResource("40_pj2e3")]
-transform = Transform3D(0.955268, 0.0558118, -0.290427, 0, 0.982031, 0.188718, 0.295741, -0.180277, 0.938103, 1.57507, 2.84038, -0.555094)
+transform = Transform3D(0.955268, 0.0558118, -0.290427, 0, 0.982031, 0.188718, 0.295741, -0.180277, 0.938103, 1.57507, 2.8181, -0.555094)
 
 [node name="Razor" parent="ScoringObjects" instance=ExtResource("41_vjga0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.894467, 1.77048, -0.344261)
