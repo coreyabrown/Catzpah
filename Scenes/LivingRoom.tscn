@@ -1,14 +1,14 @@
 [gd_scene load_steps=57 format=3 uid="uid://da2fj4psrta8w"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_qrvkd"]
-[ext_resource type="AudioStream" uid="uid://dgvon1afenxrj" path="res://Assets/Audio/Music/cozycoffeehouse.mp3" id="2_7d3od"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="2_jeg32"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_sqql1"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="2_uc5i3"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_0fkrt"]
-[ext_resource type="AudioStream" uid="uid://cejsg5xe4xvwb" path="res://Assets/Audio/Music/sweet.mp3" id="3_rfbee"]
+[ext_resource type="AudioStream" uid="uid://cprfgnydhvo2c" path="res://Assets/Audio/Music/cozycoffeehouse.wav" id="3_5luf8"]
 [ext_resource type="PackedScene" uid="uid://b4nmmjxv0olom" path="res://Assets/Paw/ControllablePaw_Right.tscn" id="4_6et88"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_026rr"]
+[ext_resource type="AudioStream" uid="uid://qk4rpeaw3tky" path="res://Assets/Audio/Music/sweet.wav" id="4_pscmq"]
 [ext_resource type="Animation" uid="uid://jqdrjrmj6war" path="res://Assets/Paw/RightPawAnimationPlayer_Grip.tres" id="5_0tqia"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="5_x3bft"]
 [ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="6_5n3uq"]
@@ -66,13 +66,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0dpjm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_q47ga"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ids8n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyvab"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_0dpjm")
+albedo_texture = SubResource("ViewportTexture_q47ga")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
@@ -103,11 +103,11 @@ script = ExtResource("1_qrvkd")
 script = ExtResource("2_sqql1")
 
 [node name="Cozy" type="AudioStreamPlayer3D" parent="LevelMusic"]
-stream = ExtResource("2_7d3od")
+stream = ExtResource("3_5luf8")
 volume_db = 3.0
 
 [node name="Sweet" type="AudioStreamPlayer3D" parent="LevelMusic"]
-stream = ExtResource("3_rfbee")
+stream = ExtResource("4_pscmq")
 volume_db = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -136,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ids8n")
+surface_material_override/0 = SubResource("StandardMaterial3D_pyvab")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880

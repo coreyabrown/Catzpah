@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_0f2bx"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_6l1nx"]
-[ext_resource type="AudioStream" uid="uid://dwbajptrgqyax" path="res://Assets/Audio/Music/allthat.mp3" id="3_opeaf"]
-[ext_resource type="AudioStream" uid="uid://c3yimccxb7w5b" path="res://Assets/Audio/Music/dreams.mp3" id="4_chrvo"]
+[ext_resource type="AudioStream" uid="uid://csj0hgbt3crrq" path="res://Assets/Audio/Music/allthat.wav" id="3_jlyty"]
+[ext_resource type="AudioStream" uid="uid://dlijsbc0e8skf" path="res://Assets/Audio/Music/dreams.wav" id="4_ogm5s"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="5_8b5sj"]
 [ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="5_ocqey"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="6_03xl5"]
@@ -77,13 +77,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1nd2k"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qa28q"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qu7il"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4aaaa"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_1nd2k")
+albedo_texture = SubResource("ViewportTexture_qa28q")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw212"]
@@ -114,11 +114,11 @@ script = ExtResource("1_0f2bx")
 script = ExtResource("2_6l1nx")
 
 [node name="AllThat" type="AudioStreamPlayer3D" parent="LevelMusic"]
-stream = ExtResource("3_opeaf")
+stream = ExtResource("3_jlyty")
 volume_db = 3.0
 
 [node name="Dreams" type="AudioStreamPlayer3D" parent="LevelMusic"]
-stream = ExtResource("4_chrvo")
+stream = ExtResource("4_ogm5s")
 volume_db = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -144,7 +144,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_terrr")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_qu7il")
+surface_material_override/0 = SubResource("StandardMaterial3D_4aaaa")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880

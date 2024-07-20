@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_vxbxs"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_tql5q"]
-[ext_resource type="AudioStream" uid="uid://bg5wd3ahahd0w" path="res://Assets/Audio/Music/melancholylull.mp3" id="3_n78u2"]
+[ext_resource type="AudioStream" uid="uid://syc3528xwjy1" path="res://Assets/Audio/Music/melancholylull.wav" id="3_0v7gm"]
 [ext_resource type="PackedScene" uid="uid://eu66kdwgagl2" path="res://Assets/Paw/ControllablePaw_Left.tscn" id="4_bty0c"]
-[ext_resource type="AudioStream" uid="uid://chpqp6m8imayk" path="res://Assets/Audio/Music/rainyday.mp3" id="4_kkjdn"]
+[ext_resource type="AudioStream" uid="uid://70emnybm2ir7" path="res://Assets/Audio/Music/rainyday.wav" id="4_bwc2b"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="4_lg7kx"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="5_36r82"]
 [ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="5_287bm"]
@@ -67,13 +67,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fm5vi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_v226g"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn2pu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alrud"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_fm5vi")
+albedo_texture = SubResource("ViewportTexture_v226g")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -114,12 +114,12 @@ script = ExtResource("1_vxbxs")
 script = ExtResource("2_tql5q")
 
 [node name="Melancholy" type="AudioStreamPlayer3D" parent="LevelMusic" groups=["sound"]]
-stream = ExtResource("3_n78u2")
+stream = ExtResource("3_0v7gm")
 volume_db = 5.0
 max_db = 5.0
 
 [node name="Rainy" type="AudioStreamPlayer3D" parent="LevelMusic" groups=["sound"]]
-stream = ExtResource("4_kkjdn")
+stream = ExtResource("4_bwc2b")
 volume_db = 5.0
 max_db = 5.0
 
@@ -146,7 +146,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_vklk8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_tn2pu")
+surface_material_override/0 = SubResource("StandardMaterial3D_alrud")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
