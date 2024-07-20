@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://0c108qxcq823"]
 
-[ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_rjen3"]
+[ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Textures/colormap.png" id="1_rjen3"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_urxj5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tix4w"]
