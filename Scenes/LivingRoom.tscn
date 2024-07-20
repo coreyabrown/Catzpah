@@ -66,13 +66,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q47ga"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_d2rwx"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyvab"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yag6o"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_q47ga")
+albedo_texture = SubResource("ViewportTexture_d2rwx")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adegd"]
@@ -107,6 +107,7 @@ stream = ExtResource("3_5luf8")
 volume_db = 3.0
 
 [node name="Sweet" type="AudioStreamPlayer3D" parent="LevelMusic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57253, -6.78763)
 stream = ExtResource("4_pscmq")
 volume_db = 3.0
 
@@ -136,7 +137,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("7_mulnv")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_pyvab")
+surface_material_override/0 = SubResource("StandardMaterial3D_yag6o")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880

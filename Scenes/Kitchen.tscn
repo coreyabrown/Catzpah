@@ -77,13 +77,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qa28q"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fn0ky"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4aaaa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cbgq"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_qa28q")
+albedo_texture = SubResource("ViewportTexture_fn0ky")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw212"]
@@ -111,6 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
 script = ExtResource("1_0f2bx")
 
 [node name="LevelMusic" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16212, 2.50837, 0)
 script = ExtResource("2_6l1nx")
 
 [node name="AllThat" type="AudioStreamPlayer3D" parent="LevelMusic"]
@@ -144,7 +145,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_terrr")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_4aaaa")
+surface_material_override/0 = SubResource("StandardMaterial3D_0cbgq")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
