@@ -5,7 +5,7 @@ extends Control
 @onready var sfxIndicator = $MenuButtons/SFX/SFXIndicator
 @onready var sfxSlider = $MenuButtons/SFX/SFXVolume
 var musicLevel = 100
-var sfxLevel = 100
+var sfxLevel = 70
 
 func _ready():
 	musicIndicator.text = str(Global.get_music_level())
@@ -42,6 +42,8 @@ func play_focus_sound():
 	$ButtonFocus.play()
 
 func play_select_sound():
+	$"../../../XROrigin3D/LeftPaw".trigger_haptic_pulse("haptic", 0.0, 0.5, 0.1, 0.0)
+	$"../../../XROrigin3D/RightPaw".trigger_haptic_pulse("haptic", 0.0, 0.5, 0.1, 0.0)
 	$ButtonSelect.play()
 
 func _on_main_menu_focus_entered():
