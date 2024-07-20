@@ -45,22 +45,22 @@ shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r82ni"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5om67"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e35rd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8kyh"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_r82ni")
+albedo_texture = SubResource("ViewportTexture_5om67")
 texture_filter = 1
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_k3up1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_i00y4"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omitw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnbcn"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_k3up1")
+albedo_texture = SubResource("ViewportTexture_i00y4")
 texture_filter = 1
 
 [node name="Credits" type="Node3D"]
@@ -109,22 +109,22 @@ laser_material = SubResource("StandardMaterial3D_ggane")
 [node name="StartXR" parent="." instance=ExtResource("9_fjepk")]
 
 [node name="Menu" parent="." instance=ExtResource("10_kaumc")]
-transform = Transform3D(0.408082, 0, -0.912945, 0, 1, 0, 0.912945, 0, 0.408082, 0, 0, 0)
+transform = Transform3D(0.939373, 0, 0.342898, 0, 1, 0, -0.342898, 0, 0.939373, 0, 0, 0)
 offset = 0.35
 
 [node name="StartMenu" parent="Menu/Viewport" index="0" instance=ExtResource("11_rx7nj")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_e35rd")
+surface_material_override/0 = SubResource("StandardMaterial3D_y8kyh")
 
 [node name="Menu2" parent="." instance=ExtResource("10_kaumc")]
-transform = Transform3D(0.408082, 0, -0.912945, 0, 1, 0, 0.912945, 0, 0.408082, 0, 0, 0)
+transform = Transform3D(0.939373, 0, -0.342898, 0, 1, 0, 0.342898, 0, 0.939373, 0, 0, 0)
 offset = -0.35
 
 [node name="StartMenu" parent="Menu2/Viewport" index="0" instance=ExtResource("12_2mc24")]
 
 [node name="Screen" parent="Menu2" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_omitw")
+surface_material_override/0 = SubResource("StandardMaterial3D_xnbcn")
 
 [editable path="Menu"]
 [editable path="Menu2"]

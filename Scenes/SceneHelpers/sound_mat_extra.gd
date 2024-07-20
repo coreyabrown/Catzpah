@@ -25,6 +25,10 @@ func _ready():
 
 func _body_entered(body):
 	var objVel = sqrt(self.linear_velocity.x*self.linear_velocity.x + self.linear_velocity.y*self.linear_velocity.y + self.linear_velocity.z*self.linear_velocity.z)
+	if body.name == "CollisionHandLeft":
+		$"../../XROrigin3D/LeftPaw".trigger_haptic_pulse("haptic", 0.0, 0.3, 0.1, 0.0)
+	if body.name == "CollisionHandRight":
+		$"../../XROrigin3D/RightPaw".trigger_haptic_pulse("haptic", 0.0, 0.3, 0.1, 0.0)
 	if objVel > 0.5:
 		play_sound(objVel)
 

@@ -3,6 +3,8 @@ extends Node3D
 var xr_interface: XRInterface
 
 func _ready():
+	var sfx = Global.get_sfx_level()
+	Global.set_sfx_level(sfx)
 	xr_interface = XRServer.find_interface("OpenXR")
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialized successfully")
