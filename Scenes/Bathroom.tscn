@@ -1,9 +1,9 @@
-[gd_scene load_steps=56 format=3 uid="uid://h876k52m6mwj"]
+[gd_scene load_steps=55 format=3 uid="uid://h876k52m6mwj"]
 
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/main.gd" id="1_uuwf8"]
 [ext_resource type="Script" path="res://Scenes/SceneHelpers/LevelMusic.gd" id="2_7yi5x"]
-[ext_resource type="AudioStream" uid="uid://8p2ii3dkfg17" path="res://Assets/Audio/Music/hope.mp3" id="3_pcvpq"]
-[ext_resource type="AudioStream" uid="uid://c4yyfabnbqb17" path="res://Assets/Audio/Music/longtrip.mp3" id="4_edtu1"]
+[ext_resource type="AudioStream" uid="uid://d30majypwgftf" path="res://Assets/Audio/Music/hope.wav" id="3_7clja"]
+[ext_resource type="AudioStream" uid="uid://bcxk5mbibphuq" path="res://Assets/Audio/Music/longtrip.wav" id="4_bm8pu"]
 [ext_resource type="PackedScene" uid="uid://cimcr6r741x6l" path="res://Scenes/SceneHelpers/Viewport.tscn" id="5_58q6a"]
 [ext_resource type="PackedScene" uid="uid://di1qtibd4qfvu" path="res://Scenes/SceneHelpers/PauseMenu.tscn" id="6_78px8"]
 [ext_resource type="PackedScene" uid="uid://b5a6yyay81ru4" path="res://Scenes/SceneHelpers/3DHUD.tscn" id="7_khpvk"]
@@ -35,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://cnie7i1oln6jb" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/bookcase_open.tscn" id="34_7dbpm"]
 [ext_resource type="PackedScene" uid="uid://xo2m7aiala36" path="res://Assets/Models/pill_bottle.tscn" id="35_t85sw"]
 [ext_resource type="PackedScene" uid="uid://1x37gc47xaou" path="res://Assets/Models/tissue_box.tscn" id="36_f1u63"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="36_r1tdl"]
 [ext_resource type="PackedScene" uid="uid://0c108qxcq823" path="res://Assets/Models/ToiletPaper.tscn" id="37_saees"]
 [ext_resource type="PackedScene" uid="uid://bkwqufn1rkh2c" path="res://Assets/Furniture-KenneyNL/Modified-Furniture/ceiling_fan.tscn" id="38_fdfni"]
 [ext_resource type="PackedScene" uid="uid://b5p17ors3f34a" path="res://Assets/Models/hairbrush.tscn" id="38_u5mrv"]
@@ -64,13 +63,13 @@ reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_om2rr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oogsn"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcgpc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60wm8"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_om2rr")
+albedo_texture = SubResource("ViewportTexture_oogsn")
 texture_filter = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npkrr"]
@@ -101,15 +100,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698496, 0)
 script = ExtResource("1_uuwf8")
 
 [node name="LevelMusic" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34456, 2.78181, -1.61979)
 script = ExtResource("2_7yi5x")
 
 [node name="Hope" type="AudioStreamPlayer3D" parent="LevelMusic"]
-stream = ExtResource("3_pcvpq")
+stream = ExtResource("3_7clja")
 volume_db = 5.0
 max_db = 5.0
 
 [node name="LongTrip" type="AudioStreamPlayer3D" parent="LevelMusic"]
-stream = ExtResource("4_edtu1")
+stream = ExtResource("4_bm8pu")
 volume_db = 5.0
 max_db = 5.0
 
@@ -136,7 +136,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_78px8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_jcgpc")
+surface_material_override/0 = SubResource("StandardMaterial3D_60wm8")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
@@ -201,133 +201,140 @@ player_height_max = 0.85
 
 [node name="StartXR" parent="." instance=ExtResource("20_v0us0")]
 
-[node name="BathroomLevel" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="."]
 script = ExtResource("21_mc52w")
 
-[node name="walls" type="Node3D" parent="BathroomLevel"]
+[node name="walls" type="Node3D" parent="Level"]
 
-[node name="wallDoorway" parent="BathroomLevel/walls" instance=ExtResource("23_0y75l")]
+[node name="wallDoorway" parent="Level/walls" instance=ExtResource("23_0y75l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.71636, -0.7, -4.23224)
 
-[node name="wallCorner" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+[node name="wallCorner" parent="Level/walls" instance=ExtResource("24_8xqx4")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4.71927, -0.7, -0.183465)
 
-[node name="wallCorner5" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+[node name="wallCorner5" parent="Level/walls" instance=ExtResource("24_8xqx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471954, -0.7, 2.56932)
 
-[node name="wallCorner2" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+[node name="wallCorner2" parent="Level/walls" instance=ExtResource("24_8xqx4")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.98443, -0.7, -10.3216)
 
-[node name="wall3" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+[node name="wall3" parent="Level/walls" instance=ExtResource("22_po213")]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 2.25449, -0.7, 7.10713)
 
-[node name="wall" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+[node name="wall" parent="Level/walls" instance=ExtResource("22_po213")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.71749, -0.7, -8.907)
 
-[node name="wall2" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+[node name="wall2" parent="Level/walls" instance=ExtResource("22_po213")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.319339, -0.7, -10.3233)
 
-[node name="backwall" parent="BathroomLevel/walls" instance=ExtResource("22_po213")]
+[node name="backwall" parent="Level/walls" instance=ExtResource("22_po213")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -8.13738, -0.7, 2.56653)
 
-[node name="wallWindowSlide2" parent="BathroomLevel/walls" instance=ExtResource("25_bkohx")]
+[node name="wallWindowSlide2" parent="Level/walls" instance=ExtResource("25_bkohx")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.25099, -0.7, -2.61757)
 
-[node name="wallCorner3" parent="BathroomLevel/walls" instance=ExtResource("24_8xqx4")]
+[node name="wallCorner3" parent="Level/walls" instance=ExtResource("24_8xqx4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.25679, -0.7, -7.57519)
 
-[node name="ceiling and floor" type="Node3D" parent="BathroomLevel"]
-
-[node name="wall" parent="BathroomLevel/ceiling and floor" instance=ExtResource("22_po213")]
-transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.02181, 5.72434, -11.4045)
-
-[node name="floorFull" parent="BathroomLevel/ceiling and floor" instance=ExtResource("26_j2y8s")]
+[node name="Floor" parent="Level" instance=ExtResource("26_j2y8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4916, -0.745785, 9.66517)
 
-[node name="floorFull(Clone)" parent="BathroomLevel/ceiling and floor/floorFull" index="0"]
+[node name="floorFull(Clone)" parent="Level/Floor" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_13i36")
 
-[node name="doorway" parent="BathroomLevel" instance=ExtResource("30_37lle")]
+[node name="Cieling" parent="Level" instance=ExtResource("22_po213")]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, -9.02181, 5.72434, -11.4045)
+
+[node name="doorway" parent="Level" instance=ExtResource("30_37lle")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.3574, -0.7, -0.530364)
 
-[node name="ceilingFan" parent="BathroomLevel" instance=ExtResource("38_fdfni")]
+[node name="ceilingFan" parent="Level" instance=ExtResource("38_fdfni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5763, 6.10317, -4.80832)
 
-[node name="bathroomMirror" parent="BathroomLevel" instance=ExtResource("29_r0m68")]
+[node name="bathroomMirror" parent="Level" instance=ExtResource("29_r0m68")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.74947, 2.5635, -1.94418)
 
-[node name="bathroomSink" parent="BathroomLevel" instance=ExtResource("30_744kg")]
+[node name="bathroomSink" parent="Level" instance=ExtResource("30_744kg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.528302, 1.29467, -1.96278)
 
-[node name="showerRound" parent="BathroomLevel" instance=ExtResource("31_yv63j")]
+[node name="showerRound" parent="Level" instance=ExtResource("31_yv63j")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.625, -0.7, -7.248)
 
-[node name="toilet" parent="BathroomLevel" instance=ExtResource("32_8qv3d")]
+[node name="toilet" parent="Level" instance=ExtResource("32_8qv3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.625715, -0.7, -9.882)
 
-[node name="trashcan" parent="BathroomLevel" instance=ExtResource("33_wp3xg")]
+[node name="trashcan" parent="Level" instance=ExtResource("33_wp3xg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.20594, -1.55009, -2.77959)
 
-[node name="bookcaseOpen" parent="BathroomLevel" instance=ExtResource("34_7dbpm")]
+[node name="bookcaseOpen" parent="Level" instance=ExtResource("34_7dbpm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34, -0.7, 2.162)
 
 [node name="ScoringObjects" type="Node3D" parent="."]
 
 [node name="Pill Bottle" parent="ScoringObjects" instance=ExtResource("35_t85sw")]
 transform = Transform3D(-0.888937, 0, 0.458029, 0, 1, 0, -0.458029, 0, -0.888937, 1.64187, 2.7488, -1.83352)
-script = ExtResource("36_r1tdl")
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Pill Bottle2" parent="ScoringObjects" instance=ExtResource("35_t85sw")]
 transform = Transform3D(-0.952783, 0, -0.303651, 0, 1, 0, 0.303651, 0, -0.952783, 1.4506, 2.7488, -1.80998)
-script = ExtResource("36_r1tdl")
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Tissue Box" parent="ScoringObjects" instance=ExtResource("36_f1u63")]
-transform = Transform3D(-0.17327, 0, -0.984874, 0, 1, 0, 0.984874, 0, -0.17327, 0.114671, 1.92317, -9.58506)
+transform = Transform3D(-0.17327, 0, -0.984874, 0, 1, 0, 0.984874, 0, -0.17327, 0.114671, 1.91649, -9.58506)
 
 [node name="Toilet Paper" parent="ScoringObjects" instance=ExtResource("37_saees")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78786, 3.56514, 1.7802)
-script = ExtResource("36_r1tdl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78786, 3.55681, 1.7802)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Toilet Paper2" parent="ScoringObjects" instance=ExtResource("37_saees")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10714, 3.56514, 1.7802)
-script = ExtResource("36_r1tdl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10714, 3.55681, 1.7802)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Toilet Paper3" parent="ScoringObjects" instance=ExtResource("37_saees")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.56514, 1.45597)
-script = ExtResource("36_r1tdl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.55681, 1.45597)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Toilet Paper4" parent="ScoringObjects" instance=ExtResource("37_saees")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.91091, 1.64065)
-script = ExtResource("36_r1tdl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95366, 3.88421, 1.64065)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Toilet Paper5" parent="ScoringObjects" instance=ExtResource("37_saees")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.796276, 1.68412, -9.64755)
-script = ExtResource("36_r1tdl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.796276, 1.67269, -9.64755)
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Hairbrush" parent="ScoringObjects" instance=ExtResource("38_u5mrv")]
 transform = Transform3D(0.960299, 0, 0.278974, 0, 1, 0, -0.278974, 0, 0.960299, 1.52268, 2.77598, -1.65626)
-script = ExtResource("36_r1tdl")
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Cup" parent="ScoringObjects" instance=ExtResource("39_e02ay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56701, 2.74083, -0.582745)
-script = ExtResource("36_r1tdl")
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Toothbrush" parent="ScoringObjects" instance=ExtResource("40_pj2e3")]
-transform = Transform3D(0.955268, 0.0558118, -0.290427, 0, 0.982031, 0.188718, 0.295741, -0.180277, 0.938103, 1.57507, 2.84038, -0.555094)
-script = ExtResource("36_r1tdl")
+transform = Transform3D(0.955268, 0.0558118, -0.290427, 0, 0.982031, 0.188718, 0.295741, -0.180277, 0.938103, 1.57507, 2.8181, -0.555094)
 
 [node name="Razor" parent="ScoringObjects" instance=ExtResource("41_vjga0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.894467, 1.77048, -0.344261)
-script = ExtResource("36_r1tdl")
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Hand Soap" parent="ScoringObjects" instance=ExtResource("42_02cyo")]
-transform = Transform3D(-0.962772, 0, -0.270315, 0, 1, 0, 0.270315, 0, -0.962772, 1.60169, 1.91499, -1.85728)
+transform = Transform3D(-0.962772, 0, -0.270315, 0, 1, 0, 0.270315, 0, -0.962772, 1.60169, 1.90161, -1.85728)
 
 [node name="Towel" parent="ScoringObjects" instance=ExtResource("43_4vb8u")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.93067, 2.54003, 1.56708)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.93067, 2.52779, 1.56708)
 
 [node name="Towel2" parent="ScoringObjects" instance=ExtResource("43_4vb8u")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.93067, 2.88833, 1.56708)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.93067, 2.83852, 1.56708)
 
 [node name="ScoreArea" type="Area3D" parent="."]
 transform = Transform3D(0.925104, 0, 0.379714, 0, 1, 0, -0.379714, 0, 0.925104, -3.45245, 1.06615, -1.52721)
@@ -354,4 +361,4 @@ one_shot = true
 
 [editable path="XROrigin3D/XRCamera3D/Menu"]
 [editable path="XROrigin3D/XRCamera3D/HUD"]
-[editable path="BathroomLevel/ceiling and floor/floorFull"]
+[editable path="Level/Floor"]

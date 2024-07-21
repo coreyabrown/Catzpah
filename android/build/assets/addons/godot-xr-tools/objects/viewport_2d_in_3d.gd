@@ -52,6 +52,9 @@ const _DIRTY_ALL			:= 0x07FF	# All dirty
 # Default layer of 1:static-world, 21:pointable, 23:ui-objects
 const DEFAULT_LAYER := 0b0000_0000_0101_0000_0000_0000_0000_0001
 
+@export_group("OnReady Settings")
+@export var enableSettings : bool = true
+@export var offset : float = 0.00
 
 # Physics property group
 @export_group("Physics")
@@ -119,6 +122,14 @@ var _dirty := _DIRTY_ALL
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_ready = true
+	
+	#update location and rotation
+	if enableSettings:
+		XRServer.center_on_hmd(1, true)
+		var origin = $"../XROrigin3D"
+		var cam = $"../XROrigin3D/XRCamera3D"
+		$".".transform = origin.transform
+		$".".rotation.y = offset
 
 	# Listen for pointer events on the screen body
 	$StaticBody3D.connect("pointer_event", _on_pointer_event)

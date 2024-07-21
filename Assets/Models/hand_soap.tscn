@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://t5xyhkxja477"]
+[gd_scene load_steps=12 format=3 uid="uid://t5xyhkxja477"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_lukix"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym3cs"]
 resource_name = "Material.002"
@@ -122,6 +124,7 @@ size = Vector3(0.0785217, 0.0458984, 0.0410156)
 [node name="Hand Soap" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 196615
+script = ExtResource("1_lukix")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

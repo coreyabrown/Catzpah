@@ -44,16 +44,16 @@ shading_mode = 0
 diffuse_mode = 1
 albedo_color = Color(0.937255, 0.462745, 0.137255, 0.745098)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_57cdm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_thas4"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jr37"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v65bu"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_57cdm")
+albedo_texture = SubResource("ViewportTexture_thas4")
 texture_filter = 1
 
-[node name="Main" type="Node3D"]
+[node name="LevelOver" type="Node3D"]
 script = ExtResource("1_j2ybx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -104,6 +104,6 @@ offset = 0.0
 [node name="LevelOverMenu" parent="Menu/Viewport" index="0" instance=ExtResource("11_xt4th")]
 
 [node name="Screen" parent="Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_2jr37")
+surface_material_override/0 = SubResource("StandardMaterial3D_v65bu")
 
 [editable path="Menu"]

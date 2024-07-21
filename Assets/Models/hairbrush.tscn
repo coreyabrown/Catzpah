@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5p17ors3f34a"]
+[gd_scene load_steps=8 format=3 uid="uid://b5p17ors3f34a"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ibb8j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2x1v"]
 resource_name = "Material.006"
@@ -77,6 +79,7 @@ size = Vector3(0.242676, 0.0824585, 0.113037)
 collision_layer = 4
 collision_mask = 196615
 mass = 0.3
+script = ExtResource("1_ibb8j")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_gelbr")

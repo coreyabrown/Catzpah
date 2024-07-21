@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://st4do0m4d4mg"]
+[gd_scene load_steps=8 format=3 uid="uid://st4do0m4d4mg"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_t84sw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46ig3"]
 resource_name = "Material.004"
@@ -68,24 +70,28 @@ shadow_mesh = SubResource("ArrayMesh_rwijb")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ma6s2"]
 radius = 0.00975913
-height = 0.260948
+height = 0.393355
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_46f7p"]
-size = Vector3(0.0205078, 0.0589447, 0.0246582)
+size = Vector3(0.0205078, 0.0881882, 0.0246582)
 
 [node name="Toothbrush" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 196615
 mass = 0.03
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_t84sw")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_y5oyb")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11708, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.177534, 0)
 shape = SubResource("CapsuleShape3D_ma6s2")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.221352, 0.0167236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332455, 0.0167236)
 shape = SubResource("BoxShape3D_46f7p")

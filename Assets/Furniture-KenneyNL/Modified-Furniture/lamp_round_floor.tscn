@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bobv75r6qerhs"]
+[gd_scene load_steps=11 format=3 uid="uid://bobv75r6qerhs"]
+
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_s53a4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m6f7"]
 resource_name = "metal"
@@ -83,6 +85,8 @@ radius = 0.385165
 
 [node name="lampRoundFloor" type="RigidBody3D"]
 mass = 3.0
+script = ExtResource("1_s53a4")
+sound_material = 3
 
 [node name="lampRoundFloor(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

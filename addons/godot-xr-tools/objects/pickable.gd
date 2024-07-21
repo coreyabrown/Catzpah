@@ -53,7 +53,6 @@ enum SecondHandGrab {
 	SECOND,				## Second hand grab
 }
 
-
 # Default layer for held objects is 17:held-object
 const DEFAULT_LAYER := 0b0000_0000_0000_0001_0000_0000_0000_0000
 
@@ -85,6 +84,12 @@ const DEFAULT_LAYER := 0b0000_0000_0000_0001_0000_0000_0000_0000
 ## Require pick-by to be in the specified group
 @export var picked_by_require : String = ""
 
+@export_group("Sound Material")
+@export var sound_material: Global.SoundMat = Global.SoundMat.PLASTIC
+@onready var soundList = Global.masterSoundList[sound_material]
+@onready var sfxLevel = Global.get_sfx_level()
+
+var soundNodes = []
 
 ## If true, the object can be picked up at range
 var can_ranged_grab: bool = true
@@ -125,6 +130,21 @@ func _ready():
 		var grab_point := child as XRToolsGrabPoint
 		if grab_point:
 			_grab_points.push_back(grab_point)
+	
+	# Do Sound Stuff
+	self.contact_monitor = true
+	self.max_contacts_reported = 1
+	# Add sounds based on sound material
+	for sound in soundList:
+		var audioStream = AudioStreamPlayer3D.new()
+		var audio = load(sound)
+		audioStream.stream = audio
+		audioStream.volume_db = (50 * (sfxLevel / 100)) - 25
+		audioStream.add_to_group("sound")
+		add_child(audioStream)
+		soundNodes.append(audioStream)
+	
+	self.body_entered.connect(self._body_entered)
 
 
 # Called when the node exits the tree
@@ -398,3 +418,17 @@ func _get_grab_point(grabber : Node3D, current : XRToolsGrabPoint) -> XRToolsGra
 func _set_ranged_grab_method(new_value: int) -> void:
 	ranged_grab_method = new_value
 	can_ranged_grab = new_value != RangedMethod.NONE
+
+func _body_entered(body):
+	var objVel = sqrt(self.linear_velocity.x*self.linear_velocity.x + self.linear_velocity.y*self.linear_velocity.y + self.linear_velocity.z*self.linear_velocity.z)
+	if body.name == "CollisionHandLeft":
+		$"../../XROrigin3D/LeftPaw".trigger_haptic_pulse("haptic", 0.0, 0.3, 0.1, 0.0)
+	if body.name == "CollisionHandRight":
+		$"../../XROrigin3D/RightPaw".trigger_haptic_pulse("haptic", 0.0, 0.3, 0.1, 0.0)
+	if objVel > 0.5:
+		play_sound(objVel)
+
+func play_sound(vel):
+	var soundChoice = randi_range(0, soundList.size()-1)
+	soundNodes[soundChoice].volume_db = (50 * (sfxLevel / 100)) - 55 + clamp(vel * 10, 0, 30)
+	soundNodes[soundChoice].play()

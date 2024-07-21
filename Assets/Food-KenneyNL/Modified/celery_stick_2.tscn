@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://clb8vs2td77to"]
+[gd_scene load_steps=7 format=3 uid="uid://clb8vs2td77to"]
 
-[ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_c2rjg"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_4anq2"]
+[ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Textures/colormap.png" id="1_c2rjg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sw5j"]
 resource_name = "colormap"
@@ -49,6 +50,8 @@ size = Vector3(0.0438232, 0.537048, 0.0878906)
 collision_layer = 4
 collision_mask = 196615
 mass = 0.04
+script = ExtResource("1_4anq2")
+sound_material = 2
 
 [node name="celery-stick" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_ysrof")

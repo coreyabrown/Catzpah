@@ -50,16 +50,15 @@ func _on_body_entered(body):
 		var eucVel = sqrt(objVel.x*objVel.x + objVel.y*objVel.y + objVel.z*objVel.z) # euclidean length -> Sqrt(x^2 + y^2 + z^2)
 		var objAngVel = body.angular_velocity
 		var eucAngVel = sqrt(objAngVel.x*objAngVel.x + objAngVel.y*objAngVel.y + objAngVel.z*objAngVel.z)
-		var addPoints = (30 - eucVel) + (10 + objMass) + (30 - eucAngVel) # Score is somewhere between 30 and 70 usually
+		var addPoints = clamp((30 - eucVel) + (10 + objMass) + (30 - eucAngVel), 5, 1000) # Score is somewhere between 30 and 70 usually
 		
 		addCombo(addPoints, body.name)
 		
 	elif body == get_node("../XROrigin3D/PlayerBody") and not playerScored:
 		playerScored = true
 		var addPoints = 70 # should be on the high end of points
-		# Maybe should end level after falling?
 		addCombo(addPoints, "RUFUS")
-		
+		# End Level After Falling
 		levelEndTimer.start()
 		
 

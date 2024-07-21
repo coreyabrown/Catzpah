@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4f1p6fpjxron"]
+[gd_scene load_steps=7 format=3 uid="uid://c4f1p6fpjxron"]
 
 [ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="1_an050"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_v62w5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfjk7"]
 resource_name = "metalDark"
@@ -46,6 +47,7 @@ size = Vector3(0.255127, 0.123047, 0.425049)
 collision_layer = 4
 collision_mask = 196615
 mass = 0.2
+script = ExtResource("1_v62w5")
 
 [node name="computerMouse(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

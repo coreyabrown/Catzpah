@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://66vpu3w1iyap"]
+[gd_scene load_steps=9 format=3 uid="uid://66vpu3w1iyap"]
 
-[ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Models/GLB format/Textures/colormap.png" id="1_lcx1x"]
+[ext_resource type="Texture2D" uid="uid://ygn7sm4m3yxc" path="res://Assets/Food-KenneyNL/Textures/colormap.png" id="1_lcx1x"]
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_wl74l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8psg"]
 resource_name = "colormap"
@@ -56,6 +57,8 @@ size = Vector3(0.167358, 0.0396118, 0.10376)
 collision_layer = 2
 collision_mask = 196615
 mass = 4.0
+script = ExtResource("1_wl74l")
+sound_material = 4
 
 [node name="pot" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_ouj57")

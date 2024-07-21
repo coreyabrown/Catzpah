@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnk3wja1m5dh1"]
+[gd_scene load_steps=11 format=3 uid="uid://bnk3wja1m5dh1"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_lvcbj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgonp"]
 
@@ -110,6 +112,8 @@ collision_mask = 196615
 mass = 0.5
 linear_damp = 1.0
 angular_damp = 1.0
+script = ExtResource("1_lvcbj")
+sound_material = 5
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(-3, 0, 3.35211e-07, 0, 0.21, 0, -4.52987e-07, 0, -2.22, 0, 0, 0)

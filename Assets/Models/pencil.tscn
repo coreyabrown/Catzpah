@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://0fh3bljptvgg"]
+[gd_scene load_steps=12 format=3 uid="uid://0fh3bljptvgg"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ohvtb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5sh8"]
 resource_name = "Material.001"
@@ -172,6 +174,8 @@ collision_mask = 196615
 mass = 0.15
 linear_damp = 0.1
 angular_damp = 0.1
+script = ExtResource("1_ohvtb")
+sound_material = 10
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbqonu7ylm2a6"]
+[gd_scene load_steps=10 format=3 uid="uid://dbqonu7ylm2a6"]
 
+[ext_resource type="Script" path="res://Scenes/SceneHelpers/sound_mat_extra.gd" id="1_cl45f"]
 [ext_resource type="Material" uid="uid://dm4jj7gj8ald3" path="res://Assets/Materials/DarkGray.tres" id="1_wlfc1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usk6f"]
@@ -103,6 +104,7 @@ size = Vector3(1.49371, 0.0737915, 0.970947)
 collision_layer = 2
 collision_mask = 196615
 mass = 3.0
+script = ExtResource("1_cl45f")
 
 [node name="laptop(Clone)" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
