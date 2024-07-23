@@ -8,6 +8,18 @@ var currentLevel = levelReference[0]
 var musicLevel = 100
 var sfxLevel = 100
 
+var colSoundPath = "res://Assets/Audio/CollisionSounds/"
+var masterSoundList = [[colSoundPath + "Cardboard1.wav", colSoundPath + "Cardboard2.wav"],
+[colSoundPath + "Ceramic1.wav", colSoundPath + "Ceramic2.wav"],
+[colSoundPath + "Food1.wav", colSoundPath + "Food2.wav"],
+[colSoundPath + "Lamp1.wav"],
+[colSoundPath + "Metal1.wav", colSoundPath + "Metal2.wav", colSoundPath + "Metal3.wav"],
+[colSoundPath + "Notebook1.wav"],
+[colSoundPath + "Pills1.wav", colSoundPath + "Pills2.wav"],
+[colSoundPath + "Plastic1.wav", colSoundPath + "plastic2.wav", colSoundPath + "Plastic3.wav", colSoundPath + "Plastic4.wav"],
+[colSoundPath + "Plant1.wav", colSoundPath + "Plant2.wav"],
+[colSoundPath + "ToiletPaper1.wav", colSoundPath + "ToiletPaper2.wav"],
+[colSoundPath + "Wood1.wav", colSoundPath + "Wood2.wav", colSoundPath + "Wood3.wav"]]
 enum SoundMat {
 	CARDBOARD = 0,
 	CERAMIC = 1,
@@ -21,18 +33,6 @@ enum SoundMat {
 	TOILETPAPER = 9,
 	WOOD = 10
 }
-
-var masterSoundList = [["res://Assets/Audio/CollisionSounds/Cardboard1.wav", "res://Assets/Audio/CollisionSounds/Cardboard2.wav"],
-["res://Assets/Audio/CollisionSounds/Ceramic1.wav", "res://Assets/Audio/CollisionSounds/Ceramic2.wav"],
-["res://Assets/Audio/CollisionSounds/Food1.wav", "res://Assets/Audio/CollisionSounds/Food2.wav"],
-["res://Assets/Audio/CollisionSounds/Lamp1.wav"],
-["res://Assets/Audio/CollisionSounds/Metal1.wav", "res://Assets/Audio/CollisionSounds/Metal2.wav", "res://Assets/Audio/CollisionSounds/Metal3.wav"],
-["res://Assets/Audio/CollisionSounds/Notebook1.wav"],
-["res://Assets/Audio/CollisionSounds/Pills1.wav", "res://Assets/Audio/CollisionSounds/Pills2.wav"],
-["res://Assets/Audio/CollisionSounds/Plastic1.wav", "res://Assets/Audio/CollisionSounds/plastic2.wav", "res://Assets/Audio/CollisionSounds/Plastic3.wav", "res://Assets/Audio/CollisionSounds/Plastic4.wav"],
-["res://Assets/Audio/CollisionSounds/Plant1.wav", "res://Assets/Audio/CollisionSounds/Plant2.wav"],
-["res://Assets/Audio/CollisionSounds/ToiletPaper1.wav", "res://Assets/Audio/CollisionSounds/ToiletPaper2.wav"],
-["res://Assets/Audio/CollisionSounds/Wood1.wav", "res://Assets/Audio/CollisionSounds/Wood2.wav", "res://Assets/Audio/CollisionSounds/Wood3.wav"]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -69,7 +69,7 @@ tonemap_mode = 2
 [sub_resource type="ViewportTexture" id="ViewportTexture_c6w7f"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3avr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ay4ha"]
 transparency = 1
 cull_mode = 2
 albedo_texture = SubResource("ViewportTexture_c6w7f")
@@ -146,7 +146,7 @@ collision_layer = 5242880
 [node name="PauseMenu" parent="XROrigin3D/XRCamera3D/Menu/Viewport" index="0" instance=ExtResource("6_vklk8")]
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/Menu" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_c3avr")
+surface_material_override/0 = SubResource("StandardMaterial3D_ay4ha")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/Menu" index="2"]
 collision_layer = 5242880
